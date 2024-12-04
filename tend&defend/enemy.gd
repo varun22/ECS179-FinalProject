@@ -1,9 +1,9 @@
 class_name Enemy
-extends Node2D
+extends CharacterBody2D
 
 # Variables attributed to enemy
 @export var damage:float = 10
-@export var speed:float = 5
+@export var speed:float = 10000
 @export var health:float = 100
 
 # Called when the node enters the scene tree for the first time.
@@ -13,4 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	self.global_position.x -= speed * delta
+	if self.global_position.x < 10:
+		queue_free()
+		

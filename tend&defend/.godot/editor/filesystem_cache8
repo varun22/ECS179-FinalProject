@@ -1,5 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1733341080
+::res://::1733343298
+enemy.gd::GDScript::-1::1733343158::0::1::::Enemy<>CharacterBody2D<>::
 icon.svg::CompressedTexture2D::3250808465680630780::1733280982::1733324767::1::::<><>::
 ::res://assets/::1733326886
 ::res://assets/fonts/::1733324767
@@ -9,16 +10,15 @@ PixelOperator8.ttf::FontFile::8095218333032907462::1733324647::1733324766::1::::
 background.jpg::CompressedTexture2D::2230618346449256025::1733328376::1733328386::1::::<><>::
 knight.png::CompressedTexture2D::9104562108618560734::1729272599::1733326912::1::::<><>::
 slime_green.png::CompressedTexture2D::9148216157431321623::1729272600::1733329411::1::::<><>::
-::res://scenes/::1733340580
-enemy.tscn::PackedScene::1412323621817059874::1733337487::0::1::::<><>::res://scripts/enemy.gd<>uid://d3lp1v1ldjimh::::res://assets/placeholder assets/slime_green.png
-menu.tscn::PackedScene::7451950874013021033::1733334662::0::1::::<><>::res://scripts/menu.gd
-player.tscn::PackedScene::6621902973500733872::1733334662::0::1::::<><>::uid://d2yk2p0inqd7c::::res://assets/placeholder assets/knight.png
-stage1.tscn::PackedScene::6961649567131198378::1733340580::0::1::::<><>::uid://c1lx1llaevewm::::res://scenes/player.tscn<>uid://61r7t013flrd::::res://assets/placeholder assets/background.jpg<>res://scripts/waves_manager.gd<>res://scripts/enemy_factory.gd<>uid://26f3kc4nm0yv::::res://scenes/turret.tscn<>uid://uee07313050q::::res://scenes/enemy.tscn
-turret.tscn::PackedScene::1959448605454508153::1733334662::0::1::::<><>::uid://d2yk2p0inqd7c::::res://assets/placeholder assets/knight.png
+::res://scenes/::1733343158
+enemy.tscn::PackedScene::1412323621817059874::1733343100::0::1::::<><>::res://enemy.gd<>uid://d3lp1v1ldjimh::::res://assets/placeholder assets/slime_green.png
+menu.tscn::PackedScene::7451950874013021033::1733343042::0::1::::<><>::res://scripts/menu.gd
+player.tscn::PackedScene::6621902973500733872::1733343042::0::1::::<><>::uid://d2yk2p0inqd7c::::res://assets/placeholder assets/knight.png
+stage1.tscn::PackedScene::6961649567131198378::1733343042::0::1::::<><>::uid://c1lx1llaevewm::::res://scenes/player.tscn<>uid://61r7t013flrd::::res://assets/placeholder assets/background.jpg<>res://scripts/waves_manager.gd<>res://scripts/enemy_factory.gd<>uid://26f3kc4nm0yv::::res://scenes/turret.tscn<>uid://uee07313050q::::res://scenes/enemy.tscn
+turret.tscn::PackedScene::1959448605454508153::1733343158::0::1::::<><>::uid://d2yk2p0inqd7c::::res://assets/placeholder assets/knight.png
 ::res://scenes/ui/::1733325534
 ui.tscn::PackedScene::293580629178258591::1733325534::0::1::::<><>::
-::res://scripts/::1733341008
-enemy.gd::GDScript::-1::1733337487::0::1::::Enemy<>Node2D<>::
+::res://scripts/::1733342566
 enemy_factory.gd::GDScript::-1::1733340580::0::1::::EnemyFactory<>Node<>::
 enemy_spec.gd::GDScript::-1::1733336803::0::1::::EnemySpec<>Node<>::
 menu.gd::GDScript::-1::1733334660::0::1::::Menu<>Control<>::
@@ -26,4 +26,4 @@ projectile_factory.gd::GDScript::-1::1733334660::0::1::::ProjectileFactory<>Node
 turret_factory.gd::GDScript::-1::1733334660::0::1::::TurretFactory<>Node<>::
 turret_spec.gd::GDScript::-1::1733336803::0::1::::TurretSpec<>Node<>::
 ui.gd::GDScript::-1::1733324647::0::1::::<>CanvasLayer<>::
-waves_manager.gd::GDScript::-1::1733341008::0::1::::WavesManager<>Node<>::
+waves_manager.gd::GDScript::-1::1733342476::0::1::::WavesManager<>Node<>::

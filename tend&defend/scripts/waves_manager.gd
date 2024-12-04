@@ -27,10 +27,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if check_end():
+		done_spawning = false
 		wave += 1
 		calc_num_to_spawn()
 		create_enemy_schedule()
 		spawn_enemies()
+	#print(wave)
 
 # Fills placement_array with random placement and 
 func create_enemy_schedule() -> void:
@@ -79,10 +81,13 @@ func calc_num_to_spawn() -> void:
 	
 # Checks if there are any instances of enemies left, if so, return true
 func check_enemy_exists() -> bool:
-	var check_for_enemies:Array[Node] = $"../EnemySpawns".get_children()
+	var check_parent_node:Array[Node] = $"../EnemySpawns".get_children()
 	# cycle through each one and check if it is a enemy, if yes,return true
-	for i in check_for_enemies:
-		if i is Enemy:
-			return true
+	for i in check_parent_node:
+		var check_enemy_exists:Array[Node] = i.get_children()
+		for j in check_enemy_exists:
+			if j is Enemy:
+				#print("enemy exists")
+				return true
 	return false
 	
