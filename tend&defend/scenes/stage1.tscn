@@ -14,3 +14,18 @@ scale = Vector2(3, 3)
 position = Vector2(580, 325)
 scale = Vector2(0.966667, 1.2607)
 texture = ExtResource("2_1p74h")
+
+[node name="EnemySpawn1" type="Node2D" parent="."]
+position = Vector2(834, 149)
+
+[node name="EnemySpawn2" type="Node2D" parent="."]
+position = Vector2(844, 241)
+
+[node name="EnemySpawn3" type="Node2D" parent="."]
+position = Vector2(849, 357)
+
+[node name="EnemySpawn4" type="Node2D" parent="."]
+position = Vector2(852, 451)
+
+[node name="EnemySpawn5" type="Node2D" parent="."]
+position = Vector2(855, 566)

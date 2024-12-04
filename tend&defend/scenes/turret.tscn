@@ -1,3 +1,44 @@
-[gd_scene format=3 uid="uid://26f3kc4nm0yv"]
+[gd_scene load_steps=7 format=3 uid="uid://26f3kc4nm0yv"]
+
+[ext_resource type="Texture2D" uid="uid://d2yk2p0inqd7c" path="res://assets/placeholder assets/knight.png" id="1_tgla5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxg71"]
+atlas = ExtResource("1_tgla5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8sw0"]
+atlas = ExtResource("1_tgla5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeejt"]
+atlas = ExtResource("1_tgla5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_as61c"]
+atlas = ExtResource("1_tgla5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8fvlv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxg71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8sw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xeejt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_as61c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Turret" type="Node2D"]
+
+[node name="AnimatedTurret" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8fvlv")
