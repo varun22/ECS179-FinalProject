@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://uee07313050q"]
+[gd_scene load_steps=9 format=3 uid="uid://uee07313050q"]
 
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_dytbo"]
 [ext_resource type="Texture2D" uid="uid://d3lp1v1ldjimh" path="res://assets/placeholder assets/slime_green.png" id="1_qqrkb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cm2w8"]
@@ -38,7 +39,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Enemy" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oo0ld"]
+size = Vector2(14, 12)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_dytbo")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_trq5m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_oo0ld")

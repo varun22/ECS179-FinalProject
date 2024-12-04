@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://26f3kc4nm0yv"]
+[gd_scene load_steps=8 format=3 uid="uid://26f3kc4nm0yv"]
 
 [ext_resource type="Texture2D" uid="uid://d2yk2p0inqd7c" path="res://assets/placeholder assets/knight.png" id="1_tgla5"]
 
@@ -38,7 +38,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2efx"]
+size = Vector2(12, 19)
+
 [node name="Turret" type="Node2D"]
 
-[node name="AnimatedTurret" type="AnimatedSprite2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedTurret" type="AnimatedSprite2D" parent="StaticBody2D"]
 sprite_frames = SubResource("SpriteFrames_8fvlv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_q2efx")
