@@ -1,19 +1,19 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1733306999
-icon.svg::CompressedTexture2D::3250808465680630780::1733280324::1733306405::1::::<><>::
-::res://assets/::1733307188
-::res://assets/fonts/::1733307004
-PixelOperator8-Bold.ttf::FontFile::2791805035825705301::1729379878::1733307004::1::::<><>::
-PixelOperator8.ttf::FontFile::8095218333032907462::1729379878::1733307004::1::::<><>::
-::res://assets/music/::1733307188
-::res://resources/::1733306513
-::res://scenes/::1733307167
-::res://scenes/enemy_type_1/::1733307155
-::res://scenes/enemy_type_2/::1733307162
-::res://scenes/enemy_type_3/::1733307167
-::res://scenes/player/::1733307109
-::res://scenes/tower_type_1/::1733307132
-::res://scenes/tower_type_2/::1733307137
-::res://scenes/tower_type_3/::1733307143
-::res://scenes/ui/::1733307060
-::res://scripts/::1733306520
+::res://::1733326780
+icon.svg::CompressedTexture2D::3250808465680630780::1733280982::1733324767::1::::<><>::
+::res://assets/::1733326886
+::res://assets/fonts/::1733324767
+PixelOperator8-Bold.ttf::FontFile::2791805035825705301::1733324647::1733324767::1::::<><>::
+PixelOperator8.ttf::FontFile::8095218333032907462::1733324647::1733324766::1::::<><>::
+::res://assets/placeholder assets/::1733328383
+background.jpg::CompressedTexture2D::2230618346449256025::1733328376::1733328386::1::::<><>::
+knight.png::CompressedTexture2D::9104562108618560734::1729272599::1733326912::1::::<><>::
+::res://scenes/::1733327973
+menu.tscn::PackedScene::7451950874013021033::1733327973::0::1::::<><>::res://scripts/menu.gd
+player.tscn::PackedScene::6621902973500733872::1733327973::0::1::::<><>::uid://d2yk2p0inqd7c::::res://assets/placeholder assets/knight.png
+stage1.tscn::PackedScene::6961649567131198378::1733327973::0::1::::<><>::uid://c1lx1llaevewm::::res://scenes/player.tscn
+::res://scenes/ui/::1733325534
+ui.tscn::PackedScene::293580629178258591::1733325534::0::1::::<><>::
+::res://scripts/::1733327833
+menu.gd::GDScript::-1::1733327833::0::1::::<>Control<>::
+ui.gd::GDScript::-1::1733324647::0::1::::<>CanvasLayer<>::

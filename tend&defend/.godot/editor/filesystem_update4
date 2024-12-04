@@ -1,0 +1,5 @@
+res://scenes/menu.tscn
+res://scenes/stage1.tscn
+res://scenes/player.tscn
+res://scripts/menu.gd
+res://scenes/turret.tscn

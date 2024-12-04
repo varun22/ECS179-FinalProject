@@ -1,6 +1,12 @@
-Label
-HBoxContainer
+Sprite2D
+Node2D
+AnimationTree
+AnimatedSprite2D
+MenuButton
+Button
 VBoxContainer
 MarginContainer
 Control
+Label
+HBoxContainer
 CanvasLayer

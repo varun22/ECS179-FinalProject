@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://26f3kc4nm0yv"]
+
+[node name="Turret" type="Node2D"]
