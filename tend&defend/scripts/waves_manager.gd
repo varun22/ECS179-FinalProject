@@ -3,7 +3,7 @@ extends Node
 
 @export var enemy:PackedScene
 
-@onready var enemy_fact:EnemyFactory
+@onready var enemy_fact:EnemyFactory = $"../EnemySpawns"
 
 var wave:int
 var num_to_spawn:int
@@ -49,6 +49,7 @@ func check_end() -> bool:
 # Can calculate some difficulty elements here (if wave is over 5, make _ out of _ enemies spawn with greater speed/damage/health)
 func spawn_enemies() -> void:
 	for i in num_to_spawn:
+		enemy_spec = EnemySpec.new()
 		enemy_spec.damage = 10
 		enemy_spec.speed = 5
 		enemy_spec.health = 100

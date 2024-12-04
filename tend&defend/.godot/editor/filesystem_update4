@@ -1,2 +1,6 @@
 res://scenes/stage1.tscn
 res://scripts/waves_manager.gd
+res://scenes/menu.tscn
+res://scenes/player.tscn
+res://scenes/turret.tscn
+res://scenes/enemy.tscn
