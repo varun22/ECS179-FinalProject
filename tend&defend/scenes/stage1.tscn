@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6gjl7b7u3kis"]
+[gd_scene load_steps=8 format=3 uid="uid://c6gjl7b7u3kis"]
 
 [ext_resource type="PackedScene" uid="uid://c1lx1llaevewm" path="res://scenes/player.tscn" id="1_4ps2d"]
 [ext_resource type="Texture2D" uid="uid://61r7t013flrd" path="res://assets/placeholder assets/background.jpg" id="2_1p74h"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/enemy_factory.gd" id="4_mlgcr"]
 [ext_resource type="PackedScene" uid="uid://26f3kc4nm0yv" path="res://scenes/turret.tscn" id="4_orpjk"]
 [ext_resource type="PackedScene" uid="uid://uee07313050q" path="res://scenes/enemy.tscn" id="5_mcqh0"]
+[ext_resource type="PackedScene" uid="uid://eghh27wxoi76" path="res://scenes/ui.tscn" id="7_r3htk"]
 
 [node name="Stage1" type="Node2D"]
 
@@ -58,3 +59,5 @@ position = Vector2(201, 460)
 
 [node name="Turret5" parent="Turrets" instance=ExtResource("4_orpjk")]
 position = Vector2(190, 565)
+
+[node name="UI" parent="." instance=ExtResource("7_r3htk")]
