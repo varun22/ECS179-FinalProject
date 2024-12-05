@@ -1,17 +1,12 @@
 class_name TurretSpec
 extends Node
 
-# Placeholder for 9 different types of turrets (different sprites and base values)
+# 3 different types of turrets plus a basic one for the start of the game (can chage later)
 enum Type {
-	TYPE1,
-	TYPE2,
-	TYPE3,
-	TYPE4,
-	TYPE5,
-	TYPE6,
-	TYPE7,
-	TYPE8,
-	TYPE9,
+	BASIC,
+	POWER,
+	FREQUENCY,
+	RANGE,
 }
 
 var range:float

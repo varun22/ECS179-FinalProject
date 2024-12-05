@@ -29,6 +29,9 @@ func _process(delta: float) -> void:
 	if check_end():
 		done_spawning = false
 		wave += 1
+		#switch scene to buy menu, on player exit or timer end, switch back to stage1
+		#consider currency, storing bought changes, etc.
+		
 		calc_num_to_spawn()
 		create_enemy_schedule()
 		spawn_enemies()
@@ -53,7 +56,7 @@ func spawn_enemies() -> void:
 	for i in num_to_spawn:
 		enemy_spec = EnemySpec.new()
 		enemy_spec.damage = 10
-		enemy_spec.speed = 5
+		enemy_spec.speed = 20
 		enemy_spec.health = 100
 		
 		var new_enemy = enemy_fact.build(enemy_spec)
@@ -84,8 +87,8 @@ func check_enemy_exists() -> bool:
 	var check_parent_node:Array[Node] = $"../EnemySpawns".get_children()
 	# cycle through each one and check if it is a enemy, if yes,return true
 	for i in check_parent_node:
-		var check_enemy_exists:Array[Node] = i.get_children()
-		for j in check_enemy_exists:
+		var check_enemy_is:Array[Node] = i.get_children()
+		for j in check_enemy_is:
 			if j is Enemy:
 				#print("enemy exists")
 				return true
