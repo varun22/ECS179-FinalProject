@@ -1,41 +1,34 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1733359119
-enemy.gd::GDScript::-1::1733358593::0::1::::Enemy<>CharacterBody2D<>::
+::res://::1733619931
 icon.svg::CompressedTexture2D::3250808465680630780::1733280324::1733359120::1::::<><>::
 ::res://assets/::1733358593
 ::res://assets/audio/::1733307268
-::res://assets/fonts/::1733357580
+::res://assets/fonts/::1733359120
 PixelOperator8-Bold.ttf::FontFile::2791805035825705301::1733357218::1733359120::1::::<><>::
 PixelOperator8.ttf::FontFile::8095218333032907462::1733357218::1733359120::1::::<><>::
 ::res://assets/music/::1733307188
-::res://assets/placeholder assets/::1733358593
+::res://assets/placeholder assets/::1733359120
 background.jpg::CompressedTexture2D::2230618346449256025::1733358593::1733359120::1::::<><>::
 knight.png::CompressedTexture2D::9104562108618560734::1733358593::1733359120::1::::<><>::
 slime_green.png::CompressedTexture2D::9148216157431321623::1733358593::1733359120::1::::<><>::
-::res://scenes/::1733358593
-enemy.tscn::PackedScene::1412323621817059874::1733358593::0::1::::<><>::res://enemy.gd<>uid://d3lp1v1ldjimh::::res://assets/placeholder assets/slime_green.png
-menu.tscn::PackedScene::7451950874013021033::1733358593::0::1::::<><>::res://scripts/menu.gd
-player.tscn::PackedScene::6621902973500733872::1733358593::0::1::::<><>::res://scripts/player.gd<>uid://d2yk2p0inqd7c::::res://assets/placeholder assets/knight.png
-stage1.tscn::PackedScene::6961649567131198378::1733358593::0::1::::<><>::uid://c1lx1llaevewm::::res://scenes/player.tscn<>uid://61r7t013flrd::::res://assets/placeholder assets/background.jpg<>res://scripts/waves_manager.gd<>res://scripts/enemy_factory.gd<>uid://26f3kc4nm0yv::::res://scenes/turret.tscn<>uid://uee07313050q::::res://scenes/enemy.tscn
-turret.tscn::PackedScene::1959448605454508153::1733358593::0::1::::<><>::res://scripts/turret.gd<>uid://d2yk2p0inqd7c::::res://assets/placeholder assets/knight.png
-::res://scenes/enemy_type_1/::1733307155
-::res://scenes/enemy_type_2/::1733307162
-::res://scenes/enemy_type_3/::1733307167
-::res://scenes/player/::1733307109
-::res://scenes/tower_type_1/::1733307132
-::res://scenes/tower_type_2/::1733307137
-::res://scenes/tower_type_3/::1733307143
-::res://scenes/ui/::1733357467
-ui.tscn::PackedScene::293580629178258591::1733357467::0::1::::<><>::
-::res://scripts/::1733358593
+::res://scenes/::1733619879
+enemy.tscn::PackedScene::1412323621817059874::1733619697::0::1::::<><>::res://scripts/enemy.gd<>uid://d3lp1v1ldjimh::::res://assets/placeholder assets/slime_green.png
+menu.tscn::PackedScene::7451950874013021033::1733518558::0::1::::<><>::res://scripts/menu.gd
+player.tscn::PackedScene::6621902973500733872::1733619697::0::1::::<><>::res://scripts/player.gd<>uid://d2yk2p0inqd7c::::res://assets/placeholder assets/knight.png
+stage1.tscn::PackedScene::6961649567131198378::1733619879::0::1::::<><>::uid://c1lx1llaevewm::::res://scenes/player.tscn<>res://scripts/game.gd<>uid://61r7t013flrd::::res://assets/placeholder assets/background.jpg<>res://scripts/waves_manager.gd<>res://scripts/enemy_factory.gd<>uid://26f3kc4nm0yv::::res://scenes/turret.tscn<>uid://uee07313050q::::res://scenes/enemy.tscn<>uid://eghh27wxoi76::::res://scenes/ui.tscn
+turret.tscn::PackedScene::1959448605454508153::1733619697::0::1::::<><>::res://scripts/turret.gd<>uid://d2yk2p0inqd7c::::res://assets/placeholder assets/knight.png
+ui.tscn::PackedScene::293580629178258591::1733619697::0::1::::<><>::res://scripts/ui.gd<>uid://dnlncfc0vlj4a::::res://assets/fonts/PixelOperator8.ttf
+::res://scripts/::1733619697
+enemy.gd::GDScript::-1::1733535248::0::1::::Enemy<>CharacterBody2D<>::
 enemy_factory.gd::GDScript::-1::1733358593::0::1::::EnemyFactory<>Node<>::
 enemy_spec.gd::GDScript::-1::1733358593::0::1::::EnemySpec<>Node<>::
+game.gd::GDScript::-1::1733619697::0::1::::Game<>Node<>::
 menu.gd::GDScript::-1::1733358593::0::1::::Menu<>Control<>::
-player.gd::GDScript::-1::1733358593::0::1::::Player<>CharacterBody2D<>::
+player.gd::GDScript::-1::1733537057::0::1::::Player<>CharacterBody2D<>::
 projectile_factory.gd::GDScript::-1::1733358593::0::1::::ProjectileFactory<>Node<>::
 signals.gd::GDScript::-1::1733358593::0::1::::Signals<>Node<>::
 turret.gd::GDScript::-1::1733358593::0::1::::Turret<>StaticBody2D<>::
 turret_factory.gd::GDScript::-1::1733358593::0::1::::TurretFactory<>Node<>::
 turret_spec.gd::GDScript::-1::1733358593::0::1::::TurretSpec<>Node<>::
-ui.gd::GDScript::-1::1733357218::0::1::::<>CanvasLayer<>::
-waves_manager.gd::GDScript::-1::1733358593::0::1::::WavesManager<>Node<>::
+ui.gd::GDScript::-1::1733363144::0::1::::UI<>CanvasLayer<>::
+waves_manager.gd::GDScript::-1::1733535428::0::1::::WavesManager<>Node<>::

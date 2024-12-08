@@ -1,6 +1,8 @@
 class_name Enemy
 extends CharacterBody2D
 
+signal died(value: int)
+
 # Variables attributed to enemy (these variables don't do anything since they get overwritten in waves_manager)
 @export var damage:float = 10
 @export var speed:float = 100
@@ -16,5 +18,13 @@ func _process(delta: float) -> void:
 	self.global_position.x -= speed * delta
 	#print(speed * delta)
 	if self.global_position.x < 10:
+		print("Enemy has made reach the end")
+		#Delete this later! This is just for testing UI
+		_enemy_died()
+		
 		queue_free()
 		
+func _enemy_died() -> void:
+	print("Enemy has died")
+	#Increment UI
+	died.emit(100)
