@@ -62,6 +62,7 @@ func spawn_enemies() -> void:
 		enemy_spec.health = 100
 		
 		var new_enemy = enemy_fact.build(enemy_spec)
+		#ADD All enemy signals here
 		new_enemy.died.connect(game.on_enemy_died)  # Connect the `died` signal to Game
 
 		if placement_array[i] == 1:

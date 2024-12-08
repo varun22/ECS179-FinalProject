@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6gjl7b7u3kis"]
+[gd_scene load_steps=10 format=3 uid="uid://c6gjl7b7u3kis"]
 
 [ext_resource type="PackedScene" uid="uid://c1lx1llaevewm" path="res://scenes/player.tscn" id="1_4ps2d"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_ycv23"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://uee07313050q" path="res://scenes/enemy.tscn" id="5_mcqh0"]
 [ext_resource type="PackedScene" uid="uid://eghh27wxoi76" path="res://scenes/ui.tscn" id="7_r3htk"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k7xph"]
+load_path = "res://.godot/imported/image.png-014cd4937377681e33f1d9fe8921393e.ctex"
+
 [node name="Stage1" type="Node2D" node_paths=PackedStringArray("ui")]
 script = ExtResource("1_ycv23")
 ui = NodePath("UI")
@@ -17,6 +20,11 @@ ui = NodePath("UI")
 z_index = 1
 position = Vector2(317, 339)
 scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(580, 325)
+scale = Vector2(0.966667, 1.2607)
+texture = SubResource("CompressedTexture2D_k7xph")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(580, 325)

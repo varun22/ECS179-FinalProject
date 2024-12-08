@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxb8meex3gjvj"]
+
+[ext_resource type="Texture2D" uid="uid://dr32en0fww6at" path="res://assets/menu screen/sky (2).png" id="1_xncyn"]
+[ext_resource type="Texture2D" uid="uid://jw3tcxhjeo7c" path="res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[7] Gold/IMG_2026.jpg" id="2_tjo0c"]
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1023.11, 575.5)
+scale = Vector2(0.319722, 0.319722)
+texture = ExtResource("1_xncyn")
+
+[node name="Img2026" type="Sprite2D" parent="."]
+position = Vector2(990, 448)
+scale = Vector2(0.753968, 0.485367)
+texture = ExtResource("2_tjo0c")

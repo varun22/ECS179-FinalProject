@@ -7,3 +7,6 @@ res://scenes/ui.tscn
 res://scripts/enemy.gd
 res://scripts/game.gd
 res://scripts/ui.gd
+res://scenes/menu.tscn
+res://scenes/credits.tscn
+res://scripts/menu.gd
