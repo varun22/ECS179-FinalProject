@@ -6,3 +6,4 @@ class_name Game
 
 func on_enemy_died(score_value: int) -> void:
 	ui._on_score_increase(score_value)
+	

@@ -4,8 +4,6 @@ extends Control
 
 func _ready():
 	var window_size = DisplayServer.window_get_size()
-	print("Window dimensions: ", window_size.x, "x", window_size.y)
-
 
 
 func _on_play_pressed() -> void:
