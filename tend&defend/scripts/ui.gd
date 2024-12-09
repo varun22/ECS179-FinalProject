@@ -3,9 +3,6 @@ class_name UI
 
 @onready var score_label: Label = %Score
 
-#TODO: Add signals into our main game script and our enemy scripts so that
-# 	   they can call _on_score_increase()
-
 var score = 0:
 	set(new_score):
 		score = new_score

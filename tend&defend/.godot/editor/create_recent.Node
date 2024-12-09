@@ -1,5 +1,6 @@
-Label
 HBoxContainer
+Sprite2D
+Label
 VBoxContainer
 MarginContainer
 Control
@@ -9,6 +10,5 @@ Node
 CollisionShape2D
 Node2D
 AnimatedSprite2D
-Sprite2D
 AnimationTree
 MenuButton

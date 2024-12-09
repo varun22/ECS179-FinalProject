@@ -1,7 +1,8 @@
 class_name WavesManager
 extends Node
 
-@export var enemy:PackedScene
+@export var enemy: PackedScene
+@export var game: Game  # Reference to the Game script for connecting signals
 
 @onready var enemy_fact:EnemyFactory = $"../EnemySpawns"
 
@@ -35,10 +36,11 @@ func _process(delta: float) -> void:
 		calc_num_to_spawn()
 		create_enemy_schedule()
 		spawn_enemies()
-	#print(wave)
+
 
 # Fills placement_array with random placement and 
 func create_enemy_schedule() -> void:
+	print("wave: ", wave)
 	var rng = RandomNumberGenerator.new()
 	for i in num_to_spawn:
 		placement_array.push_back(rng.randi_range(1, 5))
@@ -60,6 +62,9 @@ func spawn_enemies() -> void:
 		enemy_spec.health = 100
 		
 		var new_enemy = enemy_fact.build(enemy_spec)
+		#ADD All enemy signals here
+		new_enemy.died.connect(game.on_enemy_died)  # Connect the `died` signal to Game
+
 		if placement_array[i] == 1:
 			$"../EnemySpawns/EnemySpawn1".add_child(new_enemy)
 			await get_tree().create_timer(timing_array[i]).timeout
