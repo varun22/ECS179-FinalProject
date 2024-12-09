@@ -1,9 +1,11 @@
-HBoxContainer
-Sprite2D
-Label
-VBoxContainer
-MarginContainer
+CanvasLayer
 Control
+Label
+HBoxContainer
+VBoxContainer
+AudioStreamPlayer2D
+Sprite2D
+MarginContainer
 StaticBody2D
 CharacterBody2D
 Node
@@ -11,4 +13,3 @@ CollisionShape2D
 Node2D
 AnimatedSprite2D
 AnimationTree
-MenuButton

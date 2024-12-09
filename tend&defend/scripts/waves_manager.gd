@@ -1,6 +1,8 @@
 class_name WavesManager
 extends Node
 
+signal wave_update(value: int)
+
 @export var enemy: PackedScene
 @export var game: Game  # Reference to the Game script for connecting signals
 
@@ -20,9 +22,18 @@ var done_spawning:bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	wave = 1
+	await wait(3.0) #use for buy phase
 	calc_num_to_spawn()
 	create_enemy_schedule()
 	spawn_enemies()
+	
+	#connect background music
+	var background_music = $"../BackgroundMusic"
+	wave_update.connect(background_music.on_wave_update)
+	var ui = $"../UI"
+	wave_update.connect(ui._ui_on_wave_update)
+	wave_update.emit(wave)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,7 +46,12 @@ func _process(delta: float) -> void:
 		
 		calc_num_to_spawn()
 		create_enemy_schedule()
+		# Update music playback speed, add title
+		wave_update.emit(wave)
 		spawn_enemies()
+
+func wait(seconds: float) -> void:
+	await get_tree().create_timer(seconds).timeout
 
 
 # Fills placement_array with random placement and 
@@ -58,7 +74,7 @@ func spawn_enemies() -> void:
 	for i in num_to_spawn:
 		enemy_spec = EnemySpec.new()
 		enemy_spec.damage = 10
-		enemy_spec.speed = 20
+		enemy_spec.speed = 200
 		enemy_spec.health = 100
 		
 		var new_enemy = enemy_fact.build(enemy_spec)
