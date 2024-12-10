@@ -8,4 +8,7 @@ var damage:float
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(Vector2(100, 0) * delta)
 	if collision:
-		pass
+		#print("enemy hit")
+		signals.enemy_damaged.emit(damage)
+		queue_free()
+		

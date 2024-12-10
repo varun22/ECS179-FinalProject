@@ -48,35 +48,35 @@ script = ExtResource("4_mlgcr")
 enemy = ExtResource("5_mcqh0")
 
 [node name="EnemySpawn1" type="Node2D" parent="EnemySpawns"]
-position = Vector2(920, 552)
+position = Vector2(1825, 536)
 
 [node name="EnemySpawn2" type="Node2D" parent="EnemySpawns"]
-position = Vector2(856, 672)
+position = Vector2(1812, 648)
 
 [node name="EnemySpawn3" type="Node2D" parent="EnemySpawns"]
-position = Vector2(792, 776)
+position = Vector2(1807, 756)
 
 [node name="EnemySpawn4" type="Node2D" parent="EnemySpawns"]
-position = Vector2(744, 888)
+position = Vector2(1802, 867)
 
 [node name="EnemySpawn5" type="Node2D" parent="EnemySpawns"]
-position = Vector2(704, 1024)
+position = Vector2(1807, 972)
 
 [node name="Turrets" type="Node" parent="."]
 script = ExtResource("8_5kvr3")
 turret = ExtResource("4_orpjk")
 
 [node name="Turret1" parent="Turrets" instance=ExtResource("4_orpjk")]
-position = Vector2(424, 536)
+position = Vector2(413, 566)
 
 [node name="Turret2" parent="Turrets" instance=ExtResource("4_orpjk")]
-position = Vector2(344, 640)
+position = Vector2(330, 670)
 
 [node name="Turret3" parent="Turrets" instance=ExtResource("4_orpjk")]
-position = Vector2(280, 752)
+position = Vector2(272, 770)
 
 [node name="Turret4" parent="Turrets" instance=ExtResource("4_orpjk")]
-position = Vector2(192, 856)
+position = Vector2(189, 877)
 
 [node name="Turret5" parent="Turrets" instance=ExtResource("4_orpjk")]
 position = Vector2(112, 992)

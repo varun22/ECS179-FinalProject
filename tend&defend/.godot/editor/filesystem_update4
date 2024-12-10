@@ -15,3 +15,6 @@ res://scenes/projectile.tscn
 res://scripts/projectile_factory.gd
 res://scripts/projectile_spec.gd
 res://scripts/turret_factory.gd
+res://scripts/turret_type.gd
+res://scripts/enemy.gd
+res://scripts/signals.gd

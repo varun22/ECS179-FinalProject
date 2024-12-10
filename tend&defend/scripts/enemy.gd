@@ -10,8 +10,7 @@ signal died(value: int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	signals.enemy_damaged.connect(_on_enemy_damaged)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -28,3 +27,10 @@ func _enemy_died() -> void:
 	print("Enemy has died")
 	#Increment UI
 	died.emit(100)
+	
+func _on_enemy_damaged(damage: float) -> void:
+	health -= damage
+	print(health)
+	if health <= 0:
+		died.emit(0)
+		queue_free()
