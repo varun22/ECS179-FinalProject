@@ -1,63 +1,83 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6gjl7b7u3kis"]
+[gd_scene load_steps=12 format=3 uid="uid://c6gjl7b7u3kis"]
 
 [ext_resource type="PackedScene" uid="uid://c1lx1llaevewm" path="res://scenes/player.tscn" id="1_4ps2d"]
-[ext_resource type="Texture2D" uid="uid://61r7t013flrd" path="res://assets/placeholder assets/background.jpg" id="2_1p74h"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_ycv23"]
+[ext_resource type="Texture2D" uid="uid://3rkprs6gqxi6" path="res://assets/game images/BG.png" id="3_2bwbt"]
 [ext_resource type="Script" path="res://scripts/waves_manager.gd" id="3_rsma5"]
 [ext_resource type="Script" path="res://scripts/enemy_factory.gd" id="4_mlgcr"]
 [ext_resource type="PackedScene" uid="uid://26f3kc4nm0yv" path="res://scenes/turret.tscn" id="4_orpjk"]
+[ext_resource type="Texture2D" uid="uid://dgf4ql7x3tfjs" path="res://assets/game images/Floor.png" id="4_udit8"]
 [ext_resource type="PackedScene" uid="uid://uee07313050q" path="res://scenes/enemy.tscn" id="5_mcqh0"]
 [ext_resource type="PackedScene" uid="uid://eghh27wxoi76" path="res://scenes/ui.tscn" id="7_r3htk"]
+[ext_resource type="PackedScene" uid="uid://bv5fslc67ynm1" path="res://scenes/background_music.tscn" id="10_qriqr"]
+[ext_resource type="Script" path="res://scripts/background_music.gd" id="11_hnr68"]
 
-[node name="Stage1" type="Node2D"]
+[node name="Stage1" type="Node2D" node_paths=PackedStringArray("ui")]
+script = ExtResource("1_ycv23")
+ui = NodePath("UI")
 
 [node name="Player" parent="." instance=ExtResource("1_4ps2d")]
-z_index = 1
-position = Vector2(317, 339)
+z_index = 2
+position = Vector2(819, 474)
 scale = Vector2(3, 3)
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(580, 325)
-scale = Vector2(0.966667, 1.2607)
-texture = ExtResource("2_1p74h")
+position = Vector2(960, 504)
+scale = Vector2(0.999907, 1.15573)
+texture = ExtResource("3_2bwbt")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+metadata/_edit_lock_ = true
 
-[node name="WavesManager" type="Node" parent="."]
+[node name="Foreground" type="Sprite2D" parent="."]
+position = Vector2(959.911, 375.799)
+scale = Vector2(0.999907, 1.30405)
+texture = ExtResource("4_udit8")
+metadata/_edit_lock_ = true
+
+[node name="WavesManager" type="Node" parent="." node_paths=PackedStringArray("game")]
 script = ExtResource("3_rsma5")
 enemy = ExtResource("5_mcqh0")
+game = NodePath("..")
 
 [node name="EnemySpawns" type="Node" parent="."]
 script = ExtResource("4_mlgcr")
 enemy = ExtResource("5_mcqh0")
 
 [node name="EnemySpawn1" type="Node2D" parent="EnemySpawns"]
-position = Vector2(834, 149)
+position = Vector2(920, 552)
 
 [node name="EnemySpawn2" type="Node2D" parent="EnemySpawns"]
-position = Vector2(844, 241)
+position = Vector2(856, 672)
 
 [node name="EnemySpawn3" type="Node2D" parent="EnemySpawns"]
-position = Vector2(849, 357)
+position = Vector2(792, 776)
 
 [node name="EnemySpawn4" type="Node2D" parent="EnemySpawns"]
-position = Vector2(852, 451)
+position = Vector2(744, 888)
 
 [node name="EnemySpawn5" type="Node2D" parent="EnemySpawns"]
-position = Vector2(855, 566)
+position = Vector2(704, 1024)
 
 [node name="Turrets" type="Node" parent="."]
 
 [node name="Turret1" parent="Turrets" instance=ExtResource("4_orpjk")]
-position = Vector2(212, 143)
+position = Vector2(424, 536)
 
 [node name="Turret2" parent="Turrets" instance=ExtResource("4_orpjk")]
-position = Vector2(209, 238)
+position = Vector2(344, 640)
 
 [node name="Turret3" parent="Turrets" instance=ExtResource("4_orpjk")]
-position = Vector2(204, 339)
+position = Vector2(280, 752)
 
 [node name="Turret4" parent="Turrets" instance=ExtResource("4_orpjk")]
-position = Vector2(201, 460)
+position = Vector2(192, 856)
 
 [node name="Turret5" parent="Turrets" instance=ExtResource("4_orpjk")]
-position = Vector2(190, 565)
+position = Vector2(112, 992)
 
 [node name="UI" parent="." instance=ExtResource("7_r3htk")]
+
+[node name="BackgroundMusic" parent="." node_paths=PackedStringArray("audio_player") instance=ExtResource("10_qriqr")]
+script = ExtResource("11_hnr68")
+audio_player = NodePath(".")

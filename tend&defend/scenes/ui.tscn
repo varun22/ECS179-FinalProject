@@ -1,12 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://eghh27wxoi76"]
+[gd_scene load_steps=4 format=3 uid="uid://eghh27wxoi76"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_y26uq"]
 [ext_resource type="FontFile" uid="uid://dnlncfc0vlj4a" path="res://assets/fonts/PixelOperator8.ttf" id="2_1uel0"]
+[ext_resource type="FontFile" uid="uid://bf1mvd63pl18d" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_2m3ko"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_y26uq")
 
-[node name="Control" type="Control" parent="."]
+[node name="HUD" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="Top" type="MarginContainer" parent="HUD"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,20 +27,70 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Top"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Top/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="HUD/Top/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_1uel0")
+theme_override_font_sizes/font_size = 30
 text = "Score:"
 
-[node name="Score" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Score" type="Label" parent="HUD/Top/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_1uel0")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Round" type="Control" parent="HUD"]
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = 688.0
+offset_top = 391.0
+offset_right = 1347.0
+offset_bottom = 391.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HUD/Round"]
+layout_mode = 2
+offset_top = -168.0
+offset_right = 659.0
+offset_bottom = -67.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Round/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="HUD/Round/VBoxContainer2/HBoxContainer"]
+y_sort_enabled = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.827451, 0.341176, 0.215686, 1)
+theme_override_colors/font_outline_color = Color(1, 0.611765, 0.215686, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("3_2m3ko")
+theme_override_font_sizes/font_size = 100
+text = "WAVE:"
+
+[node name="Wave" type="Label" parent="HUD/Round/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.827451, 0.341176, 0.215686, 1)
+theme_override_colors/font_outline_color = Color(0.988235, 0.611765, 0.223529, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("3_2m3ko")
+theme_override_font_sizes/font_size = 100
 text = "0"
