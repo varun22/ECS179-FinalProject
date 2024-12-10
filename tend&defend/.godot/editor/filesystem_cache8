@@ -1,92 +1,95 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1733732857
-default_bus_layout.tres::AudioBusLayout::4013601157250849265::1733724127::0::1::::<><>::
-icon.svg::CompressedTexture2D::3250808465680630780::1733280324::1733359120::1::::<><>::
-::res://assets/::1733704747
-::res://assets/audio/::1733307268
-::res://assets/fonts/::1733359120
-PixelOperator8-Bold.ttf::FontFile::2791805035825705301::1733357218::1733359120::1::::<><>::
-PixelOperator8.ttf::FontFile::8095218333032907462::1733357218::1733359120::1::::<><>::
-::res://assets/game images/::1733700447
-BG.png::CompressedTexture2D::2001016922640764875::1733700311::1733700447::1::::<><>::
-Floor.png::CompressedTexture2D::7592506995444280080::1733700324::1733700446::1::::<><>::
-::res://assets/menu screen/::1733627814
-sky (2).png::CompressedTexture2D::8411922193700980863::1733626017::1733626999::1::::<><>::
-TEND-DEFEND-12-7-2024.png::CompressedTexture2D::5809316925054015965::1733627790::1733627814::1::::<><>::
-::res://assets/menu screen/Button Pack - ok_lavender/::1733626994
-Full Sprite Sheet.png::CompressedTexture2D::1246919645533340201::1674520920::1733626994::1::::<><>::
-::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/::1733626963
-::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[1] Light Blue/::1733626994
-[1] Normal.png::CompressedTexture2D::4179504021091079962::1674520668::1733626994::1::::<><>::
-[2] Clicked.png::CompressedTexture2D::2639099911291348103::1674520680::1733626994::1::::<><>::
-[3] Hover.png::CompressedTexture2D::7418113071511750830::1674520690::1733626994::1::::<><>::
-::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/::1733626994
-[1] Normal.png::CompressedTexture2D::1442921476604468922::1674519768::1733626994::1::::<><>::
-[2] Clicked.png::CompressedTexture2D::1279795302614004216::1674519780::1733626994::1::::<><>::
-[3] Hover.png::CompressedTexture2D::6760989717449394854::1674519788::1733626994::1::::<><>::
-::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[3]Yellow/::1733626994
-[1] Normal.png::CompressedTexture2D::7105631329524795340::1674519982::1733626994::1::::<><>::
-[2] Clicked.png::CompressedTexture2D::6183978626780201538::1674519990::1733626994::1::::<><>::
-[3] Hover.png::CompressedTexture2D::7600080537326472796::1674520002::1733626994::1::::<><>::
-::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/::1733626994
-[1] Normal.png::CompressedTexture2D::5273458112001497105::1674520074::1733626994::1::::<><>::
-[2] Clicked.png::CompressedTexture2D::8635944893011225670::1674520056::1733626994::1::::<><>::
-[3] Hover.png::CompressedTexture2D::4041095781763176983::1674520044::1733626994::1::::<><>::
-::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[5] Blue/::1733626994
-[1] Normal.png::CompressedTexture2D::1256077137049687149::1674519862::1733626994::1::::<><>::
-[2] Clicked.png::CompressedTexture2D::4398742340662402244::1674519852::1733626994::1::::<><>::
-[3] Hover.png::CompressedTexture2D::3682546925914644111::1674519844::1733626994::1::::<><>::
-::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[6] Silver/::1733626994
-[1] Normal.png::CompressedTexture2D::390623208161676982::1674520138::1733626994::1::::<><>::
-[2] Clicked.png::CompressedTexture2D::436670518044891878::1674520148::1733626994::1::::<><>::
-[3] Hover.png::CompressedTexture2D::3643053379660539935::1674520160::1733626994::1::::<><>::
-::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[7] Gold/::1733700499
-IMG_2026.jpg::CompressedTexture2D::678850050120711882::1733631191::1733631202::1::::<><>::
-[1] Normal.png::CompressedTexture2D::2191853022064679718::1674520536::1733626994::1::::<><>::
-[2] Clicked.png::CompressedTexture2D::7854394275653074497::1674520214::1733626994::1::::<><>::
-[3] Hover.png::CompressedTexture2D::4947927095877652142::1674520204::1733626994::1::::<><>::
-::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[8] Wood/::1733631198
-[1] Normal.png::CompressedTexture2D::842299756200182644::1674520582::1733626994::1::::<><>::
-[2] Clicked.png::CompressedTexture2D::4582645731061428177::1674520594::1733626994::1::::<><>::
-[3] Hover.png::CompressedTexture2D::7701536426545756561::1674520602::1733626994::1::::<><>::
-::res://assets/menu screen/Button Pack - ok_lavender/Sprite Sheets/::1733626994
-[0] Light Blue.png::CompressedTexture2D::7002531346799857408::1674519156::1733626994::1::::<><>::
-[1] Red.png::CompressedTexture2D::3941865260176224411::1674518912::1733626994::1::::<><>::
-[2] Yellow.png::CompressedTexture2D::4669903632838323653::1674518954::1733626994::1::::<><>::
-[3] Green.png::CompressedTexture2D::7683741892129180143::1674518982::1733626994::1::::<><>::
-[4] Blue.png::CompressedTexture2D::2327152363328226135::1674518804::1733626994::1::::<><>::
-[5] Silver.png::CompressedTexture2D::4994192796136086032::1674519018::1733626994::1::::<><>::
-[6] Gold.png::CompressedTexture2D::1413693209741689340::1674519060::1733626994::1::::<><>::
-[7] Wood.png::CompressedTexture2D::5402739962163991410::1674519126::1733626994::1::::<><>::
-::res://assets/music/::1733710414
-6260906163568640.wav::AudioStreamWAV::3033628274967536635::1733704981::1733708524::1::::<><>::
-background.ogg::AudioStreamOggVorbis::1520556953701089021::1733705246::1733710395::1::::<><>::
-main menu.ogg::AudioStreamOggVorbis::1759565613310482383::1733710356::1733732857::1::::<><>::
-::res://assets/placeholder assets/::1733704837
-background.jpg::CompressedTexture2D::2230618346449256025::1733704747::1733704837::1::::<><>::
-knight.png::CompressedTexture2D::9104562108618560734::1733704747::1733704837::1::::<><>::
-slime_green.png::CompressedTexture2D::9148216157431321623::1733704747::1733704837::1::::<><>::
-::res://scenes/::1733732841
-background_music.tscn::PackedScene::3922654044266374918::1733732699::0::1::::<><>::uid://vwtl6uv7srtd::::res://assets/music/background.ogg
-credits.tscn::PackedScene::4004853772765355079::1733732699::0::1::::<><>::uid://dr32en0fww6at::::res://assets/menu screen/sky (2).png<>uid://jw3tcxhjeo7c::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[7] Gold/IMG_2026.jpg
-enemy.tscn::PackedScene::1412323621817059874::1733732699::0::1::::<><>::res://scripts/enemy.gd<>uid://d3lp1v1ldjimh::::res://assets/placeholder assets/slime_green.png
-menu.tscn::PackedScene::7451950874013021033::1733732699::0::1::::<><>::res://scripts/menu.gd<>uid://bv5fslc67ynm1::::res://scenes/background_music.tscn<>uid://dr32en0fww6at::::res://assets/menu screen/sky (2).png<>uid://co1cuo04bfcq4::::res://assets/menu screen/TEND-DEFEND-12-7-2024.png<>uid://0cl12uf131f4::::res://assets/music/main menu.ogg<>uid://bf1mvd63pl18d::::res://assets/fonts/PixelOperator8-Bold.ttf<>uid://bxtsi0hu5y37h::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[3] Hover.png<>uid://cherc432hfd10::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[1] Normal.png<>uid://dvbk0r07yvbry::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[2] Clicked.png<>uid://dgjshl1gigbdc::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[3]Yellow/[3] Hover.png<>uid://cudthvrpni0fe::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[3]Yellow/[2] Clicked.png<>uid://c8iayeuaf4p7y::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[3]Yellow/[1] Normal.png<>uid://c3lcro4grd4pm::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/[3] Hover.png<>uid://sh7boffh3nau::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/[2] Clicked.png<>uid://us7yaa6461qk::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/[1] Normal.png
-player.tscn::PackedScene::6621902973500733872::1733732699::0::1::::<><>::res://scripts/player.gd<>uid://d2yk2p0inqd7c::::res://assets/placeholder assets/knight.png
-stage1.tscn::PackedScene::6961649567131198378::1733732828::0::1::::<><>::uid://c1lx1llaevewm::::res://scenes/player.tscn<>res://scripts/game.gd<>uid://3rkprs6gqxi6::::res://assets/game images/BG.png<>res://scripts/waves_manager.gd<>res://scripts/enemy_factory.gd<>uid://26f3kc4nm0yv::::res://scenes/turret.tscn<>uid://dgf4ql7x3tfjs::::res://assets/game images/Floor.png<>uid://uee07313050q::::res://scenes/enemy.tscn<>uid://eghh27wxoi76::::res://scenes/ui.tscn<>uid://bv5fslc67ynm1::::res://scenes/background_music.tscn<>res://scripts/background_music.gd
-turret.tscn::PackedScene::1959448605454508153::1733732699::0::1::::<><>::res://scripts/turret.gd<>uid://d2yk2p0inqd7c::::res://assets/placeholder assets/knight.png
-ui.tscn::PackedScene::293580629178258591::1733732841::0::1::::<><>::res://scripts/ui.gd<>uid://dnlncfc0vlj4a::::res://assets/fonts/PixelOperator8.ttf<>uid://bf1mvd63pl18d::::res://assets/fonts/PixelOperator8-Bold.ttf
-::res://scripts/::1733732471
-background_music.gd::GDScript::-1::1733723328::0::1::::<>AudioStreamPlayer2D<>::
-enemy.gd::GDScript::-1::1733720565::0::1::::Enemy<>CharacterBody2D<>::
-enemy_factory.gd::GDScript::-1::1733358593::0::1::::EnemyFactory<>Node<>::
-enemy_spec.gd::GDScript::-1::1733358593::0::1::::EnemySpec<>Node<>::
-game.gd::GDScript::-1::1733724282::0::1::::Game<>Node<>::
-menu.gd::GDScript::-1::1733706180::0::1::::Menu<>Control<>::
-player.gd::GDScript::-1::1733537057::0::1::::Player<>CharacterBody2D<>::
-projectile_factory.gd::GDScript::-1::1733358593::0::1::::ProjectileFactory<>Node<>::
-signals.gd::GDScript::-1::1733358593::0::1::::Signals<>Node<>::
-turret.gd::GDScript::-1::1733358593::0::1::::Turret<>StaticBody2D<>::
-turret_factory.gd::GDScript::-1::1733358593::0::1::::TurretFactory<>Node<>::
-turret_spec.gd::GDScript::-1::1733358593::0::1::::TurretSpec<>Node<>::
-ui.gd::GDScript::-1::1733732471::0::1::::UI<>CanvasLayer<>::
-waves_manager.gd::GDScript::-1::1733732471::0::1::::WavesManager<>Node<>::
+::res://::1733860610
+default_bus_layout.tres::AudioBusLayout::4013601157250849265::1733858321::0::1::::<><>::
+icon.svg::CompressedTexture2D::3250808465680630780::1733280982::1733858321::1::::<><>::
+::res://assets/::1733856889
+::res://assets/fonts/::1733858320
+PixelOperator8-Bold.ttf::FontFile::2791805035825705301::1733324647::1733858320::1::::<><>::
+PixelOperator8.ttf::FontFile::8095218333032907462::1733324647::1733858320::1::::<><>::
+::res://assets/game images/::1733858323
+BG.png::CompressedTexture2D::2001016922640764875::1733856889::1733858323::1::::<><>::
+Floor.png::CompressedTexture2D::7592506995444280080::1733856889::1733858322::1::::<><>::
+::res://assets/menu screen/::1733858326
+sky (2).png::CompressedTexture2D::8411922193700980863::1733856889::1733858326::1::::<><>::
+TEND-DEFEND-12-7-2024.png::CompressedTexture2D::5809316925054015965::1733856889::1733858321::1::::<><>::
+::res://assets/menu screen/Button Pack - ok_lavender/::1733858321
+Full Sprite Sheet.png::CompressedTexture2D::1246919645533340201::1733856889::1733858321::1::::<><>::
+::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/::1733856889
+::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[1] Light Blue/::1733858322
+[1] Normal.png::CompressedTexture2D::4179504021091079962::1733856889::1733858322::1::::<><>::
+[2] Clicked.png::CompressedTexture2D::2639099911291348103::1733856889::1733858322::1::::<><>::
+[3] Hover.png::CompressedTexture2D::7418113071511750830::1733856889::1733858322::1::::<><>::
+::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/::1733858322
+[1] Normal.png::CompressedTexture2D::1442921476604468922::1733856889::1733858322::1::::<><>::
+[2] Clicked.png::CompressedTexture2D::1279795302614004216::1733856889::1733858322::1::::<><>::
+[3] Hover.png::CompressedTexture2D::6760989717449394854::1733856889::1733858322::1::::<><>::
+::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[3]Yellow/::1733858322
+[1] Normal.png::CompressedTexture2D::7105631329524795340::1733856889::1733858322::1::::<><>::
+[2] Clicked.png::CompressedTexture2D::6183978626780201538::1733856889::1733858322::1::::<><>::
+[3] Hover.png::CompressedTexture2D::7600080537326472796::1733856889::1733858322::1::::<><>::
+::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/::1733858323
+[1] Normal.png::CompressedTexture2D::5273458112001497105::1733856889::1733858323::1::::<><>::
+[2] Clicked.png::CompressedTexture2D::8635944893011225670::1733856889::1733858323::1::::<><>::
+[3] Hover.png::CompressedTexture2D::4041095781763176983::1733856889::1733858323::1::::<><>::
+::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[5] Blue/::1733858323
+[1] Normal.png::CompressedTexture2D::1256077137049687149::1733856889::1733858323::1::::<><>::
+[2] Clicked.png::CompressedTexture2D::4398742340662402244::1733856889::1733858323::1::::<><>::
+[3] Hover.png::CompressedTexture2D::3682546925914644111::1733856889::1733858323::1::::<><>::
+::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[6] Silver/::1733858323
+[1] Normal.png::CompressedTexture2D::390623208161676982::1733856889::1733858323::1::::<><>::
+[2] Clicked.png::CompressedTexture2D::436670518044891878::1733856889::1733858323::1::::<><>::
+[3] Hover.png::CompressedTexture2D::3643053379660539935::1733856889::1733858323::1::::<><>::
+::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[7] Gold/::1733858328
+IMG_2026.jpg::CompressedTexture2D::678850050120711882::1733856889::1733858328::1::::<><>::
+[1] Normal.png::CompressedTexture2D::2191853022064679718::1733856889::1733858323::1::::<><>::
+[2] Clicked.png::CompressedTexture2D::7854394275653074497::1733856889::1733858321::1::::<><>::
+[3] Hover.png::CompressedTexture2D::4947927095877652142::1733856889::1733858321::1::::<><>::
+::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[8] Wood/::1733858321
+[1] Normal.png::CompressedTexture2D::842299756200182644::1733856889::1733858321::1::::<><>::
+[2] Clicked.png::CompressedTexture2D::4582645731061428177::1733856889::1733858321::1::::<><>::
+[3] Hover.png::CompressedTexture2D::7701536426545756561::1733856889::1733858321::1::::<><>::
+::res://assets/menu screen/Button Pack - ok_lavender/Sprite Sheets/::1733858321
+[0] Light Blue.png::CompressedTexture2D::7002531346799857408::1733856889::1733858321::1::::<><>::
+[1] Red.png::CompressedTexture2D::3941865260176224411::1733856889::1733858321::1::::<><>::
+[2] Yellow.png::CompressedTexture2D::4669903632838323653::1733856889::1733858321::1::::<><>::
+[3] Green.png::CompressedTexture2D::7683741892129180143::1733856889::1733858321::1::::<><>::
+[4] Blue.png::CompressedTexture2D::2327152363328226135::1733856889::1733858321::1::::<><>::
+[5] Silver.png::CompressedTexture2D::4994192796136086032::1733856889::1733858321::1::::<><>::
+[6] Gold.png::CompressedTexture2D::1413693209741689340::1733856889::1733858321::1::::<><>::
+[7] Wood.png::CompressedTexture2D::5402739962163991410::1733856889::1733858321::1::::<><>::
+::res://assets/music/::1733858328
+6260906163568640.wav::AudioStreamWAV::3033628274967536635::1733856889::1733858328::1::::<><>::
+background.ogg::AudioStreamOggVorbis::1520556953701089021::1733856889::1733858320::1::::<><>::
+main menu.ogg::AudioStreamOggVorbis::1759565613310482383::1733856889::1733858320::1::::<><>::
+::res://assets/placeholder assets/::1733858321
+background.jpg::CompressedTexture2D::2230618346449256025::1733344373::1733858321::1::::<><>::
+knight.png::CompressedTexture2D::9104562108618560734::1733344373::1733858321::1::::<><>::
+slime_green.png::CompressedTexture2D::9148216157431321623::1733344373::1733858321::1::::<><>::
+::res://scenes/::1733860299
+background_music.tscn::PackedScene::3922654044266374918::1733856889::0::1::::<><>::uid://vwtl6uv7srtd::::res://assets/music/background.ogg
+credits.tscn::PackedScene::4004853772765355079::1733856889::0::1::::<><>::uid://dr32en0fww6at::::res://assets/menu screen/sky (2).png<>uid://jw3tcxhjeo7c::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[7] Gold/IMG_2026.jpg
+enemy.tscn::PackedScene::1412323621817059874::1733856889::0::1::::<><>::res://scripts/enemy.gd<>uid://d3lp1v1ldjimh::::res://assets/placeholder assets/slime_green.png
+menu.tscn::PackedScene::7451950874013021033::1733856889::0::1::::<><>::res://scripts/menu.gd<>uid://bv5fslc67ynm1::::res://scenes/background_music.tscn<>uid://dr32en0fww6at::::res://assets/menu screen/sky (2).png<>uid://co1cuo04bfcq4::::res://assets/menu screen/TEND-DEFEND-12-7-2024.png<>uid://0cl12uf131f4::::res://assets/music/main menu.ogg<>uid://bf1mvd63pl18d::::res://assets/fonts/PixelOperator8-Bold.ttf<>uid://bxtsi0hu5y37h::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[3] Hover.png<>uid://cherc432hfd10::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[1] Normal.png<>uid://dvbk0r07yvbry::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[2] Clicked.png<>uid://dgjshl1gigbdc::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[3]Yellow/[3] Hover.png<>uid://cudthvrpni0fe::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[3]Yellow/[2] Clicked.png<>uid://c8iayeuaf4p7y::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[3]Yellow/[1] Normal.png<>uid://c3lcro4grd4pm::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/[3] Hover.png<>uid://sh7boffh3nau::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/[2] Clicked.png<>uid://us7yaa6461qk::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/[1] Normal.png
+player.tscn::PackedScene::6621902973500733872::1733367627::0::1::::<><>::res://scripts/player.gd<>uid://d2yk2p0inqd7c::::res://assets/placeholder assets/knight.png
+projectile.tscn::PackedScene::9014495092905472080::1733859606::0::1::::<><>::res://scripts/projectile.gd<>uid://bmkyltuiu6vou::::res://icon.svg
+stage1.tscn::PackedScene::6961649567131198378::1733859971::0::1::::<><>::uid://c1lx1llaevewm::::res://scenes/player.tscn<>res://scripts/game.gd<>uid://3rkprs6gqxi6::::res://assets/game images/BG.png<>res://scripts/waves_manager.gd<>res://scripts/enemy_factory.gd<>uid://26f3kc4nm0yv::::res://scenes/turret.tscn<>uid://dgf4ql7x3tfjs::::res://assets/game images/Floor.png<>uid://uee07313050q::::res://scenes/enemy.tscn<>uid://eghh27wxoi76::::res://scenes/ui.tscn<>res://scripts/turret_factory.gd<>res://scripts/projectile_factory.gd<>uid://bv5fslc67ynm1::::res://scenes/background_music.tscn<>uid://d1oxoghresfh5::::res://scenes/projectile.tscn<>res://scripts/background_music.gd
+turret.tscn::PackedScene::1959448605454508153::1733860299::0::1::::<><>::res://scripts/turret.gd<>uid://d2yk2p0inqd7c::::res://assets/placeholder assets/knight.png
+ui.tscn::PackedScene::293580629178258591::1733856889::0::1::::<><>::res://scripts/ui.gd<>uid://dnlncfc0vlj4a::::res://assets/fonts/PixelOperator8.ttf<>uid://bf1mvd63pl18d::::res://assets/fonts/PixelOperator8-Bold.ttf
+::res://scripts/::1733860300
+background_music.gd::GDScript::-1::1733856889::0::1::::<>AudioStreamPlayer2D<>::
+enemy.gd::GDScript::-1::1733856889::0::1::::Enemy<>CharacterBody2D<>::
+enemy_factory.gd::GDScript::-1::1733344520::0::1::::EnemyFactory<>Node<>::
+enemy_spec.gd::GDScript::-1::1733344520::0::1::::EnemySpec<>Node<>::
+game.gd::GDScript::-1::1733856889::0::1::::Game<>Node<>::
+menu.gd::GDScript::-1::1733856889::0::1::::Menu<>Control<>::
+player.gd::GDScript::-1::1733856889::0::1::::Player<>CharacterBody2D<>::
+projectile.gd::GDScript::-1::1733859606::0::1::::Projectile<>CharacterBody2D<>::
+projectile_factory.gd::GDScript::-1::1733859971::0::1::::ProjectileFactory<>Node<>::
+projectile_spec.gd::GDScript::-1::1733859607::0::1::::ProjectileSpec<>Node<>::
+signals.gd::GDScript::-1::1733860299::0::1::::Signals<>Node<>::
+turret.gd::GDScript::-1::1733860299::0::1::::Turret<>StaticBody2D<>::
+turret_factory.gd::GDScript::-1::1733859971::0::1::::TurretFactory<>Node<>::
+turret_spec.gd::GDScript::-1::1733860299::0::1::::TurretSpec<>Node<>::
+turret_type.gd::GDScript::-1::1733860300::0::1::::TurretType<>Node<>::
+ui.gd::GDScript::-1::1733856889::0::1::::UI<>CanvasLayer<>::
+waves_manager.gd::GDScript::-1::1733858634::0::1::::WavesManager<>Node<>::

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c6gjl7b7u3kis"]
+[gd_scene load_steps=15 format=3 uid="uid://c6gjl7b7u3kis"]
 
 [ext_resource type="PackedScene" uid="uid://c1lx1llaevewm" path="res://scenes/player.tscn" id="1_4ps2d"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_ycv23"]
@@ -9,7 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://dgf4ql7x3tfjs" path="res://assets/game images/Floor.png" id="4_udit8"]
 [ext_resource type="PackedScene" uid="uid://uee07313050q" path="res://scenes/enemy.tscn" id="5_mcqh0"]
 [ext_resource type="PackedScene" uid="uid://eghh27wxoi76" path="res://scenes/ui.tscn" id="7_r3htk"]
+[ext_resource type="Script" path="res://scripts/turret_factory.gd" id="8_5kvr3"]
+[ext_resource type="Script" path="res://scripts/projectile_factory.gd" id="10_a00n7"]
 [ext_resource type="PackedScene" uid="uid://bv5fslc67ynm1" path="res://scenes/background_music.tscn" id="10_qriqr"]
+[ext_resource type="PackedScene" uid="uid://d1oxoghresfh5" path="res://scenes/projectile.tscn" id="11_3dyi8"]
 [ext_resource type="Script" path="res://scripts/background_music.gd" id="11_hnr68"]
 
 [node name="Stage1" type="Node2D" node_paths=PackedStringArray("ui")]
@@ -60,6 +63,8 @@ position = Vector2(744, 888)
 position = Vector2(704, 1024)
 
 [node name="Turrets" type="Node" parent="."]
+script = ExtResource("8_5kvr3")
+turret = ExtResource("4_orpjk")
 
 [node name="Turret1" parent="Turrets" instance=ExtResource("4_orpjk")]
 position = Vector2(424, 536)
@@ -75,6 +80,10 @@ position = Vector2(192, 856)
 
 [node name="Turret5" parent="Turrets" instance=ExtResource("4_orpjk")]
 position = Vector2(112, 992)
+
+[node name="ProjectileFactory" type="Node" parent="Turrets"]
+script = ExtResource("10_a00n7")
+projectile = ExtResource("11_3dyi8")
 
 [node name="UI" parent="." instance=ExtResource("7_r3htk")]
 

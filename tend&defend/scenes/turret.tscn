@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://26f3kc4nm0yv"]
+[gd_scene load_steps=10 format=3 uid="uid://26f3kc4nm0yv"]
 
 [ext_resource type="Script" path="res://scripts/turret.gd" id="1_d13qn"]
 [ext_resource type="Texture2D" uid="uid://d2yk2p0inqd7c" path="res://assets/placeholder assets/knight.png" id="1_tgla5"]
+[ext_resource type="PackedScene" uid="uid://d1oxoghresfh5" path="res://scenes/projectile.tscn" id="2_gg628"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxg71"]
 atlas = ExtResource("1_tgla5")
@@ -44,6 +45,7 @@ size = Vector2(12, 19)
 
 [node name="Turret" type="StaticBody2D"]
 script = ExtResource("1_d13qn")
+projectile = ExtResource("2_gg628")
 
 [node name="AnimatedTurret" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8fvlv")
