@@ -1,5 +1,6 @@
 res://default_bus_layout.tres
+res://scenes/enemy.tscn
+res://scripts/waves_manager.gd
 res://scenes/menu.tscn
 res://scenes/projectile.tscn
-res://scripts/projectile.gd
-res://scenes/enemy.tscn
+res://scripts/enemy.gd
