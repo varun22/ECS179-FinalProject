@@ -25,6 +25,7 @@ func _update_score_label():
 func _on_score_increase(increase) -> void:
 		if increase:
 			score += increase
+			globalVars.score += increase
 			
 func _ui_on_wave_update(wave: int) -> void:
 	current_wave = wave

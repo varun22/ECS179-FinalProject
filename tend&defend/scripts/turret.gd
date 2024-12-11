@@ -10,6 +10,7 @@ var damage:float = 10.0
 var frequency:float = 5.0
 var health:float = 100.0
 var type:turretType.Type = turretType.Type.BASIC
+var lane:int
 
 var shoot_timer:Timer
 var proj_spec = ProjectileSpec.new()
@@ -37,6 +38,33 @@ func shoot() -> void:
 	
 	# Start timer for next shoot
 	shoot_timer.start(frequency)
+	
+func take_damage(damage_amt: float) -> void:
+	health -= damage_amt
+	if health <= 0:
+		die()
+	
+func die() -> void:
+	globalVars.currency += calculate_payback(lane)
+	
+# Calculate how much currency player gets back for a destroyed turret (50% of what it costs is given back)
+func calculate_payback(lane_num: int) -> int:
+	var payback:int = 0
+	if turretType.type_array[lane_num] == turretType.Type.BASIC:
+		return 0
+	elif turretType.type_array[lane_num] == turretType.Type.POWER:
+		payback += 25
+		payback += (turretType.power_level[lane_num] - 1) * globalVars.currency_to_upgrade
+		payback * 0.5
+	elif turretType.type_array[lane_num] == turretType.Type.REACH:
+		payback += 25
+		payback += (turretType.reach_level[lane_num] - 1) * globalVars.currency_to_upgrade
+		payback * 0.5
+	elif turretType.type_array[lane_num] == turretType.Type.FREQUENCY:
+		payback += 25
+		payback += (turretType.frequency_level[lane_num] - 1) * globalVars.currency_to_upgrade
+		payback * 0.5
+	return payback
 	
 	
 	

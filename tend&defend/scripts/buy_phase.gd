@@ -1,8 +1,8 @@
 class_name BuyPhase
 extends Node2D
 
-var currency_to_switch:int = 25
-var currency_to_upgrade:int = 10
+var currency_to_switch:int = globalVars.currency_to_switch
+var currency_to_upgrade:int = globalVars.currency_to_upgrade
 var time_start:bool = true
 var buy_phase_time = 30.0
 var buy_phase_timer:Timer
