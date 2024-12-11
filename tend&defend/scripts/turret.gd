@@ -14,6 +14,7 @@ var lane:int
 
 var shoot_timer:Timer
 var proj_spec = ProjectileSpec.new()
+var payback_rate:float = 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -55,15 +56,15 @@ func calculate_payback(lane_num: int) -> int:
 	elif turretType.type_array[lane_num] == turretType.Type.POWER:
 		payback += 25
 		payback += (turretType.power_level[lane_num] - 1) * globalVars.currency_to_upgrade
-		payback * 0.5
+		payback * payback_rate
 	elif turretType.type_array[lane_num] == turretType.Type.REACH:
 		payback += 25
 		payback += (turretType.reach_level[lane_num] - 1) * globalVars.currency_to_upgrade
-		payback * 0.5
+		payback * payback_rate
 	elif turretType.type_array[lane_num] == turretType.Type.FREQUENCY:
 		payback += 25
 		payback += (turretType.frequency_level[lane_num] - 1) * globalVars.currency_to_upgrade
-		payback * 0.5
+		payback * payback_rate
 	return payback
 	
 	
