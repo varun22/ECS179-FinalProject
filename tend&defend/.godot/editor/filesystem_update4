@@ -4,3 +4,6 @@ res://scripts/waves_manager.gd
 res://scenes/menu.tscn
 res://scenes/projectile.tscn
 res://scripts/enemy.gd
+res://scenes/turret.tscn
+res://scripts/projectile.gd
+res://scripts/turret.gd

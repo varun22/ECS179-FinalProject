@@ -27,6 +27,7 @@ func _process(_delta: float) -> void:
 	
 func shoot() -> void:
 	# Make proj spec based off turret spec
+	$BaseTurret/AnimationPlayer.play("base_tower_attack")
 	proj_spec.reach = reach
 	proj_spec.damage = damage
 	
