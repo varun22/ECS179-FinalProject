@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://26f3kc4nm0yv"]
+[gd_scene load_steps=10 format=3 uid="uid://26f3kc4nm0yv"]
 
 [ext_resource type="Script" path="res://scripts/turret.gd" id="1_d13qn"]
 [ext_resource type="PackedScene" uid="uid://d1oxoghresfh5" path="res://scenes/projectile.tscn" id="2_gg628"]
@@ -54,8 +54,25 @@ tracks/0/keys = {
 "values": [6, 7, 8, 9, 10, 11, 13, 14]
 }
 
+[sub_resource type="Animation" id="Animation_ikmqo"]
+resource_name = "Base_tower"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7v3cs"]
 _data = {
+"Base_tower": SubResource("Animation_ikmqo"),
 "RESET": SubResource("Animation_u7yus"),
 "base_tower_attack": SubResource("Animation_vjta6"),
 "base_tower_death": SubResource("Animation_7clfk")
@@ -69,26 +86,14 @@ projectile = ExtResource("2_gg628")
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_q2efx")
 
-[node name="BaseTurret" type="Sprite2D" parent="."]
+[node name="Turret" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("3_ucqc7")
 hframes = 4
 vframes = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BaseTurret"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Turret"]
 libraries = {
 "": SubResource("AnimationLibrary_7v3cs")
 }
-
-[node name="RangeTurret" type="Sprite2D" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="RangeTurret"]
-
-[node name="ProjectileTurret" type="Sprite2D" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ProjectileTurret"]
-
-[node name="PowerTurret" type="Sprite2D" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PowerTurret"]

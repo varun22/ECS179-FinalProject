@@ -27,12 +27,13 @@ func _process(_delta: float) -> void:
 	
 func shoot() -> void:
 	# Make proj spec based off turret spec
-	$BaseTurret/AnimationPlayer.play("base_tower_attack")
+	$Turret/AnimationPlayer.play("base_tower_attack")
 	proj_spec.reach = reach
 	proj_spec.damage = damage
 	
 	# Build proj based off spec and add it as child of turret
 	var new_proj = proj_fact.build(proj_spec)
+	
 	add_child(new_proj)
 	
 	# Start timer for next shoot

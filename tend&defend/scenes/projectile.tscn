@@ -1,10 +1,102 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1oxoghresfh5"]
+[gd_scene load_steps=11 format=3 uid="uid://d1oxoghresfh5"]
 
 [ext_resource type="Script" path="res://scripts/projectile.gd" id="1_oggrw"]
-[ext_resource type="Texture2D" uid="uid://bmkyltuiu6vou" path="res://icon.svg" id="1_rsx4i"]
+[ext_resource type="Texture2D" uid="uid://cahlarkeknak7" path="res://assets/Tower/Projectiles/Turret_Proj.png" id="2_kregv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oy8a6"]
 size = Vector2(18, 4)
+
+[sub_resource type="Animation" id="Animation_10sfc"]
+resource_name = "Base_shot"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_2k4du"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_6s61s"]
+resource_name = "freq_shot"
+
+[sub_resource type="Animation" id="Animation_cme4f"]
+resource_name = "Freq_Shot"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_5m55m"]
+resource_name = "Power_shot"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_svfy0"]
+resource_name = "Range_shot"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tafvr"]
+_data = {
+"Base_shot": SubResource("Animation_10sfc"),
+"Freq_Shot": SubResource("Animation_cme4f"),
+"Power_shot": SubResource("Animation_5m55m"),
+"RESET": SubResource("Animation_2k4du"),
+"Range_shot": SubResource("Animation_svfy0"),
+"freq_shot": SubResource("Animation_6s61s")
+}
 
 [node name="Projectile" type="CharacterBody2D"]
 collision_layer = 2
@@ -15,5 +107,11 @@ script = ExtResource("1_oggrw")
 shape = SubResource("RectangleShape2D_oy8a6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.140625, 0.0351566)
-texture = ExtResource("1_rsx4i")
+texture = ExtResource("2_kregv")
+hframes = 3
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_tafvr")
+}
