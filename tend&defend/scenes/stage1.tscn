@@ -62,31 +62,16 @@ position = Vector2(1802, 867)
 [node name="EnemySpawn5" type="Node2D" parent="EnemySpawns"]
 position = Vector2(1807, 972)
 
-[node name="Turrets" type="Node" parent="."]
-script = ExtResource("8_5kvr3")
-turret = ExtResource("4_orpjk")
-
-[node name="Turret1" parent="Turrets" instance=ExtResource("4_orpjk")]
-position = Vector2(413, 566)
-
-[node name="Turret2" parent="Turrets" instance=ExtResource("4_orpjk")]
-position = Vector2(330, 670)
-
-[node name="Turret3" parent="Turrets" instance=ExtResource("4_orpjk")]
-position = Vector2(272, 770)
-
-[node name="Turret4" parent="Turrets" instance=ExtResource("4_orpjk")]
-position = Vector2(189, 877)
-
-[node name="Turret5" parent="Turrets" instance=ExtResource("4_orpjk")]
-position = Vector2(112, 992)
-
-[node name="ProjectileFactory" type="Node" parent="Turrets"]
-script = ExtResource("10_a00n7")
-projectile = ExtResource("11_3dyi8")
-
 [node name="UI" parent="." instance=ExtResource("7_r3htk")]
 
 [node name="BackgroundMusic" parent="." node_paths=PackedStringArray("audio_player") instance=ExtResource("10_qriqr")]
 script = ExtResource("11_hnr68")
 audio_player = NodePath(".")
+
+[node name="Turrets" type="Node" parent="."]
+script = ExtResource("8_5kvr3")
+turret = ExtResource("4_orpjk")
+
+[node name="ProjectileFactory" type="Node" parent="Turrets"]
+script = ExtResource("10_a00n7")
+projectile = ExtResource("11_3dyi8")

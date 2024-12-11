@@ -5,9 +5,10 @@ extends StaticBody2D
 @export var projectile: PackedScene
 @onready var proj_fact:ProjectileFactory = $"../ProjectileFactory"
 
-var reach:float = 50.0
+var reach:float = 5.0
 var damage:float = 10.0
-var frequency:float = 4.0
+var frequency:float = 5.0
+var health:float = 100.0
 var type:turretType.Type = turretType.Type.BASIC
 
 var shoot_timer:Timer

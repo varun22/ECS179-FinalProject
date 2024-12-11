@@ -13,12 +13,14 @@ config_version=5
 config/name="Tend&Defend"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/placeholder assets/icon.svg"
 
 [autoload]
 
 turretType="*res://scripts/turret_type.gd"
 signals="*res://scripts/signals.gd"
+scene_switcher="*res://scripts/scene_switch.gd"
+globalVars="*res://scripts/global_vars.gd"
 
 [display]
 

@@ -1,0 +1,238 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3fwx0oivo4y2"]
+
+[ext_resource type="Script" path="res://scripts/buy_phase.gd" id="1_coiml"]
+[ext_resource type="Texture2D" uid="uid://3rkprs6gqxi6" path="res://assets/game images/BG.png" id="1_nlvc3"]
+[ext_resource type="Texture2D" uid="uid://dgf4ql7x3tfjs" path="res://assets/game images/Floor.png" id="2_sk6yv"]
+
+[node name="Buy Phase" type="Node2D"]
+script = ExtResource("1_coiml")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 504)
+scale = Vector2(0.999907, 1.15573)
+texture = ExtResource("1_nlvc3")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+metadata/_edit_lock_ = true
+
+[node name="Foreground" type="Sprite2D" parent="."]
+position = Vector2(959.911, 375.799)
+scale = Vector2(0.999907, 1.30405)
+texture = ExtResource("2_sk6yv")
+metadata/_edit_lock_ = true
+
+[node name="Lane 1" type="Node" parent="."]
+
+[node name="Power Upgrade 1" type="Button" parent="Lane 1"]
+offset_left = 598.0
+offset_top = 547.0
+offset_right = 769.0
+offset_bottom = 578.0
+text = "Choose Power Turret"
+
+[node name="Range Upgrade 1" type="Button" parent="Lane 1"]
+offset_left = 908.0
+offset_top = 544.0
+offset_right = 1078.0
+offset_bottom = 575.0
+text = "Choose Range Turret"
+
+[node name="Frequency Upgrade 1" type="Button" parent="Lane 1"]
+offset_left = 1209.0
+offset_top = 544.0
+offset_right = 1412.0
+offset_bottom = 575.0
+text = "Choose Frequency Turret"
+
+[node name="Confirm 1" type="Button" parent="Lane 1"]
+offset_left = 1546.0
+offset_top = 545.0
+offset_right = 1617.0
+offset_bottom = 576.0
+text = "Confirm"
+
+[node name="Upgrade 1" type="Button" parent="Lane 1"]
+visible = false
+offset_left = 1007.0
+offset_top = 543.0
+offset_right = 1146.0
+offset_bottom = 574.0
+text = "Upgrade to Level"
+
+[node name="Lane 2" type="Node" parent="."]
+
+[node name="Power Upgrade 2" type="Button" parent="Lane 2"]
+offset_left = 568.0
+offset_top = 648.0
+offset_right = 739.0
+offset_bottom = 679.0
+text = "Choose Power Turret"
+
+[node name="Range Upgrade 2" type="Button" parent="Lane 2"]
+offset_left = 911.0
+offset_top = 645.0
+offset_right = 1081.0
+offset_bottom = 676.0
+text = "Choose Range Turret"
+
+[node name="Frequency Upgrade 2" type="Button" parent="Lane 2"]
+offset_left = 1209.0
+offset_top = 658.0
+offset_right = 1412.0
+offset_bottom = 689.0
+text = "Choose Frequency Turret"
+
+[node name="Confirm 2" type="Button" parent="Lane 2"]
+offset_left = 1548.0
+offset_top = 653.0
+offset_right = 1619.0
+offset_bottom = 684.0
+text = "Confirm"
+
+[node name="Upgrade 2" type="Button" parent="Lane 2"]
+visible = false
+offset_left = 1009.0
+offset_top = 644.0
+offset_right = 1148.0
+offset_bottom = 675.0
+text = "Upgrade to Level"
+
+[node name="Lane 3" type="Node" parent="."]
+
+[node name="Power Upgrade 3" type="Button" parent="Lane 3"]
+offset_left = 544.0
+offset_top = 756.0
+offset_right = 715.0
+offset_bottom = 787.0
+text = "Choose Power Turret"
+
+[node name="Range Upgrade 3" type="Button" parent="Lane 3"]
+offset_left = 911.0
+offset_top = 754.0
+offset_right = 1081.0
+offset_bottom = 785.0
+text = "Choose Range Turret"
+
+[node name="Frequency Upgrade 3" type="Button" parent="Lane 3"]
+offset_left = 1216.0
+offset_top = 753.0
+offset_right = 1419.0
+offset_bottom = 784.0
+text = "Choose Frequency Turret"
+
+[node name="Confirm 3" type="Button" parent="Lane 3"]
+offset_left = 1551.0
+offset_top = 762.0
+offset_right = 1622.0
+offset_bottom = 793.0
+text = "Confirm"
+
+[node name="Upgrade 3" type="Button" parent="Lane 3"]
+visible = false
+offset_left = 1009.0
+offset_top = 753.0
+offset_right = 1148.0
+offset_bottom = 784.0
+text = "Upgrade to Level"
+
+[node name="Lane 4" type="Node" parent="."]
+
+[node name="Power Upgrade 4" type="Button" parent="Lane 4"]
+offset_left = 524.0
+offset_top = 861.0
+offset_right = 695.0
+offset_bottom = 892.0
+text = "Choose Power Turret"
+
+[node name="Range Upgrade 4" type="Button" parent="Lane 4"]
+offset_left = 901.0
+offset_top = 872.0
+offset_right = 1071.0
+offset_bottom = 903.0
+text = "Choose Range Turret"
+
+[node name="Frequency Upgrade 4" type="Button" parent="Lane 4"]
+offset_left = 1221.0
+offset_top = 869.0
+offset_right = 1424.0
+offset_bottom = 900.0
+text = "Choose Frequency Turret"
+
+[node name="Confirm 4" type="Button" parent="Lane 4"]
+offset_left = 1551.0
+offset_top = 868.0
+offset_right = 1622.0
+offset_bottom = 899.0
+text = "Confirm"
+
+[node name="Upgrade 4" type="Button" parent="Lane 4"]
+visible = false
+offset_left = 1010.0
+offset_top = 869.0
+offset_right = 1149.0
+offset_bottom = 900.0
+text = "Upgrade to Level"
+
+[node name="Lane 5" type="Node" parent="."]
+
+[node name="Power Upgrade 5" type="Button" parent="Lane 5"]
+offset_left = 509.0
+offset_top = 986.0
+offset_right = 680.0
+offset_bottom = 1017.0
+text = "Choose Power Turret"
+
+[node name="Range Upgrade 5" type="Button" parent="Lane 5"]
+offset_left = 896.0
+offset_top = 990.0
+offset_right = 1066.0
+offset_bottom = 1021.0
+text = "Choose Range Turret"
+
+[node name="Frequency Upgrade 5" type="Button" parent="Lane 5"]
+offset_left = 1214.0
+offset_top = 991.0
+offset_right = 1417.0
+offset_bottom = 1022.0
+text = "Choose Frequency Turret"
+
+[node name="Confirm 5" type="Button" parent="Lane 5"]
+offset_left = 1548.0
+offset_top = 989.0
+offset_right = 1619.0
+offset_bottom = 1020.0
+text = "Confirm"
+
+[node name="Upgrade 5" type="Button" parent="Lane 5"]
+visible = false
+offset_left = 1020.0
+offset_top = 985.0
+offset_right = 1159.0
+offset_bottom = 1016.0
+text = "Upgrade to Level"
+
+[connection signal="pressed" from="Lane 1/Power Upgrade 1" to="." method="_on_power_upgrade_1_pressed"]
+[connection signal="pressed" from="Lane 1/Range Upgrade 1" to="." method="_on_range_upgrade_1_pressed"]
+[connection signal="pressed" from="Lane 1/Frequency Upgrade 1" to="." method="_on_frequency_upgrade_1_pressed"]
+[connection signal="pressed" from="Lane 1/Confirm 1" to="." method="_on_confirm_1_pressed"]
+[connection signal="pressed" from="Lane 1/Upgrade 1" to="." method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="Lane 2/Power Upgrade 2" to="." method="_on_power_upgrade_2_pressed"]
+[connection signal="pressed" from="Lane 2/Range Upgrade 2" to="." method="_on_range_upgrade_2_pressed"]
+[connection signal="pressed" from="Lane 2/Frequency Upgrade 2" to="." method="_on_frequency_upgrade_2_pressed"]
+[connection signal="pressed" from="Lane 2/Confirm 2" to="." method="_on_confirm_2_pressed"]
+[connection signal="pressed" from="Lane 2/Upgrade 2" to="." method="_on_upgrade_2_pressed"]
+[connection signal="pressed" from="Lane 3/Power Upgrade 3" to="." method="_on_power_upgrade_3_pressed"]
+[connection signal="pressed" from="Lane 3/Range Upgrade 3" to="." method="_on_range_upgrade_3_pressed"]
+[connection signal="pressed" from="Lane 3/Frequency Upgrade 3" to="." method="_on_frequency_upgrade_3_pressed"]
+[connection signal="pressed" from="Lane 3/Confirm 3" to="." method="_on_confirm_3_pressed"]
+[connection signal="pressed" from="Lane 3/Upgrade 3" to="." method="_on_upgrade_3_pressed"]
+[connection signal="pressed" from="Lane 4/Power Upgrade 4" to="." method="_on_power_upgrade_4_pressed"]
+[connection signal="pressed" from="Lane 4/Range Upgrade 4" to="." method="_on_range_upgrade_4_pressed"]
+[connection signal="pressed" from="Lane 4/Frequency Upgrade 4" to="." method="_on_frequency_upgrade_4_pressed"]
+[connection signal="pressed" from="Lane 4/Confirm 4" to="." method="_on_confirm_4_pressed"]
+[connection signal="pressed" from="Lane 4/Upgrade 4" to="." method="_on_upgrade_4_pressed"]
+[connection signal="pressed" from="Lane 5/Power Upgrade 5" to="." method="_on_power_upgrade_5_pressed"]
+[connection signal="pressed" from="Lane 5/Range Upgrade 5" to="." method="_on_range_upgrade_5_pressed"]
+[connection signal="pressed" from="Lane 5/Frequency Upgrade 5" to="." method="_on_frequency_upgrade_5_pressed"]
+[connection signal="pressed" from="Lane 5/Confirm 5" to="." method="_on_confirm_5_pressed"]
+[connection signal="pressed" from="Lane 5/Upgrade 5" to="." method="_on_upgrade_5_pressed"]

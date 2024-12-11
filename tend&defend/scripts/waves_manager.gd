@@ -7,6 +7,7 @@ signal wave_update(value: int)
 @export var game: Game  # Reference to the Game script for connecting signals
 
 @onready var enemy_fact:EnemyFactory = $"../EnemySpawns"
+@onready var turret_fact:TurretFactory = $"../Turrets"
 
 var wave:int
 var num_to_spawn:int
@@ -14,14 +15,15 @@ var num_to_spawn:int
 var placement_array:Array[int]
 # Array to store times between spawns
 var timing_array:Array[float]
-
 var enemy_spec:EnemySpec
 var done_spawning:bool = false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	wave = 1
+	# Builds turrets based on global types and stats in turret_type
+	turret_fact.rebuild()
+	wave = globalVars.wave_num
 	await wait(3.0) #use for buy phase
 	calc_num_to_spawn()
 	create_enemy_schedule()
@@ -39,16 +41,18 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if check_end():
+		globalVars.wave_num += 1
 		done_spawning = false
-		wave += 1
 		#switch scene to buy menu, on player exit or timer end, switch back to stage1
 		#consider currency, storing bought changes, etc.
+		scene_switcher.switch_scene("res://scenes/buy_phase.tscn")
 		
-		calc_num_to_spawn()
-		create_enemy_schedule()
+		# This never gets reached anymore due to scene switching
 		# Update music playback speed, add title
-		wave_update.emit(wave)
-		spawn_enemies()
+		#wave_update.emit(wave)
+		#calc_num_to_spawn()
+		#create_enemy_schedule()
+		#spawn_enemies()
 
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout

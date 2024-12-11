@@ -11,6 +11,6 @@ enum Type {
 
 # Array to keep track of type of each turret and stats of each turret
 var type_array = [Type.BASIC, Type.BASIC, Type.BASIC, Type.BASIC, Type.BASIC]
-var reach_array = [50.0, 50.0, 50.0, 50.0, 50.0]
-var damage_array = [10.0, 10.0, 10.0, 10.0, 10.0]
-var frequency_array = [4.0, 4.0, 4.0, 4.0, 4.0]
+var reach_level = [1, 1, 1, 1, 1]
+var power_level = [1, 1, 1, 1, 1]
+var frequency_level = [1, 1, 1, 1, 1]

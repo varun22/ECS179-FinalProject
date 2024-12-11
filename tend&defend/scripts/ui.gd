@@ -7,7 +7,7 @@ class_name UI
 
 
 var current_wave: int = 1 
-var score = 0:
+var score = globalVars.score:
 	set(new_score):
 		score = new_score
 		_update_score_label()

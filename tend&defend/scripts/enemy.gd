@@ -10,28 +10,31 @@ signal died(value: int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	$HealthBar.max_value = health
+	$HealthBar.value = health
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	self.global_position.x -= speed * delta
 	#print(speed * delta)
 	if self.global_position.x < 10:
-		print("Enemy has made reach the end")
+		#print("Enemy has made reach the end")
 		#Delete this later! This is just for testing UI
 		_enemy_died()
 		
 		queue_free()
 		
 func _enemy_died() -> void:
-	print("Enemy has died")
+	#print("Enemy has died")
 	#Increment UI
 	died.emit(100)
-		
+
+# Function for when enemies take damage form projectile
 func take_damage(damage_amt: float) -> void:
 	health -= damage_amt
-	print(health)
+	$HealthBar.value = health
+	#print(health)
 	if health <= 0:
-		died.emit(0)
+		_enemy_died()
 		queue_free()
 		
