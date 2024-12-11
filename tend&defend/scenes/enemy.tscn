@@ -44,7 +44,7 @@ size = Vector2(14, 12)
 
 [node name="Enemy" type="CharacterBody2D"]
 scale = Vector2(5, 5)
-collision_layer = 2
+collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_dytbo")
 
@@ -53,4 +53,5 @@ sprite_frames = SubResource("SpriteFrames_trq5m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_oo0ld")

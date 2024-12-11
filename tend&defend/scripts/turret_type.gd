@@ -6,7 +6,7 @@ enum Type {
 	BASIC,
 	POWER,
 	FREQUENCY,
-	RANGE,
+	REACH,
 }
 
 # Array to keep track of type of each turret and stats of each turret

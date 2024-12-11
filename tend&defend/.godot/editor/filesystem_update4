@@ -3,3 +3,10 @@ res://scenes/menu.tscn
 res://scenes/projectile.tscn
 res://scripts/projectile.gd
 res://scenes/enemy.tscn
+res://scripts/waves_manager.gd
+res://scripts/turret_type.gd
+res://scenes/stage1.tscn
+res://scripts/turret.gd
+res://scripts/signals.gd
+res://scripts/enemy.gd
+res://scripts/game.gd
