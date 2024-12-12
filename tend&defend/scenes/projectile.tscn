@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1oxoghresfh5"]
+[gd_scene load_steps=11 format=3 uid="uid://d1oxoghresfh5"]
 
 [ext_resource type="Script" path="res://scripts/projectile.gd" id="1_oggrw"]
+[ext_resource type="Texture2D" uid="uid://bmkyltuiu6vou" path="res://assets/placeholder assets/icon.svg" id="1_rsx4i"]
 [ext_resource type="Texture2D" uid="uid://cahlarkeknak7" path="res://assets/Tower/Projectiles/Turret_Proj.png" id="2_pb7g5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oy8a6"]
@@ -105,7 +106,12 @@ script = ExtResource("1_oggrw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_oy8a6")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.140625, 0.0351566)
+texture = ExtResource("1_rsx4i")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.140625, 0.0351566)
 texture = ExtResource("2_pb7g5")
 hframes = 3

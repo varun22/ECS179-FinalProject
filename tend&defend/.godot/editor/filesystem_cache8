@@ -1,9 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1734024806
-default_bus_layout.tres::AudioBusLayout::4013601157250849265::1734024759::0::1::::<><>::
-::res://assets/::1734024755
-::res://assets/Enemy/::1734024754
-Enemy (1).png::CompressedTexture2D::3579095730891052944::1733944336::1734024754::1::::<><>::
+::res://::1734029754
+default_bus_layout.tres::AudioBusLayout::4013601157250849265::1734029006::0::1::::<><>::
+::res://assets/::1734029548
+::res://assets/Enemy/::1734029923
+Enemy (1) (1).png::CompressedTexture2D::8686188129848231050::1734029504::1734029504::1::::<><>::
+Enemy (1) (2).png::CompressedTexture2D::8313988438184646060::1734029923::1734029923::1::::<><>::
 ::res://assets/fonts/::1734024754
 PixelOperator8-Bold.ttf::FontFile::2791805035825705301::1733940568::1734024754::1::::<><>::
 PixelOperator8.ttf::FontFile::8095218333032907462::1733940568::1734024754::1::::<><>::
@@ -70,28 +71,24 @@ slime_green.png::CompressedTexture2D::9148216157431321623::1733940568::173402475
 ::res://assets/sfx/::1734024755
 click.mp3::AudioStreamMP3::3494171165368673722::1734024737::1734024754::1::::<><>::
 shoot.mp3::AudioStreamMP3::8911989167623045302::1734024737::1734024754::1::::<><>::
-::res://assets/Tower/::1734025183
+::res://assets/Tower/::1734025222
 Base_Turret (1).png::CompressedTexture2D::2760382084094312990::1734025183::1734025183::1::::<><>::
-Base_Turret.png::CompressedTexture2D::1166593996733841295::1733950244::1734024754::1::::<><>::
-Freq_Tower.png::CompressedTexture2D::7587741069999495449::1733950241::1734024754::1::::<><>::
-Power_Tower.png::CompressedTexture2D::473686093958110588::1733950238::1734024754::1::::<><>::
-Range_Tower.png::CompressedTexture2D::3276491696249643396::1733950234::1734024754::1::::<><>::
 ::res://assets/Tower/Projectiles/::1734024754
 Turret_Proj.png::CompressedTexture2D::4787960807125664636::1733954155::1734024754::1::::<><>::
-::res://scenes/::1734024800
-audio_player.tscn::PackedScene::6086092195894513777::1734024799::0::1::::<><>::res://scripts/audio_player.gd
+::res://scenes/::1734029754
+audio_player.tscn::PackedScene::6086092195894513777::1734028971::0::1::::<><>::res://scripts/audio_player.gd
 background_music.tscn::PackedScene::3922654044266374918::1733940568::0::1::::<><>::uid://vwtl6uv7srtd::::res://assets/music/background.ogg
-buy_phase.tscn::PackedScene::4363408376532127999::1734024799::0::1::::<><>::res://scripts/buy_phase.gd<>uid://3rkprs6gqxi6::::res://assets/game images/BG.png<>uid://dgf4ql7x3tfjs::::res://assets/game images/Floor.png<>uid://dnlncfc0vlj4a::::res://assets/fonts/PixelOperator8.ttf<>uid://eghh27wxoi76::::res://scenes/ui.tscn<>uid://gr765jgn4n5p::::res://scenes/sound_manager.tscn
+buy_phase.tscn::PackedScene::4363408376532127999::1734028971::0::1::::<><>::res://scripts/buy_phase.gd<>uid://3rkprs6gqxi6::::res://assets/game images/BG.png<>uid://dgf4ql7x3tfjs::::res://assets/game images/Floor.png<>uid://dnlncfc0vlj4a::::res://assets/fonts/PixelOperator8.ttf<>uid://eghh27wxoi76::::res://scenes/ui.tscn<>uid://gr765jgn4n5p::::res://scenes/sound_manager.tscn
 credits.tscn::PackedScene::4004853772765355079::1733940568::0::1::::<><>::uid://dr32en0fww6at::::res://assets/menu screen/sky (2).png<>uid://jw3tcxhjeo7c::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[7] Gold/IMG_2026.jpg
-enemy.tscn::PackedScene::1412323621817059874::1734024799::0::1::::<><>::res://scripts/enemy.gd<>uid://bq80gipduyw53::::res://assets/Enemy/Enemy (1).png
-menu.tscn::PackedScene::7451950874013021033::1734024799::0::1::::<><>::res://scripts/menu.gd<>uid://dr32en0fww6at::::res://assets/menu screen/sky (2).png<>uid://co1cuo04bfcq4::::res://assets/menu screen/TEND-DEFEND-12-7-2024.png<>uid://bf1mvd63pl18d::::res://assets/fonts/PixelOperator8-Bold.ttf<>uid://bxtsi0hu5y37h::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[3] Hover.png<>uid://cherc432hfd10::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[1] Normal.png<>uid://dvbk0r07yvbry::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[2] Clicked.png<>uid://dgjshl1gigbdc::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[3]Yellow/[3] Hover.png<>uid://cudthvrpni0fe::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[3]Yellow/[2] Clicked.png<>uid://c8iayeuaf4p7y::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[3]Yellow/[1] Normal.png<>uid://c3lcro4grd4pm::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/[3] Hover.png<>uid://sh7boffh3nau::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/[2] Clicked.png<>uid://us7yaa6461qk::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/[1] Normal.png<>uid://gr765jgn4n5p::::res://scenes/sound_manager.tscn
-player.tscn::PackedScene::6621902973500733872::1734024799::0::1::::<><>::res://scripts/player.gd<>uid://d2yk2p0inqd7c::::res://assets/placeholder assets/knight.png
-projectile.tscn::PackedScene::9014495092905472080::1734024799::0::1::::<><>::res://scripts/projectile.gd<>uid://bmkyltuiu6vou::::res://assets/placeholder assets/icon.svg
-sound_manager.tscn::PackedScene::458227376921673975::1734024800::0::1::::<><>::res://scripts/sound_manager.gd<>uid://dy8bfoojqgbko::::res://assets/sfx/shoot.mp3<>uid://bp1uqu2q3p0kk::::res://assets/sfx/click.mp3
-stage1.tscn::PackedScene::6961649567131198378::1734024799::0::1::::<><>::uid://c1lx1llaevewm::::res://scenes/player.tscn<>res://scripts/game.gd<>uid://3rkprs6gqxi6::::res://assets/game images/BG.png<>res://scripts/waves_manager.gd<>res://scripts/enemy_factory.gd<>uid://26f3kc4nm0yv::::res://scenes/turret.tscn<>uid://dgf4ql7x3tfjs::::res://assets/game images/Floor.png<>uid://uee07313050q::::res://scenes/enemy.tscn<>uid://eghh27wxoi76::::res://scenes/ui.tscn<>res://scripts/turret_factory.gd<>res://scripts/projectile_factory.gd<>uid://d1oxoghresfh5::::res://scenes/projectile.tscn<>uid://gr765jgn4n5p::::res://scenes/sound_manager.tscn
-turret.tscn::PackedScene::1959448605454508153::1734024799::0::1::::<><>::res://scripts/turret.gd<>uid://d1oxoghresfh5::::res://scenes/projectile.tscn<>uid://qvdvrnblfu5l::::res://assets/Tower/Base_Turret.png
-ui.tscn::PackedScene::293580629178258591::1734024799::0::1::::<><>::res://scripts/ui.gd<>uid://dnlncfc0vlj4a::::res://assets/fonts/PixelOperator8.ttf<>uid://bf1mvd63pl18d::::res://assets/fonts/PixelOperator8-Bold.ttf
-::res://scripts/::1734024799
+enemy.tscn::PackedScene::1412323621817059874::1734029750::0::1::::<><>::res://scripts/enemy.gd<>uid://dv0wiqlvesd3w::::res://assets/Enemy/Enemy (1) (1).png
+menu.tscn::PackedScene::7451950874013021033::1734028971::0::1::::<><>::res://scripts/menu.gd<>uid://dr32en0fww6at::::res://assets/menu screen/sky (2).png<>uid://co1cuo04bfcq4::::res://assets/menu screen/TEND-DEFEND-12-7-2024.png<>uid://bf1mvd63pl18d::::res://assets/fonts/PixelOperator8-Bold.ttf<>uid://bxtsi0hu5y37h::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[3] Hover.png<>uid://cherc432hfd10::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[1] Normal.png<>uid://dvbk0r07yvbry::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[2] Clicked.png<>uid://dgjshl1gigbdc::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[3]Yellow/[3] Hover.png<>uid://cudthvrpni0fe::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[3]Yellow/[2] Clicked.png<>uid://c8iayeuaf4p7y::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[3]Yellow/[1] Normal.png<>uid://c3lcro4grd4pm::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/[3] Hover.png<>uid://sh7boffh3nau::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/[2] Clicked.png<>uid://us7yaa6461qk::::res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/[1] Normal.png<>uid://gr765jgn4n5p::::res://scenes/sound_manager.tscn
+player.tscn::PackedScene::6621902973500733872::1734028971::0::1::::<><>::res://scripts/player.gd<>uid://d2yk2p0inqd7c::::res://assets/placeholder assets/knight.png
+projectile.tscn::PackedScene::9014495092905472080::1734029068::0::1::::<><>::res://scripts/projectile.gd<>uid://cahlarkeknak7::::res://assets/Tower/Projectiles/Turret_Proj.png
+sound_manager.tscn::PackedScene::458227376921673975::1734028971::0::1::::<><>::res://scripts/sound_manager.gd<>uid://dy8bfoojqgbko::::res://assets/sfx/shoot.mp3<>uid://bp1uqu2q3p0kk::::res://assets/sfx/click.mp3
+stage1.tscn::PackedScene::6961649567131198378::1734028971::0::1::::<><>::uid://c1lx1llaevewm::::res://scenes/player.tscn<>res://scripts/game.gd<>uid://3rkprs6gqxi6::::res://assets/game images/BG.png<>res://scripts/waves_manager.gd<>res://scripts/enemy_factory.gd<>uid://26f3kc4nm0yv::::res://scenes/turret.tscn<>uid://dgf4ql7x3tfjs::::res://assets/game images/Floor.png<>uid://uee07313050q::::res://scenes/enemy.tscn<>uid://eghh27wxoi76::::res://scenes/ui.tscn<>res://scripts/turret_factory.gd<>res://scripts/projectile_factory.gd<>uid://d1oxoghresfh5::::res://scenes/projectile.tscn<>uid://gr765jgn4n5p::::res://scenes/sound_manager.tscn
+turret.tscn::PackedScene::1959448605454508153::1734028971::0::1::::<><>::res://scripts/turret.gd<>uid://d1oxoghresfh5::::res://scenes/projectile.tscn<>uid://bflfdbu0lu527::::res://assets/Tower/Base_Turret (1).png
+ui.tscn::PackedScene::293580629178258591::1734028971::0::1::::<><>::res://scripts/ui.gd<>uid://dnlncfc0vlj4a::::res://assets/fonts/PixelOperator8.ttf<>uid://bf1mvd63pl18d::::res://assets/fonts/PixelOperator8-Bold.ttf
+::res://scripts/::1734027684
 audio_player.gd::GDScript::-1::1734024737::0::1::::AudioPlayer<>AudioStreamPlayer2D<>::
 buy_phase.gd::GDScript::-1::1734024737::0::1::::BuyPhase<>Node2D<>::
 enemy.gd::GDScript::-1::1734024737::0::1::::Enemy<>CharacterBody2D<>::
@@ -107,9 +104,9 @@ projectile_spec.gd::GDScript::-1::1733940568::0::1::::ProjectileSpec<>Node<>::
 scene_switch.gd::GDScript::-1::1734024737::0::1::::SceneSwitch<>Node<>::
 signals.gd::GDScript::-1::1734024737::0::1::::Signals<>Node<>::
 sound_manager.gd::GDScript::-1::1734024737::0::1::::SoundManager<>Node<>::
-turret.gd::GDScript::-1::1734024737::0::1::::Turret<>StaticBody2D<>::
-turret_factory.gd::GDScript::-1::1734024737::0::1::::TurretFactory<>Node<>::
+turret.gd::GDScript::-1::1734027682::0::1::::Turret<>StaticBody2D<>::
+turret_factory.gd::GDScript::-1::1734026334::0::1::::TurretFactory<>Node<>::
 turret_spec.gd::GDScript::-1::1733940568::0::1::::TurretSpec<>Node<>::
 turret_type.gd::GDScript::-1::1734024737::0::1::::TurretType<>Node<>::
 ui.gd::GDScript::-1::1734024737::0::1::::UI<>CanvasLayer<>::
-waves_manager.gd::GDScript::-1::1734024799::0::1::::WavesManager<>Node<>::
+waves_manager.gd::GDScript::-1::1734026481::0::1::::WavesManager<>Node<>::
