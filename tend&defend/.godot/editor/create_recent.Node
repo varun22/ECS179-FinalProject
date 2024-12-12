@@ -1,8 +1,8 @@
+AnimationPlayer
 AudioStreamPlayer2D
 Node
 ProgressBar
 Button
-AnimationPlayer
 Sprite2D
 CollisionShape2D
 CharacterBody2D
