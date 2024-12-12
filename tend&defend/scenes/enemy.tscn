@@ -43,6 +43,7 @@ animations = [{
 size = Vector2(14, 12)
 
 [node name="Enemy" type="CharacterBody2D"]
+scale = Vector2(2.65658, -24.1168)
 script = ExtResource("1_dytbo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
