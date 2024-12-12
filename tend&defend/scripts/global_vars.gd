@@ -12,3 +12,4 @@ var game_health:int = 5
 # Global upgrade costs
 var currency_to_switch:int = 25
 var currency_to_upgrade:int = 10
+var currency_to_tend:int = 100

@@ -21,6 +21,7 @@ turretType="*res://scripts/turret_type.gd"
 signals="*res://scripts/signals.gd"
 scene_switcher="*res://scripts/scene_switch.gd"
 globalVars="*res://scripts/global_vars.gd"
+audioPlayer="*res://scenes/audio_player.tscn"
 
 [display]
 

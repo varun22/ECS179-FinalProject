@@ -30,8 +30,8 @@ func _ready() -> void:
 	spawn_enemies()
 	
 	#connect background music
-	var background_music = $"../BackgroundMusic"
-	wave_update.connect(background_music.on_wave_update)
+	#var background_music = $"../BackgroundMusic"
+	wave_update.connect(audioPlayer.on_wave_update)
 	var ui = $"../UI"
 	wave_update.connect(ui._ui_on_wave_update)
 	wave_update.emit(wave)

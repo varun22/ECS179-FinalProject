@@ -44,11 +44,15 @@ func shoot() -> void:
 	
 func take_damage(damage_amt: float) -> void:
 	health -= damage_amt
+	turretType.turret_health[lane] -= damage_amt
 	if health <= 0:
+		turretType.turret_health[lane] = 0.0
 		die()
 	
 func die() -> void:
 	globalVars.currency += calculate_payback(lane)
+	turretType.type_array[lane] = turretType.Type.BASIC
+	$Turret/AnimationPlayer.play("base_tower_death")
 	
 # Calculate how much currency player gets back for a destroyed turret (50% of what it costs is given back)
 func calculate_payback(lane_num: int) -> int:

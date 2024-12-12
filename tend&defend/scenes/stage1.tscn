@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c6gjl7b7u3kis"]
+[gd_scene load_steps=13 format=3 uid="uid://c6gjl7b7u3kis"]
 
 [ext_resource type="PackedScene" uid="uid://c1lx1llaevewm" path="res://scenes/player.tscn" id="1_4ps2d"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_ycv23"]
@@ -11,11 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://eghh27wxoi76" path="res://scenes/ui.tscn" id="7_r3htk"]
 [ext_resource type="Script" path="res://scripts/turret_factory.gd" id="8_5kvr3"]
 [ext_resource type="Script" path="res://scripts/projectile_factory.gd" id="10_a00n7"]
-[ext_resource type="PackedScene" uid="uid://bv5fslc67ynm1" path="res://scenes/background_music.tscn" id="10_qriqr"]
 [ext_resource type="PackedScene" uid="uid://d1oxoghresfh5" path="res://scenes/projectile.tscn" id="11_3dyi8"]
-[ext_resource type="Script" path="res://scripts/background_music.gd" id="11_hnr68"]
 
 [node name="Stage1" type="Node2D" node_paths=PackedStringArray("ui")]
+process_mode = 1
 script = ExtResource("1_ycv23")
 ui = NodePath("UI")
 
@@ -63,10 +62,6 @@ position = Vector2(1802, 867)
 position = Vector2(1807, 972)
 
 [node name="UI" parent="." instance=ExtResource("7_r3htk")]
-
-[node name="BackgroundMusic" parent="." node_paths=PackedStringArray("audio_player") instance=ExtResource("10_qriqr")]
-script = ExtResource("11_hnr68")
-audio_player = NodePath(".")
 
 [node name="Turrets" type="Node" parent="."]
 script = ExtResource("8_5kvr3")

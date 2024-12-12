@@ -12,6 +12,7 @@ signal died(value: int)
 func _ready() -> void:
 	$HealthBar.max_value = health
 	$HealthBar.value = health
+	$Sprite2D/AnimationPlayer.play("saber_move_left")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
