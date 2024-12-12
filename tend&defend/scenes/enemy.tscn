@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://uee07313050q"]
+[gd_scene load_steps=15 format=3 uid="uid://uee07313050q"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_dytbo"]
 [ext_resource type="Texture2D" uid="uid://dqpmf7f2d55do" path="res://assets/Enemy/Enemy (1) (2).png" id="2_g0fw6"]
@@ -132,6 +132,39 @@ tracks/0/keys = {
 "values": [26, 27, 28, 29, 30]
 }
 
+[sub_resource type="Animation" id="Animation_vjg00"]
+resource_name = "machete_move_left"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [30, 31, 32, 33]
+}
+
+[sub_resource type="Animation" id="Animation_utfb5"]
+resource_name = "machete_death"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [34, 35, 36, 37, 38, 39, 40]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xsy4n"]
 _data = {
 "RESET": SubResource("Animation_uys2l"),
@@ -139,6 +172,8 @@ _data = {
 "cloak_death": SubResource("Animation_amupw"),
 "cloak_move_left": SubResource("Animation_ex7my"),
 "machete_attack": SubResource("Animation_vstgv"),
+"machete_death": SubResource("Animation_utfb5"),
+"machete_move_left": SubResource("Animation_vjg00"),
 "saber_attack": SubResource("Animation_y1dnh"),
 "saber_death": SubResource("Animation_0gwxl"),
 "saber_move_left": SubResource("Animation_8wraw")
