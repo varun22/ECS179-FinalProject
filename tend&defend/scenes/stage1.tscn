@@ -16,8 +16,10 @@ ui = NodePath("UI")
 
 [node name="Player" parent="." instance=ExtResource("1_4ps2d")]
 z_index = 1
-position = Vector2(528, 752)
+position = Vector2(340, 755)
 scale = Vector2(3, 3)
+collision_mask = 3
+motion_mode = 1
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 504)
@@ -43,19 +45,19 @@ script = ExtResource("4_mlgcr")
 enemy = ExtResource("5_mcqh0")
 
 [node name="EnemySpawn1" type="Node2D" parent="EnemySpawns"]
-position = Vector2(920, 552)
+position = Vector2(1880, 560)
 
 [node name="EnemySpawn2" type="Node2D" parent="EnemySpawns"]
-position = Vector2(856, 672)
+position = Vector2(1880, 670)
 
 [node name="EnemySpawn3" type="Node2D" parent="EnemySpawns"]
-position = Vector2(792, 776)
+position = Vector2(1880, 770)
 
 [node name="EnemySpawn4" type="Node2D" parent="EnemySpawns"]
-position = Vector2(744, 888)
+position = Vector2(1880, 896)
 
 [node name="EnemySpawn5" type="Node2D" parent="EnemySpawns"]
-position = Vector2(704, 1024)
+position = Vector2(1880, 1020)
 
 [node name="Turrets" type="Node" parent="."]
 

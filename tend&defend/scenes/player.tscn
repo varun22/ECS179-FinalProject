@@ -1,7 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://c1lx1llaevewm"]
+[gd_scene load_steps=21 format=3 uid="uid://c1lx1llaevewm"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_bti5u"]
 [ext_resource type="Texture2D" uid="uid://d2yk2p0inqd7c" path="res://assets/placeholder assets/knight.png" id="1_cljg5"]
+[ext_resource type="Script" path="res://scripts/hit_box.gd" id="3_kh3lg"]
+[ext_resource type="Script" path="res://scripts/hurt_box.gd" id="4_t6hl7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fey8d"]
 atlas = ExtResource("1_cljg5")
@@ -103,6 +105,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imwne"]
 size = Vector2(13, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wj0x2"]
+size = Vector2(16.5, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ey3hs"]
+size = Vector2(13, 20)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_bti5u")
 
@@ -114,3 +122,22 @@ frame_progress = 0.898551
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 3)
 shape = SubResource("RectangleShape2D_imwne")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("3_kh3lg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(14.75, 6)
+shape = SubResource("RectangleShape2D_wj0x2")
+disabled = true
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("4_t6hl7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_ey3hs")

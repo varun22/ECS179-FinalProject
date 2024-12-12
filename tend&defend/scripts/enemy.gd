@@ -15,15 +15,23 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	move_and_slide()
+	
 	self.global_position.x -= speed * delta
 	#print(speed * delta)
 	if self.global_position.x < 10:
-		print("Enemy has made reach the end")
+		print("Enemy has reached the end")
 		#Delete this later! This is just for testing UI
 		_enemy_died()
 		
 		queue_free()
 		
+func take_damage(damage:int) -> void:
+	health -= damage
+	if 0 >= health:
+		_enemy_died()
+		queue_free()
+
 func _enemy_died() -> void:
 	print("Enemy has died")
 	#Increment UI
