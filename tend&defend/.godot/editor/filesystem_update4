@@ -13,3 +13,4 @@ res://scenes/sound_manager.tscn
 res://scripts/turret.gd
 res://scripts/turret_factory.gd
 res://scripts/enemy.gd
+res://scripts/player.gd

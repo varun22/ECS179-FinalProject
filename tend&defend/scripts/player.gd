@@ -3,7 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-
+func _ready() -> void:
+	$Sprite2d/AnimationPlayer.play("base_player_idle")
 func _physics_process(delta: float) -> void:
 	pass
 	## Add the gravity.
