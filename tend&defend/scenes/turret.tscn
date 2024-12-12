@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://26f3kc4nm0yv"]
+[gd_scene load_steps=16 format=3 uid="uid://26f3kc4nm0yv"]
 
 [ext_resource type="Script" path="res://scripts/turret.gd" id="1_d13qn"]
 [ext_resource type="PackedScene" uid="uid://d1oxoghresfh5" path="res://scenes/projectile.tscn" id="2_gg628"]
-[ext_resource type="Texture2D" uid="uid://qvdvrnblfu5l" path="res://assets/Tower/Base_Turret.png" id="3_ucqc7"]
+[ext_resource type="Texture2D" uid="uid://bflfdbu0lu527" path="res://assets/Tower/Base_Turret (1).png" id="3_qugkf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2efx"]
 size = Vector2(12, 19)
@@ -70,12 +70,114 @@ tracks/0/keys = {
 "values": [6, 7, 8, 9, 10, 11, 13, 14]
 }
 
+[sub_resource type="Animation" id="Animation_wg4xw"]
+resource_name = "freq_tower_attack"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [15, 16, 17, 18, 19, 15]
+}
+
+[sub_resource type="Animation" id="Animation_ddhko"]
+resource_name = "freq_turret"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [15, 15]
+}
+
+[sub_resource type="Animation" id="Animation_uqetc"]
+resource_name = "power_turret"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [20, 20]
+}
+
+[sub_resource type="Animation" id="Animation_ro4ky"]
+resource_name = "power_turret_attack"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [20, 21, 22, 23, 24, 25, 20]
+}
+
+[sub_resource type="Animation" id="Animation_se0wj"]
+resource_name = "range_turret"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [26, 26]
+}
+
+[sub_resource type="Animation" id="Animation_i4moa"]
+resource_name = "range_turret_attack"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [26, 27, 28, 29, 30, 26]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7v3cs"]
 _data = {
 "Base_tower": SubResource("Animation_ikmqo"),
 "RESET": SubResource("Animation_u7yus"),
 "base_tower_attack": SubResource("Animation_vjta6"),
-"base_tower_death": SubResource("Animation_7clfk")
+"base_tower_death": SubResource("Animation_7clfk"),
+"freq_tower_attack": SubResource("Animation_wg4xw"),
+"freq_turret": SubResource("Animation_ddhko"),
+"power_turret": SubResource("Animation_uqetc"),
+"power_turret_attack": SubResource("Animation_ro4ky"),
+"range_turret": SubResource("Animation_se0wj"),
+"range_turret_attack": SubResource("Animation_i4moa")
 }
 
 [node name="Turret" type="StaticBody2D"]
@@ -89,9 +191,9 @@ shape = SubResource("RectangleShape2D_q2efx")
 [node name="Turret" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("3_ucqc7")
+texture = ExtResource("3_qugkf")
 hframes = 4
-vframes = 4
+vframes = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Turret"]
 libraries = {

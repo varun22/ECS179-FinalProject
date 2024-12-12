@@ -8,6 +8,7 @@ signal wave_update(value: int)
 
 @onready var enemy_fact:EnemyFactory = $"../EnemySpawns"
 @onready var turret_fact:TurretFactory = $"../Turrets"
+@onready var animations = $"../Turret/AnimationPlayer"
 
 # Array to store which lane to spawn each enemy in
 var placement_array:Array[int]
