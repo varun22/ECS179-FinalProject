@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://def1soyymjv5r"]
+[gd_scene load_steps=24 format=3 uid="uid://def1soyymjv5r"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_fkbpw"]
 [ext_resource type="Texture2D" uid="uid://dr32en0fww6at" path="res://assets/menu screen/sky (2).png" id="2_vgeju"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c3lcro4grd4pm" path="res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/[3] Hover.png" id="11_1qwxb"]
 [ext_resource type="Texture2D" uid="uid://sh7boffh3nau" path="res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/[2] Clicked.png" id="12_u1edr"]
 [ext_resource type="Texture2D" uid="uid://us7yaa6461qk" path="res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[2] Red/[1] Normal.png" id="13_rahs0"]
+[ext_resource type="PackedScene" uid="uid://gr765jgn4n5p" path="res://scenes/sound_manager.tscn" id="14_fq2k1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ijvoo"]
 texture = ExtResource("5_0hyy4")
@@ -114,6 +115,8 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_6dn0x")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jl86p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_utgvw")
 text = "Exit"
+
+[node name="soundManager" parent="." instance=ExtResource("14_fq2k1")]
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]

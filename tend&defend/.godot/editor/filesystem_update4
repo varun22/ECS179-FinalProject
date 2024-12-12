@@ -21,3 +21,10 @@ res://scripts/buy_phase.gd
 res://scripts/global_vars.gd
 res://scripts/turret_type.gd
 res://scripts/ui.gd
+res://scripts/enemy_factory.gd
+res://scripts/enemy_spec.gd
+res://scripts/projectile.gd
+res://scripts/turret_factory.gd
+res://scripts/signals.gd
+res://scripts/sound_manager.gd
+res://scenes/sound_manager.tscn

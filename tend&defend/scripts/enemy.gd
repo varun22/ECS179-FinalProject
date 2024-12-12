@@ -7,6 +7,8 @@ signal died(value: int)
 @export var damage:float = 10
 @export var speed:float = 100
 @export var health:float = 100
+# Type of enemy, 1, 2, or 3
+var type:int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,6 +31,12 @@ func _enemy_died() -> void:
 	#print("Enemy has died")
 	#Increment UI
 	died.emit(100)
+	if type == 1:
+		globalVars.currency += 10.0
+	elif type == 2:
+		globalVars.currency += 20.0
+	elif type == 3:
+		globalVars.currency += 30.0
 
 # Function for when enemies take damage form projectile
 func take_damage(damage_amt: float) -> void:

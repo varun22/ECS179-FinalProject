@@ -36,11 +36,13 @@ func shoot() -> void:
 	
 	# Build proj based off spec and add it as child of turret
 	var new_proj = proj_fact.build(proj_spec)
-	
 	add_child(new_proj)
+	
+	signals.turret_shot.emit()
 	
 	# Start timer for next shoot
 	shoot_timer.start(frequency)
+	
 	
 func take_damage(damage_amt: float) -> void:
 	health -= damage_amt

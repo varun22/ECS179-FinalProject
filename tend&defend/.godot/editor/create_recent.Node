@@ -1,9 +1,9 @@
+AudioStreamPlayer2D
+Node
 ProgressBar
 Button
-AudioStreamPlayer2D
 AnimationPlayer
 Sprite2D
-Node
 CollisionShape2D
 CharacterBody2D
 CanvasLayer
@@ -12,4 +12,3 @@ Label
 HBoxContainer
 VBoxContainer
 MarginContainer
-StaticBody2D

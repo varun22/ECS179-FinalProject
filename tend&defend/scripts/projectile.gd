@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# Sets initial velocity of projectile
-	move_and_collide(Vector2(100, 0) * delta)
+	move_and_collide(Vector2(1000, 0) * delta)
 	if range_timer.is_stopped():
 		queue_free()
 

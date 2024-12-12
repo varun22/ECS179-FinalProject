@@ -1,10 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://b3fwx0oivo4y2"]
+[gd_scene load_steps=31 format=3 uid="uid://b3fwx0oivo4y2"]
 
 [ext_resource type="Script" path="res://scripts/buy_phase.gd" id="1_coiml"]
 [ext_resource type="Texture2D" uid="uid://3rkprs6gqxi6" path="res://assets/game images/BG.png" id="1_nlvc3"]
 [ext_resource type="Texture2D" uid="uid://dgf4ql7x3tfjs" path="res://assets/game images/Floor.png" id="2_sk6yv"]
 [ext_resource type="FontFile" uid="uid://dnlncfc0vlj4a" path="res://assets/fonts/PixelOperator8.ttf" id="4_b2pb8"]
 [ext_resource type="PackedScene" uid="uid://eghh27wxoi76" path="res://scenes/ui.tscn" id="5_sv8g7"]
+[ext_resource type="PackedScene" uid="uid://gr765jgn4n5p" path="res://scenes/sound_manager.tscn" id="6_t0jfv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32qo3"]
 bg_color = Color(0.756669, 0.479334, 0.963906, 1)
@@ -632,6 +633,8 @@ offset_bottom = 95.0
 theme_override_styles/background = SubResource("StyleBoxFlat_jijye")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mwar2")
 show_percentage = false
+
+[node name="soundManager" parent="." instance=ExtResource("6_t0jfv")]
 
 [connection signal="pressed" from="Lane 1/Power Upgrade 1" to="." method="_on_power_upgrade_1_pressed"]
 [connection signal="pressed" from="Lane 1/Range Upgrade 1" to="." method="_on_range_upgrade_1_pressed"]

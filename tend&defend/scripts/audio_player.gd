@@ -33,6 +33,18 @@ func play_stage1():
 func play_main_menu():
 	play_music(main_menu_music)
 
+# Helper function to play sound effects
+func play_SFX(stream: AudioStream, volume: float):
+	var sfx_player = AudioStreamPlayer2D.new()
+	sfx_player.stream = stream
+	sfx_player.volume_db = volume
+	add_child(sfx_player)
+	sfx_player.play()
+	
+	await sfx_player.finished
+	
+	sfx_player.queue_free()
+
 # Called by wave manager
 func on_wave_update(wave: int) -> void:
 	current_wave = wave

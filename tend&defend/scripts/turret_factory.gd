@@ -4,7 +4,7 @@ extends Node
 @export var turret:PackedScene
 
 # Stores base values for turrets
-var base_reach:float = 5.0
+var base_reach:float = 0.6
 var base_damage:float = 10.0
 var base_frequency:float = 5.0
 
@@ -30,18 +30,20 @@ func rebuild() -> void:
 			new_turret.type = turretType.Type.BASIC
 		elif turretType.type_array[i] == turretType.Type.POWER:
 			new_turret.reach = base_reach
-			new_turret.damage = base_damage + (10.0 * (turretType.power_level[i] - 1))
+			new_turret.damage = base_damage + (5.0 * (turretType.power_level[i] - 1))
 			new_turret.frequency = base_frequency
 			new_turret.type = turretType.Type.POWER
 		elif turretType.type_array[i] == turretType.Type.REACH:
-			new_turret.reach = base_reach + (1.0 * (turretType.reach_level[i] - 1))
+			new_turret.reach = base_reach + (0.05 * (turretType.reach_level[i] - 1))
 			new_turret.damage = base_damage
 			new_turret.frequency = base_frequency
 			new_turret.type = turretType.Type.REACH
 		elif turretType.type_array[i] == turretType.Type.FREQUENCY:
 			new_turret.reach = base_reach
 			new_turret.damage = base_damage
-			new_turret.frequency = base_frequency - (0.5 * (turretType.frequency_level[i] - 1))
+			new_turret.frequency = base_frequency - (0.1 * (turretType.frequency_level[i] - 1))
+			if new_turret.frequency < 0.5:
+				new_turret.frequency = 0.5
 			new_turret.type = turretType.Type.FREQUENCY
 		# Place turrets in correct position based on turret number
 		if i == 0:

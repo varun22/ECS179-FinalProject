@@ -5,6 +5,10 @@ extends Node
 var currency: int = 1000
 # Global wave number
 var wave_num: int = 1
+var num_to_spawn_one: int = 5
+var num_to_spawn_two: int = 0
+var num_to_spawn_three: int = 0
+var num_to_spawn_total: int = 5
 # Global score
 var score:int
 # Global game health

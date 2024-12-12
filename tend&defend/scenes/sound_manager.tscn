@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://gr765jgn4n5p"]
+
+[ext_resource type="Script" path="res://scripts/sound_manager.gd" id="1_w8jf8"]
+[ext_resource type="AudioStream" uid="uid://dy8bfoojqgbko" path="res://assets/sfx/shoot.mp3" id="2_icg7n"]
+[ext_resource type="AudioStream" uid="uid://bp1uqu2q3p0kk" path="res://assets/sfx/click.mp3" id="3_nycs1"]
+
+[node name="soundManager" type="Node"]
+script = ExtResource("1_w8jf8")
+
+[node name="shoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_icg7n")
+
+[node name="buttonClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nycs1")

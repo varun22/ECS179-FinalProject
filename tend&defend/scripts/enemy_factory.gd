@@ -10,5 +10,6 @@ func build(enemy_spec:EnemySpec) -> Enemy:
 	new_enemy.damage = enemy_spec.damage
 	new_enemy.speed = enemy_spec.speed
 	new_enemy.health = enemy_spec.health
+	new_enemy.type = enemy_spec.type
 	
 	return new_enemy
