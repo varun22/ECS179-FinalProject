@@ -1,5 +1,6 @@
 Sprite2D
 AnimationPlayer
+AnimatedSprite2D
 AudioStreamPlayer2D
 Node
 ProgressBar
@@ -11,4 +12,3 @@ Control
 Label
 HBoxContainer
 VBoxContainer
-MarginContainer
