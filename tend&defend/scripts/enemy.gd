@@ -32,21 +32,25 @@ func _process(delta: float) -> void:
 		queue_free()
 		
 func _enemy_died() -> void:
-	#print("Enemy has died")
-	#Increment UI
+	# Play the appropriate death animation
 	if type == 1:
 		$Sprite2D/AnimationPlayer.play("saber_death")
 	elif type == 2:
 		$Sprite2D/AnimationPlayer.play("cloak_death")
 	else:
 		$Sprite2D/AnimationPlayer.play("machete_death")
+
+	# Emit the died signal
 	died.emit(100)
-	if type == 1:
-		globalVars.currency += 10.0
-	elif type == 2:
-		globalVars.currency += 20.0
-	elif type == 3:
-		globalVars.currency += 30.0
+
+	# Instance the Banana scene and set its position
+	var banana_scene = preload("res://scenes/banana.tscn") 
+	var banana_instance = banana_scene.instance()
+	banana_instance.global_position = self.global_position
+
+	# Add the Banana to the current scene
+	get_tree().get_current_scene().add_child(banana_instance)
+
 
 # Function for when enemies take damage form projectile
 func take_damage(damage_amt: float) -> void:
@@ -56,4 +60,5 @@ func take_damage(damage_amt: float) -> void:
 	if health <= 0:
 		_enemy_died()
 		queue_free()
+
 		

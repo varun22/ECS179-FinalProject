@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://clblmo6lp2p63"]
 
-[ext_resource type="Script" path="res://banana.gd" id="1_wrrrb"]
+[ext_resource type="Script" path="res://scripts/banana.gd" id="1_wrrrb"]
 [ext_resource type="Texture2D" uid="uid://bfdacygb6it72" path="res://assets/Banana/Banana.png" id="2_pn06q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k10n7"]
@@ -135,7 +135,6 @@ radius = 11.0
 
 [node name="Area2D" type="Area2D"]
 scale = Vector2(2.72, 2.72)
-collision_mask = 5
 script = ExtResource("1_wrrrb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
