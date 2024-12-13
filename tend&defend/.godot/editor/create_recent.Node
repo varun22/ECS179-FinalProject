@@ -1,3 +1,4 @@
+Sprite2D
 Button
 Node
 CollisionShape2D
@@ -5,7 +6,6 @@ HurtBox
 AnimationTree
 HitBox
 Area2D
-Sprite2D
 AnimationPlayer
 AnimatedSprite2D
 AudioStreamPlayer2D

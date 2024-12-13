@@ -76,4 +76,4 @@ projectile = ExtResource("11_3dyi8")
 [node name="soundManager" parent="." instance=ExtResource("13_ulv4p")]
 
 [node name="Area2D" parent="." instance=ExtResource("14_7ejcn")]
-position = Vector2(1665, 783)
+position = Vector2(1376, 801)

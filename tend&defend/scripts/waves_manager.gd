@@ -41,6 +41,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if check_end():
+		signals.new_wave.emit()
 		globalVars.wave_num += 1
 		done_spawning = false
 		#switch scene to buy menu, on player exit or timer end, switch back to stage1
