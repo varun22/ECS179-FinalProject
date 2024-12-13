@@ -6,6 +6,7 @@ extends Node
 func _ready() -> void:
 	signals.turret_shot.connect(_on_turret_shoot)
 	signals.button_click.connect(_on_button_click)
+	
 
 # Two ways of doing it
 func _on_turret_shoot() -> void:

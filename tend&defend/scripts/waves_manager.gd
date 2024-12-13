@@ -24,7 +24,7 @@ var done_spawning:bool = false
 func _ready() -> void:
 	# Builds turrets based on global types and stats in turret_type
 	turret_fact.rebuild()
-	await wait(3.0) #use for buy phase
+	await wait(0.1) #use for buy phase
 	calc_num_to_spawn()
 	create_enemy_schedule()
 	spawn_enemies()
@@ -41,6 +41,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if check_end():
+		signals.new_wave.emit()
 		globalVars.wave_num += 1
 		done_spawning = false
 		#switch scene to buy menu, on player exit or timer end, switch back to stage1

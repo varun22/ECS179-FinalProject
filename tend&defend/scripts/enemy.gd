@@ -29,7 +29,6 @@ func _process(delta: float) -> void:
 		#print("Enemy has made reach the end")
 		#Delete this later! This is just for testing UI
 		_enemy_died()
-		
 		queue_free()
 		
 func _enemy_died() -> void:
