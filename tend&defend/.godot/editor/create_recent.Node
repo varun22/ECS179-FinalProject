@@ -1,3 +1,5 @@
+Button
+Node
 CollisionShape2D
 HurtBox
 AnimationTree
@@ -7,8 +9,6 @@ Sprite2D
 AnimationPlayer
 AnimatedSprite2D
 AudioStreamPlayer2D
-Node
 ProgressBar
-Button
 CharacterBody2D
 CanvasLayer

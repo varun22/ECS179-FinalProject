@@ -16,3 +16,4 @@ res://scripts/player.gd
 res://scripts/enemy.gd
 res://scripts/turret.gd
 res://scripts/turret_factory.gd
+res://scripts/buy_phase.gd

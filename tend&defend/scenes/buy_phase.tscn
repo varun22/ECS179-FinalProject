@@ -1,11 +1,22 @@
-[gd_scene load_steps=31 format=3 uid="uid://b3fwx0oivo4y2"]
+[gd_scene load_steps=35 format=3 uid="uid://b3fwx0oivo4y2"]
 
 [ext_resource type="Script" path="res://scripts/buy_phase.gd" id="1_coiml"]
 [ext_resource type="Texture2D" uid="uid://3rkprs6gqxi6" path="res://assets/game images/BG.png" id="1_nlvc3"]
 [ext_resource type="Texture2D" uid="uid://dgf4ql7x3tfjs" path="res://assets/game images/Floor.png" id="2_sk6yv"]
 [ext_resource type="FontFile" uid="uid://dnlncfc0vlj4a" path="res://assets/fonts/PixelOperator8.ttf" id="4_b2pb8"]
+[ext_resource type="Texture2D" uid="uid://cmxj3w2tl3214" path="res://assets/Player/weapons/Rod.png" id="5_55hff"]
 [ext_resource type="PackedScene" uid="uid://eghh27wxoi76" path="res://scenes/ui.tscn" id="5_sv8g7"]
+[ext_resource type="Texture2D" uid="uid://d0g1xg21qixu1" path="res://assets/Player/weapons/hammer.png" id="6_8n3uo"]
 [ext_resource type="PackedScene" uid="uid://gr765jgn4n5p" path="res://scenes/sound_manager.tscn" id="6_t0jfv"]
+[ext_resource type="Texture2D" uid="uid://c04hijgalggqp" path="res://assets/Player/weapons/racket.png" id="7_w40tg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5uhv"]
+bg_color = Color(0.803922, 0.498039, 0.196078, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+corner_detail = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32qo3"]
 bg_color = Color(0.756669, 0.479334, 0.963906, 1)
@@ -266,6 +277,44 @@ position = Vector2(959.911, 375.799)
 scale = Vector2(0.999907, 1.30405)
 texture = ExtResource("2_sk6yv")
 metadata/_edit_lock_ = true
+
+[node name="Lane 0" type="Node" parent="."]
+
+[node name="Stick" type="Button" parent="Lane 0"]
+offset_left = 655.0
+offset_top = 440.0
+offset_right = 805.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5uhv")
+text = "Stick"
+icon = ExtResource("5_55hff")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Hammer" type="Button" parent="Lane 0"]
+offset_left = 980.0
+offset_top = 440.0
+offset_right = 1130.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5uhv")
+text = "Hammer"
+icon = ExtResource("6_8n3uo")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Racket" type="Button" parent="Lane 0"]
+offset_left = 1315.0
+offset_top = 440.0
+offset_right = 1465.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5uhv")
+text = "Racket"
+icon = ExtResource("7_w40tg")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Lane 1" type="Node" parent="."]
 
@@ -636,6 +685,9 @@ show_percentage = false
 
 [node name="soundManager" parent="." instance=ExtResource("6_t0jfv")]
 
+[connection signal="pressed" from="Lane 0/Stick" to="." method="_on_stick_pressed"]
+[connection signal="pressed" from="Lane 0/Hammer" to="." method="_on_hammer_pressed"]
+[connection signal="pressed" from="Lane 0/Racket" to="." method="_on_racket_pressed"]
 [connection signal="pressed" from="Lane 1/Power Upgrade 1" to="." method="_on_power_upgrade_1_pressed"]
 [connection signal="pressed" from="Lane 1/Range Upgrade 1" to="." method="_on_range_upgrade_1_pressed"]
 [connection signal="pressed" from="Lane 1/Frequency Upgrade 1" to="." method="_on_frequency_upgrade_1_pressed"]
