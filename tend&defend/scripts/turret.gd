@@ -53,6 +53,7 @@ func shoot() -> void:
 	
 	
 func take_damage(damage_amt: float) -> void:
+	print("took damage ", damage_amt)
 	health -= damage_amt
 	turretType.turret_health[lane] -= damage_amt
 	if health <= 0:

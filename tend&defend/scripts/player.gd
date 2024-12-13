@@ -6,7 +6,7 @@ const JUMP_VELOCITY = -400.0
 const MAX_X: float = 1880.0
 const HEALTH: float = 100.0
 
-var y_positions: Array = [540, 650, 755, 870, 980]
+var y_positions: Array = [555, 670, 785, 900, 1015]
 var current_y_index: int = 2
 var current_health: float = 100.0
 var _dead: bool = false
@@ -65,7 +65,6 @@ func _physics_process(delta: float) -> void:
 	var min_x = 340 - (current_y_index - 2) * 77
 	
 	if move_input > 0.1:
-		print("moving")
 		if type == 1:
 			$Sprite2d/AnimationPlayer.play("stick_walk_right")
 		elif type == 2:
@@ -76,7 +75,6 @@ func _physics_process(delta: float) -> void:
 			$Sprite2d/AnimationPlayer.play("racket_move_right")
 		right_cmd.execute(self)
 	elif Input.is_action_just_pressed("attack"):
-		print("attacked")
 		if type == 1:
 			$Sprite2d/AnimationPlayer.play("stick_attack")
 		elif type == 2:

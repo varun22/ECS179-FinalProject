@@ -14,3 +14,5 @@ res://scripts/hit_box.gd
 res://scripts/hurt_box.gd
 res://scripts/player.gd
 res://scripts/enemy.gd
+res://scripts/turret.gd
+res://scripts/turret_factory.gd

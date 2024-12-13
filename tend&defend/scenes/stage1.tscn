@@ -48,19 +48,19 @@ script = ExtResource("4_mlgcr")
 enemy = ExtResource("5_mcqh0")
 
 [node name="EnemySpawn1" type="Node2D" parent="EnemySpawns"]
-position = Vector2(1825, 536)
+position = Vector2(1900, 545)
 
 [node name="EnemySpawn2" type="Node2D" parent="EnemySpawns"]
-position = Vector2(1812, 648)
+position = Vector2(1850, 660)
 
 [node name="EnemySpawn3" type="Node2D" parent="EnemySpawns"]
-position = Vector2(1807, 756)
+position = Vector2(1800, 775)
 
 [node name="EnemySpawn4" type="Node2D" parent="EnemySpawns"]
-position = Vector2(1802, 867)
+position = Vector2(1750, 900)
 
 [node name="EnemySpawn5" type="Node2D" parent="EnemySpawns"]
-position = Vector2(1807, 972)
+position = Vector2(1700, 1015)
 
 [node name="UI" parent="." instance=ExtResource("7_r3htk")]
 

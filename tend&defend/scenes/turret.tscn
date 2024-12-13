@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://26f3kc4nm0yv"]
+[gd_scene load_steps=18 format=3 uid="uid://26f3kc4nm0yv"]
 
 [ext_resource type="Script" path="res://scripts/turret.gd" id="1_d13qn"]
 [ext_resource type="PackedScene" uid="uid://d1oxoghresfh5" path="res://scenes/projectile.tscn" id="2_gg628"]
 [ext_resource type="Texture2D" uid="uid://bflfdbu0lu527" path="res://assets/Tower/Base_Turret (1).png" id="3_qugkf"]
+[ext_resource type="Script" path="res://scripts/hurt_box.gd" id="4_amow8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2efx"]
 size = Vector2(12, 19)
@@ -180,7 +181,11 @@ _data = {
 "range_turret_attack": SubResource("Animation_i4moa")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2f3gv"]
+size = Vector2(44, 125)
+
 [node name="Turret" type="StaticBody2D"]
+collision_mask = 2
 script = ExtResource("1_d13qn")
 projectile = ExtResource("2_gg628")
 
@@ -199,3 +204,12 @@ vframes = 8
 libraries = {
 "": SubResource("AnimationLibrary_7v3cs")
 }
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("4_amow8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, 14.5)
+shape = SubResource("RectangleShape2D_2f3gv")

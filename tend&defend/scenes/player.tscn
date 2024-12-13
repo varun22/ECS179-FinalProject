@@ -87,7 +87,7 @@ tracks/1/path = NodePath("HitBox/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0333333, 0.3, 0.566667),
+"times": PackedFloat32Array(0, 0.3, 0.566667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -278,7 +278,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imwne"]
-size = Vector2(15.5, 46)
+size = Vector2(15.5, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gauyn"]
 size = Vector2(21, 23)
@@ -287,6 +287,7 @@ size = Vector2(21, 23)
 size = Vector2(16, 46)
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 2
 script = ExtResource("1_bti5u")
 
 [node name="Sprite2d" type="Sprite2D" parent="."]
@@ -302,10 +303,12 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-17.75, -6)
+position = Vector2(-17.75, 5)
 shape = SubResource("RectangleShape2D_imwne")
 
 [node name="HitBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 script = ExtResource("3_2vlp2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
@@ -313,6 +316,8 @@ position = Vector2(0.5, 5.5)
 shape = SubResource("RectangleShape2D_gauyn")
 
 [node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
 script = ExtResource("4_mhrt5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
