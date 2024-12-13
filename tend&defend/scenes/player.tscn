@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://c1lx1llaevewm"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_bti5u"]
-[ext_resource type="Texture2D" uid="uid://babfv06tejedp" path="res://assets/Player/Character  Sheet.png" id="2_e2jux"]
+[ext_resource type="Texture2D" uid="uid://cdbibei17nass" path="res://assets/Player/Character  Sheet (1).png" id="2_ab0o7"]
 
 [sub_resource type="Animation" id="Animation_dx16v"]
 resource_name = "base_player_idle"
@@ -258,7 +258,7 @@ size = Vector2(13, 20)
 script = ExtResource("1_bti5u")
 
 [node name="Sprite2d" type="Sprite2D" parent="."]
-texture = ExtResource("2_e2jux")
+texture = ExtResource("2_ab0o7")
 hframes = 6
 vframes = 7
 frame = 6
