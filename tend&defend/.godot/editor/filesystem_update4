@@ -10,7 +10,7 @@ res://scenes/projectile.tscn
 res://scenes/audio_player.tscn
 res://scenes/buy_phase.tscn
 res://scenes/sound_manager.tscn
-res://scripts/turret.gd
-res://scripts/turret_factory.gd
-res://scripts/enemy.gd
+res://scripts/hit_box.gd
+res://scripts/hurt_box.gd
 res://scripts/player.gd
+res://scripts/enemy.gd
