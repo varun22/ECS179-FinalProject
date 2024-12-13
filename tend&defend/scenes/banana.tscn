@@ -135,13 +135,13 @@ radius = 12.0416
 
 [node name="Banana" type="Area2D"]
 scale = Vector2(2.92001, 2.92001)
-collision_layer = 8
+collision_layer = 2
 script = ExtResource("1_63kg8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xjgek")
 autoplay = "default"
-frame_progress = 0.573573
+frame_progress = 0.5096
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
