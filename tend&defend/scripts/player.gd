@@ -123,8 +123,8 @@ func take_damage(damage:int) -> void:
 	current_health -= damage
 	if 0 >= current_health:
 		_dead = true
+		$Sprite2d/AnimationPlayer.play("death")
 	
-
 
 	## Add the gravity.
 	#if not is_on_floor():
