@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/hurt_box.gd" id="4_amow8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2efx"]
-size = Vector2(12, 19)
+size = Vector2(44, 125)
 
 [sub_resource type="Animation" id="Animation_ikmqo"]
 resource_name = "Base_tower"
@@ -185,12 +185,13 @@ _data = {
 size = Vector2(44, 125)
 
 [node name="Turret" type="StaticBody2D"]
-collision_mask = 2
+collision_layer = 8
+collision_mask = 4
 script = ExtResource("1_d13qn")
 projectile = ExtResource("2_gg628")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
+position = Vector2(0, 14.5)
 shape = SubResource("RectangleShape2D_q2efx")
 
 [node name="Turret" type="Sprite2D" parent="."]
@@ -206,7 +207,7 @@ libraries = {
 }
 
 [node name="HurtBox" type="Area2D" parent="."]
-collision_layer = 8
+collision_layer = 16
 collision_mask = 0
 script = ExtResource("4_amow8")
 

@@ -21,7 +21,7 @@ ui = NodePath("UI")
 
 [node name="Player" parent="." instance=ExtResource("1_4ps2d")]
 z_index = 2
-position = Vector2(136, 596)
+position = Vector2(409, 785)
 scale = Vector2(3, 3)
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -57,10 +57,10 @@ position = Vector2(1850, 660)
 position = Vector2(1800, 775)
 
 [node name="EnemySpawn4" type="Node2D" parent="EnemySpawns"]
-position = Vector2(1750, 900)
+position = Vector2(1750, 890)
 
 [node name="EnemySpawn5" type="Node2D" parent="EnemySpawns"]
-position = Vector2(1700, 1015)
+position = Vector2(1700, 1005)
 
 [node name="UI" parent="." instance=ExtResource("7_r3htk")]
 

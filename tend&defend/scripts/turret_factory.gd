@@ -5,7 +5,7 @@ extends Node
 
 # Stores base values for turrets
 var base_reach:float = 0.6
-var base_damage:float = 5.0
+var base_damage:float = 25.0
 var base_frequency:float = 5.0
 
 # Builds and returns a turret
@@ -48,22 +48,22 @@ func rebuild() -> void:
 		# Place turrets in correct position based on turret number
 		if i == 0:
 			new_turret.position.x = 425
-			new_turret.position.y = 545
+			new_turret.position.y = 540
 			new_turret.lane = 1
 		elif i == 1:
 			new_turret.position.x = 345
-			new_turret.position.y = 665
+			new_turret.position.y = 660
 			new_turret.lane = 2
 		elif i == 2:
 			new_turret.position.x = 265
-			new_turret.position.y = 785
+			new_turret.position.y = 780
 			new_turret.lane = 3
 		elif i == 3:
 			new_turret.position.x = 185
-			new_turret.position.y = 905
+			new_turret.position.y = 900
 			new_turret.lane = 4
 		elif i == 4:
 			new_turret.position.x = 105
-			new_turret.position.y = 1025
+			new_turret.position.y = 1020
 			new_turret.lane = 5
 		$".".add_child(new_turret)

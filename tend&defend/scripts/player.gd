@@ -61,9 +61,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	var move_input = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	
-	var min_x = 340 - (current_y_index - 2) * 77
-	
+		
 	if move_input > 0.1:
 		if type == 1:
 			$Sprite2d/AnimationPlayer.play("stick_walk_right")
@@ -108,7 +106,7 @@ func _physics_process(delta: float) -> void:
 		idle.execute(self)
 		
 	
-	self.global_position.x = clamp(self.global_position.x, min_x, MAX_X)
+	self.global_position.x = clamp(self.global_position.x, 0, MAX_X)
 		
 	if Input.is_action_just_pressed("move_up"):
 		move_up()
