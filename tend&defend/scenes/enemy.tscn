@@ -240,4 +240,3 @@ script = ExtResource("4_hpyyu")
 position = Vector2(-13.2, 4)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jjrja")
-disabled = true
