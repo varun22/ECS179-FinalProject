@@ -1,11 +1,11 @@
 CollisionShape2D
+AnimatedSprite2D
+Area2D
 HurtBox
 AnimationTree
 HitBox
-Area2D
 Sprite2D
 AnimationPlayer
-AnimatedSprite2D
 AudioStreamPlayer2D
 Node
 ProgressBar
