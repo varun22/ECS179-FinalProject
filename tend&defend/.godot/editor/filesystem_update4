@@ -17,3 +17,5 @@ res://scripts/enemy.gd
 res://scripts/turret.gd
 res://scripts/turret_factory.gd
 res://scripts/buy_phase.gd
+res://scripts/banana.gd
+res://scenes/banana.tscn

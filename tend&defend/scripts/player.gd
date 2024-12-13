@@ -32,6 +32,7 @@ var attacking : bool:
 		
 func _ready():
 	current_health = HEALTH
+	target_position = global_position
 	bind_player_input_commands()
 	
 
@@ -44,24 +45,26 @@ func bind_player_input_commands():
 func change_facing(new_facing:Facing) -> void:
 	facing = new_facing
 
+var target_position: Vector2
+var lerp_speed: float = 10.0
+
 func move_up():
 	if current_y_index > 0:
 		current_y_index -= 1
-		global_position.y = y_positions[current_y_index]
-		global_position.x += 77
+		target_position.y = y_positions[current_y_index]
+		target_position.x = global_position.x + 77
 
 func move_down():
 	if current_y_index < y_positions.size() - 1:
 		current_y_index += 1
-		global_position.y = y_positions[current_y_index]
-		global_position.x -= 77
-
+		target_position.y = y_positions[current_y_index]
+		target_position.x = global_position.x - 77
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	var move_input = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-		
+	
 	if move_input > 0.1:
 		if type == 1:
 			$Sprite2d/AnimationPlayer.play("stick_walk_right")
@@ -72,17 +75,7 @@ func _physics_process(delta: float) -> void:
 		else: 
 			$Sprite2d/AnimationPlayer.play("racket_move_right")
 		right_cmd.execute(self)
-	elif Input.is_action_just_pressed("attack"):
-		if type == 1:
-			$Sprite2d/AnimationPlayer.play("stick_attack")
-		elif type == 2:
-			$Sprite2d/AnimationPlayer.play("sword_attack")
-		elif type == 3:
-			$Sprite2d/AnimationPlayer.play("hammer_attack")
-		else: 
-			$Sprite2d/AnimationPlayer.play("racket_attack")
-		attack.execute(self)
-		
+		target_position.x += SPEED * delta 
 	elif move_input < -0.1:
 		if type == 1:
 			$Sprite2d/AnimationPlayer.play("stick_walk_right")
@@ -93,8 +86,25 @@ func _physics_process(delta: float) -> void:
 		else: 
 			$Sprite2d/AnimationPlayer.play("racket_move_right")
 		left_cmd.execute(self)
+		target_position.x -= SPEED * delta 
+	elif Input.is_action_just_pressed("attack"):
+		if type == 1:
+			$Sprite2d/AnimationPlayer.play("stick_attack")
+		elif type == 2:
+			$Sprite2d/AnimationPlayer.play("sword_attack")
+		elif type == 3:
+			$Sprite2d/AnimationPlayer.play("hammer_attack")
+		else: 
+			$Sprite2d/AnimationPlayer.play("racket_attack")
+		attack.execute(self)
+	elif Input.is_action_just_pressed("move_up"):
+		$Sprite2d/AnimationPlayer.play("jump")
+		move_up()
+	elif Input.is_action_just_pressed("move_down"):
+		$Sprite2d/AnimationPlayer.play("jump")
+		move_down()
 	else:
-		if(!$Sprite2d/AnimationPlayer.is_playing()):
+		if (!$Sprite2d/AnimationPlayer.is_playing()):
 			if type == 1:
 				$Sprite2d/AnimationPlayer.play("stick_idle")
 			elif type == 2:
@@ -104,15 +114,11 @@ func _physics_process(delta: float) -> void:
 			else: 
 				$Sprite2d/AnimationPlayer.play("racket_idle")
 		idle.execute(self)
-		
 	
-	self.global_position.x = clamp(self.global_position.x, 0, MAX_X)
+	target_position.x = clamp(target_position.x, 0, MAX_X)
+	
+	global_position = lerp(global_position, target_position, lerp_speed * delta)
 		
-	if Input.is_action_just_pressed("move_up"):
-		move_up()
-	elif Input.is_action_just_pressed("move_down"):
-		move_down()
-
 func take_damage(damage:int) -> void:
 	current_health -= damage
 	if 0 >= current_health:

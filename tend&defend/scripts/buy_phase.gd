@@ -85,14 +85,14 @@ func _process(delta: float) -> void:
 		scene_switcher.switch_scene("res://scenes/stage1.tscn")
 
 
-func _on_stick_pressed() -> void:
-	player.type = 2
-
-func _on_hammer_pressed() -> void:
-	player.type = 3
-	
-func _on_racket_pressed() -> void:
-	player.type = 4
+#func _on_stick_pressed() -> void:
+	#player.type = 2
+#
+#func _on_hammer_pressed() -> void:
+	#player.type = 3
+	#
+#func _on_racket_pressed() -> void:
+	#player.type = 4
 	
 	
 # When pressed, switches to power tower if enough currency
