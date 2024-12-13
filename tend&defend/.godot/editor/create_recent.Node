@@ -1,9 +1,10 @@
+Sprite2D
+AnimationPlayer
+AnimatedSprite2D
 AudioStreamPlayer2D
 Node
 ProgressBar
 Button
-AnimationPlayer
-Sprite2D
 CollisionShape2D
 CharacterBody2D
 CanvasLayer
@@ -11,4 +12,3 @@ Control
 Label
 HBoxContainer
 VBoxContainer
-MarginContainer

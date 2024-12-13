@@ -30,7 +30,15 @@ func _process(_delta: float) -> void:
 	
 func shoot() -> void:
 	# Make proj spec based off turret spec
-	$Turret/AnimationPlayer.play("base_tower_attack")
+	if turretType.type_array[lane-1] == turretType.Type.BASIC:
+		$Turret/AnimationPlayer.play("base_tower_attack")
+	elif turretType.type_array[lane-1] == turretType.Type.POWER:
+		$Turret/AnimationPlayer.play("power_turret_attack")
+	elif turretType.type_array[lane-1] == turretType.Type.REACH:
+		$Turret/AnimationPlayer.play("range_turret_attack")
+	elif turretType.type_array[lane-1] == turretType.Type.FREQUENCY:
+		$Turret/AnimationPlayer.play("freq_tower_attack")
+		
 	proj_spec.reach = reach
 	proj_spec.damage = damage
 	

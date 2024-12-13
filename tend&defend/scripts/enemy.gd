@@ -14,7 +14,12 @@ var type:int
 func _ready() -> void:
 	$HealthBar.max_value = health
 	$HealthBar.value = health
-	$Sprite2D/AnimationPlayer.play("saber_move_left")
+	if type == 1:
+		$Sprite2D/AnimationPlayer.play("saber_move_left")
+	elif type == 2:
+		$Sprite2D/AnimationPlayer.play("cloak_move_left")
+	else:
+		$Sprite2D/AnimationPlayer.play("machete_move_left")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -30,6 +35,12 @@ func _process(delta: float) -> void:
 func _enemy_died() -> void:
 	#print("Enemy has died")
 	#Increment UI
+	if type == 1:
+		$Sprite2D/AnimationPlayer.play("saber_death")
+	elif type == 2:
+		$Sprite2D/AnimationPlayer.play("cloak_death")
+	else:
+		$Sprite2D/AnimationPlayer.play("machete_death")
 	died.emit(100)
 	if type == 1:
 		globalVars.currency += 10.0

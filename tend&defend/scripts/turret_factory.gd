@@ -5,7 +5,7 @@ extends Node
 
 # Stores base values for turrets
 var base_reach:float = 0.6
-var base_damage:float = 10.0
+var base_damage:float = 25.0
 var base_frequency:float = 5.0
 
 # Builds and returns a turret

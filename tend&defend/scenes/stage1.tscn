@@ -21,7 +21,7 @@ ui = NodePath("UI")
 
 [node name="Player" parent="." instance=ExtResource("1_4ps2d")]
 z_index = 2
-position = Vector2(819, 474)
+position = Vector2(136, 596)
 scale = Vector2(3, 3)
 
 [node name="Background" type="Sprite2D" parent="."]
