@@ -43,13 +43,12 @@ func _enemy_died() -> void:
 	# Emit the died signal
 	died.emit(100)
 
-	# Instance the Banana scene and set its position
-	var banana_scene = preload("res://scenes/banana.tscn") 
-	var banana_instance = banana_scene.instance()
+	# Spawn a banana at the enemy's location
+	var banana_scene = preload("res://scenes/banana.tscn") # Replace with the actual path to your Banana scene
+	var banana_instance = banana_scene.instantiate()
 	banana_instance.global_position = self.global_position
+	get_parent().add_child(banana_instance)
 
-	# Add the Banana to the current scene
-	get_tree().get_current_scene().add_child(banana_instance)
 
 
 # Function for when enemies take damage form projectile

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6gjl7b7u3kis"]
+[gd_scene load_steps=15 format=3 uid="uid://c6gjl7b7u3kis"]
 
 [ext_resource type="PackedScene" uid="uid://c1lx1llaevewm" path="res://scenes/player.tscn" id="1_4ps2d"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_ycv23"]
@@ -13,8 +13,9 @@
 [ext_resource type="Script" path="res://scripts/projectile_factory.gd" id="10_a00n7"]
 [ext_resource type="PackedScene" uid="uid://d1oxoghresfh5" path="res://scenes/projectile.tscn" id="11_3dyi8"]
 [ext_resource type="PackedScene" uid="uid://gr765jgn4n5p" path="res://scenes/sound_manager.tscn" id="13_ulv4p"]
+[ext_resource type="PackedScene" uid="uid://clblmo6lp2p63" path="res://scenes/banana.tscn" id="14_e671e"]
 
-[node name="Stage1" type="Node2D" node_paths=PackedStringArray("ui")]
+[node name="a" type="Node2D" node_paths=PackedStringArray("ui")]
 process_mode = 1
 script = ExtResource("1_ycv23")
 ui = NodePath("UI")
@@ -73,3 +74,6 @@ script = ExtResource("10_a00n7")
 projectile = ExtResource("11_3dyi8")
 
 [node name="soundManager" parent="." instance=ExtResource("13_ulv4p")]
+
+[node name="Area2D" parent="." instance=ExtResource("14_e671e")]
+position = Vector2(812, 796)
