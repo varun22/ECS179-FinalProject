@@ -19,3 +19,5 @@ res://scripts/turret_factory.gd
 res://scripts/buy_phase.gd
 res://scripts/banana.gd
 res://scenes/banana.tscn
+res://scripts/global_vars.gd
+res://scripts/ui.gd
