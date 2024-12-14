@@ -139,8 +139,7 @@ While I did plan on implementing a cutscene at the very beginning to introduce t
 **Include links to your presskit materials and trailer.**
 Within our [Presskit](https://drive.google.com/file/d/1XMUI37bU57cAUlQvjEk63kfijGHDjKfg/view?usp=sharing), we utilized Google Slides to craft it to maximize creative freedom in what we wanted it to look like. Materials include [game sprites](https://drive.google.com/drive/folders/1KGMQUHQ20xn9OwS91FxMVZwHEPbBwQFV?usp=sharing), images of inspirations and how they were translated to our project, and an overall explanation on the story, description, and inspirations for our project.
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
-
-**Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
+For our [Trailer](https://www.youtube.com/watch?v=yuImlzO8yxI), I went with an approach that slightly makes fun of other games in the genre to appeal to our own version of tower defense. I used multiple clips and assets from the game to compose the trailer, focusing a lot on our player as one of the biggest selling points! Additionally, I show a lot of clips of the variety of tower loadouts you can have and also showcase all our enemies and how they interact with the player. Overall, I am happy with how the trailer came out and the only part I think its missing was potentially a section where I have live reactions from people seeing the game for the first time.
 
 ## Game Feel and Polish (Richard Huang)
 
