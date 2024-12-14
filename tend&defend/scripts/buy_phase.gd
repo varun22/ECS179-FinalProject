@@ -8,6 +8,10 @@ var time_start:bool = true
 var buy_phase_time = 30.0
 var buy_phase_timer:Timer
 
+var currency_to_stick:int = 100
+var currency_to_hammer:int = 200
+var currency_to_racket:int = 500
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	buy_phase_timer = Timer.new()
@@ -77,6 +81,25 @@ func _ready() -> void:
 		$"Lane 5/Range Upgrade 5".visible = false
 		$"Lane 5/Frequency Upgrade 5".visible = false
 		$"Lane 5/Confirm 5".visible = false
+		
+
+		
+	if globalVars.player_type == 1:
+		$"Lane 0/Stick".text = "Stick\nCost: " + str(currency_to_stick)
+		$"Lane 0/Hammer".text = "Hammer\nCost: " + str(currency_to_hammer)
+		$"Lane 0/Racket".text = "Racket\nCost: " + str(currency_to_racket)
+	elif globalVars.player_type == 2:
+		$"Lane 0/Stick".visible = false
+		$"Lane 0/Hammer".text = "Hammer\nCost: " + str(currency_to_hammer)
+		$"Lane 0/Racket".text = "Racket\nCost: " + str(currency_to_racket)
+	elif globalVars.player_type == 3:
+		$"Lane 0/Stick".visible = false
+		$"Lane 0/Hammer".visible = false
+		$"Lane 0/Racket".text = "Racket\nCost: " + str(currency_to_racket)
+	elif globalVars.player_type == 4:
+		$"Lane 0/Stick".visible = false
+		$"Lane 0/Hammer".visible = false
+		$"Lane 0/Racket".visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -85,14 +108,23 @@ func _process(delta: float) -> void:
 		scene_switcher.switch_scene("res://scenes/stage1.tscn")
 
 
-#func _on_stick_pressed() -> void:
-	#player.type = 2
-#
-#func _on_hammer_pressed() -> void:
-	#player.type = 3
-	#
-#func _on_racket_pressed() -> void:
-	#player.type = 4
+func _on_stick_pressed() -> void:
+	if globalVars.currency >= currency_to_stick:
+		globalVars.currency -= currency_to_stick
+		$"Lane 0/Stick".visible = false
+		globalVars.player_type = 2
+
+func _on_hammer_pressed() -> void:
+	if globalVars.currency >= currency_to_hammer:
+		globalVars.currency -= currency_to_hammer
+		$"Lane 0/Hammer".visible = false
+		globalVars.player_type = 3
+	
+func _on_racket_pressed() -> void:
+	if globalVars.currency >= currency_to_racket:
+		globalVars.currency -= currency_to_racket
+		$"Lane 0/Racket".visible = false
+		globalVars.player_type = 4
 	
 	
 # When pressed, switches to power tower if enough currency

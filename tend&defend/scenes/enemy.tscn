@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://uee07313050q"]
+[gd_scene load_steps=21 format=3 uid="uid://uee07313050q"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_dytbo"]
 [ext_resource type="Texture2D" uid="uid://dqpmf7f2d55do" path="res://assets/Enemy/Enemy (1) (2).png" id="2_g0fw6"]
@@ -184,6 +184,30 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oo0ld"]
 size = Vector2(14, 18.2)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpnog"]
+bg_color = Color(0.106223, 0.00353468, 0.00788417, 1)
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.599617, 0.0922846, 0.141251, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ocsvd"]
+bg_color = Color(0.876042, 0.182791, 0.27049, 1)
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.892026, 0.357369, 0.465784, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 3
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ean05"]
 size = Vector2(13.6, 23.2)
 
@@ -213,11 +237,13 @@ position = Vector2(0, 2.9)
 shape = SubResource("RectangleShape2D_oo0ld")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
-offset_left = -8.2
-offset_top = -3.4
-offset_right = 48.8
-offset_bottom = 5.6
+offset_left = -9.0
+offset_top = -14.0
+offset_right = 50.0
+offset_bottom = -5.0
 scale = Vector2(0.3, 0.3)
+theme_override_styles/background = SubResource("StyleBoxFlat_lpnog")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ocsvd")
 step = 1.0
 show_percentage = false
 
