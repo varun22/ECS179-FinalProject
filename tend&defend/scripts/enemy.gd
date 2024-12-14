@@ -55,16 +55,19 @@ func _enemy_died() -> void:
 	dead = true
 	# Play the appropriate death animation
 	if type == 1:
+		signals.enemy_death_1.emit()
 		$Sprite2D/AnimationPlayer.play("saber_death")
 		# Emit the died signal
 		died.emit(100)
 		globalVars.currency += 10.0
 	elif type == 2:
+		signals.enemy_death_2.emit()
 		$Sprite2D/AnimationPlayer.play("cloak_death")
 		# Emit the died signal
 		died.emit(200)
 		globalVars.currency += 20.0
 	else:
+		signals.enemy_death_2.emit()
 		$Sprite2D/AnimationPlayer.play("machete_death")
 		# Emit the died signal
 		died.emit(300)

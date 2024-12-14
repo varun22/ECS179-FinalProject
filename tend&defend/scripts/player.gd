@@ -114,6 +114,7 @@ func _physics_process(delta: float) -> void:
 		left_cmd.execute(self)
 		target_position.x -= SPEED * delta 
 	elif Input.is_action_just_pressed("attack"):
+		signals.swing_weapon.emit()
 		if type == 1:
 			$Sprite2d/AnimationPlayer.play("sword_attack")
 		elif type == 2:
@@ -146,8 +147,10 @@ func _physics_process(delta: float) -> void:
 	global_position = lerp(global_position, target_position, lerp_speed * delta)
 		
 func take_damage(damage:int) -> void:
+	signals.player_hurt.emit()
 	current_health -= damage
 	if 0 >= current_health:
+		signals.player_death.emit()
 		#don't spawn player until next round
 		_dead = true
 		unbind_player_input_commands()

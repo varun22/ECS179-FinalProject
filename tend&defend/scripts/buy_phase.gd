@@ -14,6 +14,8 @@ var currency_to_racket:int = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	audioPlayer.play_stage1()
+	
 	buy_phase_timer = Timer.new()
 	buy_phase_timer.one_shot = true
 	add_child(buy_phase_timer)

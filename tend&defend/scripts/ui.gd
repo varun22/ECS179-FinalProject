@@ -44,9 +44,12 @@ func _ui_on_wave_update(wave: int) -> void:
 	round.visible = false
 
 func _update_health_display():
+	var health_array:Array[Node] = health_container.get_children()
+	for n in health_array:
+		n.queue_free()
 	#health_container.clear_children()
 
-	for i in range(globalVars.game_health - 1):
+	for i in range(globalVars.game_health):
 		var heart = TextureRect.new()
 		heart.texture = heart_texture
 		heart.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED

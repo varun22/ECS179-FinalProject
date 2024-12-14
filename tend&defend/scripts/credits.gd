@@ -6,4 +6,5 @@ func _ready() -> void:
 	audioPlayer.play_main_menu()
 
 func _on_main_menu_pressed() -> void:
+	signals.button_click.emit()
 	scene_switcher.switch_scene("res://scenes/menu.tscn")

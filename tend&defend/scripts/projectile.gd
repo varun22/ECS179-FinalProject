@@ -42,6 +42,7 @@ func setup_visual() -> void:
 # Signal for if projectile hits an enemy (calls enemy to take damage, frees projectile)
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Enemy:
+		signals.projectile_hit.emit()
 		#print("enemy hit")
 		# This signal is for sound manager later
 		#signals.enemy_damaged.emit(damage)

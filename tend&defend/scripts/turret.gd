@@ -67,11 +67,13 @@ func take_damage(damage_amt: float) -> void:
 		die()
 	
 func die() -> void:
+	signals.turret_death.emit()
 	globalVars.currency += calculate_payback(lane)
 	if(globalVars.game_health > 0):
-		--globalVars.game_health
-		if(globalVars.game_health == 0):
-			scene_switcher.switch_scene("res://scenes/credits.tscn")
+		globalVars.game_health -= 1
+		if(globalVars.game_health <= 0):
+			await get_tree().create_timer(1).timeout
+			scene_switcher.switch_scene("res://scenes/game_over.tscn")
 			pass
 	turretType.type_array[lane] = turretType.Type.BASIC
 	$Turret/AnimationPlayer.play("base_tower_death")

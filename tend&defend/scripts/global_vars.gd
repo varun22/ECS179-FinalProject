@@ -2,7 +2,7 @@ class_name GlobalVars
 extends Node
 
 # Global currency
-var currency: int = 1000
+var currency: int = 0
 # Global wave number
 var wave_num: int = 1
 var num_to_spawn_one: int = 5

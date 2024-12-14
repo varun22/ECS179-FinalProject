@@ -1,3 +1,4 @@
+AudioStreamPlayer2D
 Label
 ColorRect
 Sprite2D
@@ -11,5 +12,3 @@ CollisionShape2D
 HurtBox
 AnimationTree
 HitBox
-Area2D
-AnimationPlayer

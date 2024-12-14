@@ -143,18 +143,19 @@ func spawn_enemies() -> void:
 # Every third wave, add a new enemy level 1 and make an old enemy level 2
 # EVery fifth wave, add a new enemy level 1, and make an old enemy level 3
 func calc_num_to_spawn() -> void:
-	#if globalVars.wave_num % 3 == 0 or globalVars.wave_num % 5 == 0:
-		#if globalVars.wave_num % 3 == 0:
-			#globalVars.num_to_spawn_total += 1
-			#globalVars.num_to_spawn_one += 1
-			#globalVars.num_to_spawn_two += 1
-		#if globalVars.wave_num % 5 == 0:
-			#globalVars.num_to_spawn_total += 1
-			#globalVars.num_to_spawn_one += 1
-			#globalVars.num_to_spawn_three += 1
-	globalVars.num_to_spawn_one = 0
-	globalVars.num_to_spawn_three = 5
-	globalVars.num_to_spawn_total = 5
+	if globalVars.wave_num % 3 == 0 or globalVars.wave_num % 5 == 0:
+		if globalVars.wave_num % 3 == 0:
+			globalVars.num_to_spawn_total += 1
+			globalVars.num_to_spawn_one += 1
+			globalVars.num_to_spawn_two += 1
+		if globalVars.wave_num % 5 == 0:
+			globalVars.num_to_spawn_total += 1
+			globalVars.num_to_spawn_one += 1
+			globalVars.num_to_spawn_three += 1
+	# Testing
+	#globalVars.num_to_spawn_one = 0
+	#globalVars.num_to_spawn_three = 5
+	#globalVars.num_to_spawn_total = 5
 
 # Checks if there are any instances of enemies left, if so, return true
 func check_enemy_exists() -> bool:
