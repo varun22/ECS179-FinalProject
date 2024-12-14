@@ -58,21 +58,23 @@ func _enemy_died() -> void:
 		$Sprite2D/AnimationPlayer.play("saber_death")
 		# Emit the died signal
 		died.emit(100)
+		globalVars.currency += 10.0
 	elif type == 2:
 		$Sprite2D/AnimationPlayer.play("cloak_death")
 		# Emit the died signal
 		died.emit(200)
+		globalVars.currency += 20.0
 	else:
 		$Sprite2D/AnimationPlayer.play("machete_death")
 		# Emit the died signal
 		died.emit(300)
+		globalVars.currency += 30.0
 
-
-	# FIX ME: Does not Spawn banana as it should
-	var banana_scene = preload("res://scenes/banana.tscn") 
-	var banana_instance = banana_scene.instantiate()
-	banana_instance.global_position = self.global_position
-	get_parent().add_child(banana_instance)
+	#FIX ME: Does not Spawn banana on death yet
+	#var banana_scene = preload("res://scenes/banana.tscn") 
+	#var banana_instance = banana_scene.instantiate()
+	#banana_instance.global_position = self.global_position
+	#get_parent().add_child(banana_instance)
 
 # Function for when enemies take damage form projectile
 func take_damage(damage_amt: float) -> void:

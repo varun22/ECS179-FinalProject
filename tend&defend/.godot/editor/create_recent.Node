@@ -1,9 +1,10 @@
-AudioStreamPlayer2D
+Label
+ColorRect
+Sprite2D
 TextureRect
 HBoxContainer
 VBoxContainer
 MarginContainer
-Sprite2D
 Button
 Node
 CollisionShape2D

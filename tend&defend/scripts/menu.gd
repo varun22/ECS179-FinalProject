@@ -16,7 +16,7 @@ func _on_play_pressed() -> void:
 
 func _on_credits_pressed() -> void:
 	signals.button_click.emit()
-	get_tree().change_scene_to_file("res://scenes/credits.tscn")
+	scene_switcher.switch_scene("res://scenes/credits.tscn")
 	
 
 func _on_exit_pressed() -> void:
