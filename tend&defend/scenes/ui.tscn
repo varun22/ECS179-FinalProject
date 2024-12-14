@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://eghh27wxoi76"]
+[gd_scene load_steps=5 format=3 uid="uid://eghh27wxoi76"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_y26uq"]
-[ext_resource type="FontFile" uid="uid://dnlncfc0vlj4a" path="res://assets/fonts/PixelOperator8.ttf" id="2_1uel0"]
-[ext_resource type="FontFile" uid="uid://bf1mvd63pl18d" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_2m3ko"]
+[ext_resource type="FontFile" uid="uid://dwymrr4g1jj1e" path="res://assets/fonts/PixelOperator8.ttf" id="2_1uel0"]
+[ext_resource type="FontFile" uid="uid://c8p0st0lyvhq2" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_2m3ko"]
+[ext_resource type="Texture2D" uid="uid://brybc5pw1vo05" path="res://assets/heart.png" id="4_d0n8f"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_y26uq")
@@ -12,8 +13,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -928.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Top" type="MarginContainer" parent="HUD"]
 layout_mode = 1
@@ -94,3 +97,51 @@ theme_override_constants/outline_size = 21
 theme_override_fonts/font = ExtResource("3_2m3ko")
 theme_override_font_sizes/font_size = 100
 text = "0"
+
+[node name="Top2" type="MarginContainer" parent="HUD"]
+layout_mode = 1
+offset_top = 50.0
+offset_right = 323.0
+offset_bottom = 145.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Top2"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Top2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/Top2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1uel0")
+theme_override_font_sizes/font_size = 30
+text = "Banana Bucks:"
+
+[node name="Currency" type="Label" parent="HUD/Top2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1uel0")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Top3" type="MarginContainer" parent="HUD"]
+visible = false
+layout_mode = 0
+offset_left = 30.0
+offset_top = 120.0
+offset_right = 670.0
+offset_bottom = 760.0
+scale = Vector2(0.15, 0.15)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Top3"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Top3/VBoxContainer"]
+layout_mode = 2
+
+[node name="Heart" type="TextureRect" parent="HUD/Top3/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_d0n8f")

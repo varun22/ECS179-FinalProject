@@ -1,5 +1,5 @@
+class_name AudioPlayer
 extends AudioStreamPlayer2D
-
 #Script for controlling speed of background music and pitch - Wasnt happy with how it was sounding so disabled it for now
 
 @export var audio_player: AudioStreamPlayer2D 
@@ -7,13 +7,47 @@ extends AudioStreamPlayer2D
 @export var speed_increment: float = 0.05  # How fast to speed up audio
 @export var target_bus: String = "Master" 
 
+const stage1_music = preload("res://assets/music/background.ogg")
+const main_menu_music = preload("res://assets/music/main menu.ogg")
+const game_over_music = preload("res://assets/music/End-Music.ogg")
+
 var current_wave: int = 1  
 var is_playing: bool = false 
 
 func _ready() -> void:
-	audio_player.pitch_scale = base_speed
-	audio_player.play() 
-	is_playing = true
+	pass
+	#audio_player.pitch_scale = base_speed
+	#audio_player.play() 
+	#is_playing = true
+
+# Helper function to play music
+func play_music(music: AudioStream):
+	if stream == music:
+		return
+
+	stream = music
+	play()
+
+func play_stage1():
+	play_music(stage1_music)
+	
+func play_main_menu():
+	play_music(main_menu_music)
+	
+func play_game_over():
+	play_music(game_over_music)
+
+# Helper function to play sound effects
+func play_SFX(stream: AudioStream, volume: float):
+	var sfx_player = AudioStreamPlayer2D.new()
+	sfx_player.stream = stream
+	sfx_player.volume_db = volume
+	add_child(sfx_player)
+	sfx_player.play()
+	
+	await sfx_player.finished
+	
+	sfx_player.queue_free()
 
 # Called by wave manager
 func on_wave_update(wave: int) -> void:

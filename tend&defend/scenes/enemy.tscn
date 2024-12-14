@@ -1,65 +1,313 @@
-[gd_scene load_steps=9 format=3 uid="uid://uee07313050q"]
+[gd_scene load_steps=21 format=3 uid="uid://uee07313050q"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_dytbo"]
-[ext_resource type="Texture2D" uid="uid://d3lp1v1ldjimh" path="res://assets/placeholder assets/slime_green.png" id="1_qqrkb"]
+[ext_resource type="Texture2D" uid="uid://dqpmf7f2d55do" path="res://assets/Enemy/Enemy (1) (2).png" id="2_g0fw6"]
+[ext_resource type="Script" path="res://scripts/hurt_box.gd" id="3_wdlpv"]
+[ext_resource type="Script" path="res://scripts/hit_box_enemy.gd" id="4_0tkqx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cm2w8"]
-atlas = ExtResource("1_qqrkb")
-region = Rect2(0, 24, 24, 24)
+[sub_resource type="Animation" id="Animation_uys2l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HitBox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wjpph"]
-atlas = ExtResource("1_qqrkb")
-region = Rect2(24, 24, 24, 24)
+[sub_resource type="Animation" id="Animation_f0dkf"]
+resource_name = "cloak_attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HitBox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3g72j"]
-atlas = ExtResource("1_qqrkb")
-region = Rect2(48, 24, 24, 24)
+[sub_resource type="Animation" id="Animation_amupw"]
+resource_name = "cloak_death"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [20, 21, 22, 23, 24, 25, 40]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p0a8o"]
-atlas = ExtResource("1_qqrkb")
-region = Rect2(72, 24, 24, 24)
+[sub_resource type="Animation" id="Animation_ex7my"]
+resource_name = "cloak_move_left"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [12, 13]
+}
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_trq5m"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cm2w8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wjpph")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3g72j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p0a8o")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="Animation" id="Animation_vstgv"]
+resource_name = "machete_attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [26, 27, 28, 29, 30]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HitBox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_utfb5"]
+resource_name = "machete_death"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [34, 35, 36, 37, 38, 39, 40]
+}
+
+[sub_resource type="Animation" id="Animation_vjg00"]
+resource_name = "machete_move_left"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [30, 31, 32, 33]
+}
+
+[sub_resource type="Animation" id="Animation_y1dnh"]
+resource_name = "saber_attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HitBox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_0gwxl"]
+resource_name = "saber_death"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [14, 15, 16, 17, 18, 19, 40]
+}
+
+[sub_resource type="Animation" id="Animation_8wraw"]
+resource_name = "saber_move_left"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xsy4n"]
+_data = {
+"RESET": SubResource("Animation_uys2l"),
+"cloak_attack": SubResource("Animation_f0dkf"),
+"cloak_death": SubResource("Animation_amupw"),
+"cloak_move_left": SubResource("Animation_ex7my"),
+"machete_attack": SubResource("Animation_vstgv"),
+"machete_death": SubResource("Animation_utfb5"),
+"machete_move_left": SubResource("Animation_vjg00"),
+"saber_attack": SubResource("Animation_y1dnh"),
+"saber_death": SubResource("Animation_0gwxl"),
+"saber_move_left": SubResource("Animation_8wraw")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oo0ld"]
-size = Vector2(14, 12)
+size = Vector2(14, 18.2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpnog"]
+bg_color = Color(0.106223, 0.00353468, 0.00788417, 1)
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.599617, 0.0922846, 0.141251, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ocsvd"]
+bg_color = Color(0.876042, 0.182791, 0.27049, 1)
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.892026, 0.357369, 0.465784, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ean05"]
+size = Vector2(13.6, 23.2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjrja"]
+size = Vector2(12, 12.2)
 
 [node name="Enemy" type="CharacterBody2D"]
 scale = Vector2(5, 5)
 collision_layer = 4
-collision_mask = 2
+collision_mask = 10
 script = ExtResource("1_dytbo")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_trq5m")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_g0fw6")
+hframes = 4
+vframes = 11
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_xsy4n")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(0, 2.9)
 shape = SubResource("RectangleShape2D_oo0ld")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
-offset_left = -8.2
-offset_top = -3.4
-offset_right = 48.8
-offset_bottom = 5.6
+offset_left = -9.0
+offset_top = -14.0
+offset_right = 50.0
+offset_bottom = -5.0
 scale = Vector2(0.3, 0.3)
+theme_override_styles/background = SubResource("StyleBoxFlat_lpnog")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ocsvd")
 step = 1.0
 show_percentage = false
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_mask = 0
+script = ExtResource("3_wdlpv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, 0.4)
+shape = SubResource("RectangleShape2D_ean05")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("4_0tkqx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-13.2, 4)
+shape = SubResource("RectangleShape2D_jjrja")

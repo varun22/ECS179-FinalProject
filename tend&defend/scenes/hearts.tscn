@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://1imcpqbvd8e6"]
+
+[ext_resource type="Script" path="res://scripts/hearts.gd" id="1_7641g"]
+[ext_resource type="Texture2D" uid="uid://brybc5pw1vo05" path="res://assets/heart.png" id="1_rxkn2"]
+
+[node name="Hearts" type="Node"]
+script = ExtResource("1_7641g")
+
+[node name="heart1" type="Sprite2D" parent="."]
+position = Vector2(73, 168)
+scale = Vector2(0.142187, 0.142187)
+texture = ExtResource("1_rxkn2")
+
+[node name="heart2" type="Sprite2D" parent="."]
+position = Vector2(155, 168)
+scale = Vector2(0.142187, 0.142187)
+texture = ExtResource("1_rxkn2")
+
+[node name="heart3" type="Sprite2D" parent="."]
+position = Vector2(237, 168)
+scale = Vector2(0.142187, 0.142187)
+texture = ExtResource("1_rxkn2")

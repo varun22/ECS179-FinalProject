@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://b4yoqh6cbfu57"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_7jirw"]
+[ext_resource type="Texture2D" uid="uid://btesawj8bqane" path="res://assets/menu screen/GameOver.png" id="1_peqhy"]
+[ext_resource type="FontFile" uid="uid://c8p0st0lyvhq2" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_s4ifg"]
+[ext_resource type="Texture2D" uid="uid://bxtsi0hu5y37h" path="res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[3] Hover.png" id="3_00xmx"]
+[ext_resource type="Texture2D" uid="uid://dvbk0r07yvbry" path="res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[2] Clicked.png" id="4_cmgin"]
+[ext_resource type="Texture2D" uid="uid://cherc432hfd10" path="res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[1] Normal.png" id="5_g08md"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tmxg2"]
+texture = ExtResource("3_00xmx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_32xc1"]
+texture = ExtResource("4_cmgin")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_53u3u"]
+texture = ExtResource("5_g08md")
+
+[node name="Game Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7jirw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, -540)
+texture = ExtResource("1_peqhy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.0
+offset_top = 285.0
+offset_right = 313.0
+offset_bottom = 461.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 19
+alignment = 1
+
+[node name="Main Menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_s4ifg")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxTexture_tmxg2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_32xc1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_53u3u")
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

@@ -1,8 +1,266 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3fwx0oivo4y2"]
+[gd_scene load_steps=36 format=3 uid="uid://b3fwx0oivo4y2"]
 
 [ext_resource type="Script" path="res://scripts/buy_phase.gd" id="1_coiml"]
 [ext_resource type="Texture2D" uid="uid://3rkprs6gqxi6" path="res://assets/game images/BG.png" id="1_nlvc3"]
 [ext_resource type="Texture2D" uid="uid://dgf4ql7x3tfjs" path="res://assets/game images/Floor.png" id="2_sk6yv"]
+[ext_resource type="FontFile" uid="uid://dwymrr4g1jj1e" path="res://assets/fonts/PixelOperator8.ttf" id="4_b2pb8"]
+[ext_resource type="Texture2D" uid="uid://cmxj3w2tl3214" path="res://assets/Player/weapons/Rod.png" id="5_55hff"]
+[ext_resource type="PackedScene" uid="uid://eghh27wxoi76" path="res://scenes/ui.tscn" id="5_sv8g7"]
+[ext_resource type="Texture2D" uid="uid://d0g1xg21qixu1" path="res://assets/Player/weapons/hammer.png" id="6_8n3uo"]
+[ext_resource type="PackedScene" uid="uid://gr765jgn4n5p" path="res://scenes/sound_manager.tscn" id="6_t0jfv"]
+[ext_resource type="Texture2D" uid="uid://c04hijgalggqp" path="res://assets/Player/weapons/racket.png" id="7_w40tg"]
+[ext_resource type="PackedScene" uid="uid://1imcpqbvd8e6" path="res://scenes/hearts.tscn" id="10_qjmg4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5uhv"]
+bg_color = Color(0.803922, 0.498039, 0.196078, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32qo3"]
+bg_color = Color(0.756669, 0.479334, 0.963906, 1)
+border_width_bottom = 8
+border_color = Color(0.865569, 0.753507, 0.989909, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prqwa"]
+bg_color = Color(0.306527, 0.0579995, 0.446308, 1)
+border_width_bottom = 2
+border_color = Color(0.542067, 0.149769, 0.809992, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32044"]
+bg_color = Color(0.475552, 0.120927, 0.678472, 1)
+border_width_bottom = 8
+border_color = Color(0.765774, 0.543535, 0.981144, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_typsf"]
+bg_color = Color(0.332693, 0.949599, 0.626572, 1)
+border_width_bottom = 8
+border_color = Color(0.791659, 0.965249, 0.82436, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_806xe"]
+bg_color = Color(0.0898344, 0.323816, 0.201606, 1)
+border_width_bottom = 2
+border_color = Color(0.279712, 0.545901, 0.348995, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xu3f3"]
+bg_color = Color(0.163065, 0.523332, 0.335866, 1)
+border_width_bottom = 8
+border_color = Color(0.413272, 0.750075, 0.498287, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yks24"]
+bg_color = Color(0.996991, 0.51966, 0.461298, 1)
+border_width_bottom = 8
+border_color = Color(1, 0.737545, 0.720549, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhx2l"]
+bg_color = Color(0.411851, 0.014551, 0.0167881, 1)
+border_width_bottom = 2
+border_color = Color(0.803066, 0, 0.161768, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnc3y"]
+bg_color = Color(0.546676, 0.026599, 0.0307757, 1)
+border_width_bottom = 8
+border_color = Color(1, 0.21453, 0.276346, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slywt"]
+bg_color = Color(0.826297, 0.821002, 0.814918, 1)
+border_width_bottom = 8
+border_color = Color(0.903598, 0.903598, 0.903598, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk10y"]
+bg_color = Color(0.508815, 0.500091, 0.490053, 1)
+border_width_bottom = 2
+border_color = Color(0.597176, 0.597176, 0.597176, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hn3y2"]
+bg_color = Color(0.66544, 0.657088, 0.647484, 1)
+border_width_bottom = 8
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kr0su"]
+bg_color = Color(0.571566, 0.713986, 0.972031, 1)
+border_width_bottom = 8
+border_color = Color(0.756852, 0.83911, 0.984637, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_db4jc"]
+bg_color = Color(0.182698, 0.387118, 0.784957, 1)
+border_width_bottom = 8
+border_color = Color(0.333692, 0.53993, 0.92815, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22lmt"]
+bg_color = Color(0.401728, 0.59249, 0.948648, 1)
+border_width_bottom = 8
+border_color = Color(0.583659, 0.722853, 0.973418, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tgfbp"]
+bg_color = Color(0.983064, 0.823028, 3.85046e-07, 1)
+border_width_bottom = 8
+border_color = Color(1, 0.902291, 0.541536, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yb3he"]
+bg_color = Color(0.682472, 0.568777, 1.92523e-07, 1)
+border_width_bottom = 8
+border_color = Color(0.825582, 0.689825, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1e5ck"]
+bg_color = Color(0.835294, 0.698039, 0, 1)
+border_width_bottom = 8
+border_color = Color(0.953174, 0.797746, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3bcs"]
+bg_color = Color(0.0898344, 0.323816, 0.201606, 1)
+border_width_bottom = 2
+border_color = Color(0.279712, 0.545901, 0.348995, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pboef"]
+bg_color = Color(0.0898344, 0.323816, 0.201606, 1)
+border_width_bottom = 2
+border_color = Color(0.279712, 0.545901, 0.348995, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3bmk5"]
+bg_color = Color(0.0898344, 0.323816, 0.201606, 1)
+border_width_bottom = 2
+border_color = Color(0.279712, 0.545901, 0.348995, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cugqq"]
+bg_color = Color(0.0898344, 0.323816, 0.201606, 1)
+border_width_bottom = 2
+border_color = Color(0.279712, 0.545901, 0.348995, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jijye"]
+bg_color = Color(0.106223, 0.00353468, 0.00788417, 1)
+border_width_right = 5
+border_width_bottom = 10
+border_color = Color(0.599617, 0.0922846, 0.141251, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwar2"]
+bg_color = Color(0.876042, 0.182791, 0.27049, 1)
+border_width_right = 5
+border_width_bottom = 10
+border_color = Color(0.892026, 0.357369, 0.465784, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 3
 
 [node name="Buy Phase" type="Node2D"]
 script = ExtResource("1_coiml")
@@ -21,218 +279,445 @@ scale = Vector2(0.999907, 1.30405)
 texture = ExtResource("2_sk6yv")
 metadata/_edit_lock_ = true
 
+[node name="Lane 0" type="Node" parent="."]
+
+[node name="Stick" type="Button" parent="Lane 0"]
+offset_left = 655.0
+offset_top = 440.0
+offset_right = 805.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5uhv")
+text = "Stick"
+icon = ExtResource("5_55hff")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Hammer" type="Button" parent="Lane 0"]
+offset_left = 980.0
+offset_top = 440.0
+offset_right = 1130.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5uhv")
+text = "Hammer"
+icon = ExtResource("6_8n3uo")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Racket" type="Button" parent="Lane 0"]
+offset_left = 1315.0
+offset_top = 440.0
+offset_right = 1465.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5uhv")
+text = "Racket"
+icon = ExtResource("7_w40tg")
+icon_alignment = 1
+expand_icon = true
+
 [node name="Lane 1" type="Node" parent="."]
 
 [node name="Power Upgrade 1" type="Button" parent="Lane 1"]
-offset_left = 598.0
-offset_top = 547.0
-offset_right = 769.0
-offset_bottom = 578.0
+offset_left = 585.0
+offset_top = 530.0
+offset_right = 841.0
+offset_bottom = 590.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_32qo3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_prqwa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_32044")
 text = "Choose Power Turret"
 
 [node name="Range Upgrade 1" type="Button" parent="Lane 1"]
-offset_left = 908.0
-offset_top = 544.0
-offset_right = 1078.0
-offset_bottom = 575.0
+offset_left = 920.0
+offset_top = 530.0
+offset_right = 1176.0
+offset_bottom = 590.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_typsf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_806xe")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xu3f3")
 text = "Choose Range Turret"
 
 [node name="Frequency Upgrade 1" type="Button" parent="Lane 1"]
-offset_left = 1209.0
-offset_top = 544.0
-offset_right = 1412.0
-offset_bottom = 575.0
+offset_left = 1255.0
+offset_top = 530.0
+offset_right = 1563.0
+offset_bottom = 590.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yks24")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mhx2l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vnc3y")
 text = "Choose Frequency Turret"
 
 [node name="Confirm 1" type="Button" parent="Lane 1"]
-offset_left = 1546.0
-offset_top = 545.0
-offset_right = 1617.0
-offset_bottom = 576.0
+offset_left = 1789.0
+offset_top = 530.0
+offset_right = 1885.0
+offset_bottom = 578.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_slywt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jk10y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hn3y2")
 text = "Confirm"
 
 [node name="Upgrade 1" type="Button" parent="Lane 1"]
 visible = false
-offset_left = 1007.0
-offset_top = 543.0
-offset_right = 1146.0
-offset_bottom = 574.0
+offset_left = 965.0
+offset_top = 530.0
+offset_right = 1171.0
+offset_bottom = 590.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kr0su")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_db4jc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_22lmt")
 text = "Upgrade to Level"
+
+[node name="Tend1" type="Button" parent="Lane 1"]
+visible = false
+offset_left = 318.0
+offset_top = 531.0
+offset_right = 512.0
+offset_bottom = 591.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tgfbp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yb3he")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1e5ck")
+text = "Tend to Turret?"
 
 [node name="Lane 2" type="Node" parent="."]
 
 [node name="Power Upgrade 2" type="Button" parent="Lane 2"]
-offset_left = 568.0
-offset_top = 648.0
-offset_right = 739.0
-offset_bottom = 679.0
+offset_left = 545.0
+offset_top = 635.0
+offset_right = 801.0
+offset_bottom = 695.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_32qo3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_prqwa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_32044")
 text = "Choose Power Turret"
 
 [node name="Range Upgrade 2" type="Button" parent="Lane 2"]
-offset_left = 911.0
-offset_top = 645.0
-offset_right = 1081.0
-offset_bottom = 676.0
+offset_left = 890.0
+offset_top = 635.0
+offset_right = 1146.0
+offset_bottom = 695.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_typsf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y3bcs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xu3f3")
 text = "Choose Range Turret"
 
 [node name="Frequency Upgrade 2" type="Button" parent="Lane 2"]
-offset_left = 1209.0
-offset_top = 658.0
-offset_right = 1412.0
-offset_bottom = 689.0
+offset_left = 1235.0
+offset_top = 635.0
+offset_right = 1543.0
+offset_bottom = 695.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yks24")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mhx2l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vnc3y")
 text = "Choose Frequency Turret"
 
 [node name="Confirm 2" type="Button" parent="Lane 2"]
-offset_left = 1548.0
-offset_top = 653.0
-offset_right = 1619.0
-offset_bottom = 684.0
+offset_left = 1786.0
+offset_top = 635.0
+offset_right = 1882.0
+offset_bottom = 683.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_slywt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jk10y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hn3y2")
 text = "Confirm"
 
 [node name="Upgrade 2" type="Button" parent="Lane 2"]
 visible = false
-offset_left = 1009.0
-offset_top = 644.0
-offset_right = 1148.0
-offset_bottom = 675.0
+offset_left = 935.0
+offset_top = 635.0
+offset_right = 1141.0
+offset_bottom = 695.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kr0su")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_db4jc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_22lmt")
 text = "Upgrade to Level"
+
+[node name="Tend2" type="Button" parent="Lane 2"]
+visible = false
+offset_left = 242.0
+offset_top = 635.0
+offset_right = 436.0
+offset_bottom = 695.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tgfbp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yb3he")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1e5ck")
+text = "Tend to Turret?"
 
 [node name="Lane 3" type="Node" parent="."]
 
 [node name="Power Upgrade 3" type="Button" parent="Lane 3"]
-offset_left = 544.0
-offset_top = 756.0
-offset_right = 715.0
-offset_bottom = 787.0
+offset_left = 505.0
+offset_top = 745.0
+offset_right = 761.0
+offset_bottom = 805.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_32qo3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_prqwa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_32044")
 text = "Choose Power Turret"
 
 [node name="Range Upgrade 3" type="Button" parent="Lane 3"]
-offset_left = 911.0
-offset_top = 754.0
-offset_right = 1081.0
-offset_bottom = 785.0
+offset_left = 860.0
+offset_top = 745.0
+offset_right = 1116.0
+offset_bottom = 805.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_typsf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pboef")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xu3f3")
 text = "Choose Range Turret"
 
 [node name="Frequency Upgrade 3" type="Button" parent="Lane 3"]
-offset_left = 1216.0
-offset_top = 753.0
-offset_right = 1419.0
-offset_bottom = 784.0
+offset_left = 1215.0
+offset_top = 745.0
+offset_right = 1523.0
+offset_bottom = 805.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yks24")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mhx2l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vnc3y")
 text = "Choose Frequency Turret"
 
 [node name="Confirm 3" type="Button" parent="Lane 3"]
-offset_left = 1551.0
-offset_top = 762.0
-offset_right = 1622.0
+offset_left = 1786.0
+offset_top = 745.0
+offset_right = 1882.0
 offset_bottom = 793.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_slywt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jk10y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hn3y2")
 text = "Confirm"
 
 [node name="Upgrade 3" type="Button" parent="Lane 3"]
 visible = false
-offset_left = 1009.0
-offset_top = 753.0
-offset_right = 1148.0
-offset_bottom = 784.0
+offset_left = 905.0
+offset_top = 745.0
+offset_right = 1111.0
+offset_bottom = 805.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kr0su")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_db4jc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_22lmt")
 text = "Upgrade to Level"
+
+[node name="Tend3" type="Button" parent="Lane 3"]
+visible = false
+offset_left = 174.0
+offset_top = 744.0
+offset_right = 368.0
+offset_bottom = 804.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tgfbp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yb3he")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1e5ck")
+text = "Tend to Turret?"
 
 [node name="Lane 4" type="Node" parent="."]
 
 [node name="Power Upgrade 4" type="Button" parent="Lane 4"]
-offset_left = 524.0
-offset_top = 861.0
-offset_right = 695.0
-offset_bottom = 892.0
+offset_left = 465.0
+offset_top = 855.0
+offset_right = 721.0
+offset_bottom = 915.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_32qo3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_prqwa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_32044")
 text = "Choose Power Turret"
 
 [node name="Range Upgrade 4" type="Button" parent="Lane 4"]
-offset_left = 901.0
-offset_top = 872.0
-offset_right = 1071.0
-offset_bottom = 903.0
+offset_left = 830.0
+offset_top = 855.0
+offset_right = 1086.0
+offset_bottom = 915.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_typsf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3bmk5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xu3f3")
 text = "Choose Range Turret"
 
 [node name="Frequency Upgrade 4" type="Button" parent="Lane 4"]
-offset_left = 1221.0
-offset_top = 869.0
-offset_right = 1424.0
-offset_bottom = 900.0
+offset_left = 1195.0
+offset_top = 855.0
+offset_right = 1503.0
+offset_bottom = 915.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yks24")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mhx2l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vnc3y")
 text = "Choose Frequency Turret"
 
 [node name="Confirm 4" type="Button" parent="Lane 4"]
-offset_left = 1551.0
-offset_top = 868.0
-offset_right = 1622.0
-offset_bottom = 899.0
+offset_left = 1786.0
+offset_top = 860.0
+offset_right = 1882.0
+offset_bottom = 908.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_slywt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jk10y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hn3y2")
 text = "Confirm"
 
 [node name="Upgrade 4" type="Button" parent="Lane 4"]
 visible = false
-offset_left = 1010.0
-offset_top = 869.0
-offset_right = 1149.0
-offset_bottom = 900.0
+offset_left = 875.0
+offset_top = 855.0
+offset_right = 1081.0
+offset_bottom = 915.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kr0su")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_db4jc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_22lmt")
 text = "Upgrade to Level"
+
+[node name="Tend4" type="Button" parent="Lane 4"]
+visible = false
+offset_left = 90.0
+offset_top = 858.0
+offset_right = 284.0
+offset_bottom = 918.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tgfbp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yb3he")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1e5ck")
+text = "Tend to Turret?"
 
 [node name="Lane 5" type="Node" parent="."]
 
 [node name="Power Upgrade 5" type="Button" parent="Lane 5"]
-offset_left = 509.0
-offset_top = 986.0
-offset_right = 680.0
-offset_bottom = 1017.0
+offset_left = 425.0
+offset_top = 965.0
+offset_right = 681.0
+offset_bottom = 1025.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_32qo3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_prqwa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_32044")
 text = "Choose Power Turret"
 
 [node name="Range Upgrade 5" type="Button" parent="Lane 5"]
-offset_left = 896.0
-offset_top = 990.0
-offset_right = 1066.0
-offset_bottom = 1021.0
+offset_left = 800.0
+offset_top = 965.0
+offset_right = 1056.0
+offset_bottom = 1025.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_typsf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cugqq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xu3f3")
 text = "Choose Range Turret"
 
 [node name="Frequency Upgrade 5" type="Button" parent="Lane 5"]
-offset_left = 1214.0
-offset_top = 991.0
-offset_right = 1417.0
-offset_bottom = 1022.0
+offset_left = 1175.0
+offset_top = 965.0
+offset_right = 1483.0
+offset_bottom = 1025.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yks24")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mhx2l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vnc3y")
 text = "Choose Frequency Turret"
 
 [node name="Confirm 5" type="Button" parent="Lane 5"]
-offset_left = 1548.0
-offset_top = 989.0
-offset_right = 1619.0
-offset_bottom = 1020.0
+offset_left = 1787.0
+offset_top = 970.0
+offset_right = 1883.0
+offset_bottom = 1018.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_slywt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jk10y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hn3y2")
 text = "Confirm"
 
 [node name="Upgrade 5" type="Button" parent="Lane 5"]
 visible = false
-offset_left = 1020.0
-offset_top = 985.0
-offset_right = 1159.0
-offset_bottom = 1016.0
+offset_left = 845.0
+offset_top = 965.0
+offset_right = 1051.0
+offset_bottom = 1025.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kr0su")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_db4jc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_22lmt")
 text = "Upgrade to Level"
 
+[node name="Tend5" type="Button" parent="Lane 5"]
+visible = false
+offset_left = 18.0
+offset_top = 985.0
+offset_right = 212.0
+offset_bottom = 1045.0
+theme_override_fonts/font = ExtResource("4_b2pb8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tgfbp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yb3he")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1e5ck")
+text = "Tend to Turret?"
+
+[node name="UI" parent="." instance=ExtResource("5_sv8g7")]
+layer = 0
+
+[node name="TimerProgress" type="ProgressBar" parent="."]
+offset_left = 523.0
+offset_top = 49.0
+offset_right = 1890.0
+offset_bottom = 95.0
+theme_override_styles/background = SubResource("StyleBoxFlat_jijye")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mwar2")
+show_percentage = false
+
+[node name="soundManager" parent="." instance=ExtResource("6_t0jfv")]
+
+[node name="Hearts" parent="." instance=ExtResource("10_qjmg4")]
+
+[connection signal="pressed" from="Lane 0/Stick" to="." method="_on_stick_pressed"]
+[connection signal="pressed" from="Lane 0/Hammer" to="." method="_on_hammer_pressed"]
+[connection signal="pressed" from="Lane 0/Racket" to="." method="_on_racket_pressed"]
 [connection signal="pressed" from="Lane 1/Power Upgrade 1" to="." method="_on_power_upgrade_1_pressed"]
 [connection signal="pressed" from="Lane 1/Range Upgrade 1" to="." method="_on_range_upgrade_1_pressed"]
 [connection signal="pressed" from="Lane 1/Frequency Upgrade 1" to="." method="_on_frequency_upgrade_1_pressed"]
 [connection signal="pressed" from="Lane 1/Confirm 1" to="." method="_on_confirm_1_pressed"]
 [connection signal="pressed" from="Lane 1/Upgrade 1" to="." method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="Lane 1/Tend1" to="." method="_on_tend_1_pressed"]
 [connection signal="pressed" from="Lane 2/Power Upgrade 2" to="." method="_on_power_upgrade_2_pressed"]
 [connection signal="pressed" from="Lane 2/Range Upgrade 2" to="." method="_on_range_upgrade_2_pressed"]
 [connection signal="pressed" from="Lane 2/Frequency Upgrade 2" to="." method="_on_frequency_upgrade_2_pressed"]
 [connection signal="pressed" from="Lane 2/Confirm 2" to="." method="_on_confirm_2_pressed"]
 [connection signal="pressed" from="Lane 2/Upgrade 2" to="." method="_on_upgrade_2_pressed"]
+[connection signal="pressed" from="Lane 2/Tend2" to="." method="_on_tend_2_pressed"]
 [connection signal="pressed" from="Lane 3/Power Upgrade 3" to="." method="_on_power_upgrade_3_pressed"]
 [connection signal="pressed" from="Lane 3/Range Upgrade 3" to="." method="_on_range_upgrade_3_pressed"]
 [connection signal="pressed" from="Lane 3/Frequency Upgrade 3" to="." method="_on_frequency_upgrade_3_pressed"]
 [connection signal="pressed" from="Lane 3/Confirm 3" to="." method="_on_confirm_3_pressed"]
 [connection signal="pressed" from="Lane 3/Upgrade 3" to="." method="_on_upgrade_3_pressed"]
+[connection signal="pressed" from="Lane 3/Tend3" to="." method="_on_tend_3_pressed"]
 [connection signal="pressed" from="Lane 4/Power Upgrade 4" to="." method="_on_power_upgrade_4_pressed"]
 [connection signal="pressed" from="Lane 4/Range Upgrade 4" to="." method="_on_range_upgrade_4_pressed"]
 [connection signal="pressed" from="Lane 4/Frequency Upgrade 4" to="." method="_on_frequency_upgrade_4_pressed"]
 [connection signal="pressed" from="Lane 4/Confirm 4" to="." method="_on_confirm_4_pressed"]
 [connection signal="pressed" from="Lane 4/Upgrade 4" to="." method="_on_upgrade_4_pressed"]
+[connection signal="pressed" from="Lane 4/Tend4" to="." method="_on_tend_4_pressed"]
 [connection signal="pressed" from="Lane 5/Power Upgrade 5" to="." method="_on_power_upgrade_5_pressed"]
 [connection signal="pressed" from="Lane 5/Range Upgrade 5" to="." method="_on_range_upgrade_5_pressed"]
 [connection signal="pressed" from="Lane 5/Frequency Upgrade 5" to="." method="_on_frequency_upgrade_5_pressed"]
 [connection signal="pressed" from="Lane 5/Confirm 5" to="." method="_on_confirm_5_pressed"]
 [connection signal="pressed" from="Lane 5/Upgrade 5" to="." method="_on_upgrade_5_pressed"]
+[connection signal="pressed" from="Lane 5/Tend5" to="." method="_on_tend_5_pressed"]

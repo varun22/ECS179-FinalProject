@@ -8,13 +8,14 @@ signal wave_update(value: int)
 
 @onready var enemy_fact:EnemyFactory = $"../EnemySpawns"
 @onready var turret_fact:TurretFactory = $"../Turrets"
+#@onready var animations = $"../Turret/AnimationPlayer"
 
-var wave:int
-var num_to_spawn:int
 # Array to store which lane to spawn each enemy in
 var placement_array:Array[int]
 # Array to store times between spawns
 var timing_array:Array[float]
+# Array to store enemy types to spawn
+var spawn_array:Array[int]
 var enemy_spec:EnemySpec
 var done_spawning:bool = false
 
@@ -23,24 +24,24 @@ var done_spawning:bool = false
 func _ready() -> void:
 	# Builds turrets based on global types and stats in turret_type
 	turret_fact.rebuild()
-	wave = globalVars.wave_num
 	await wait(3.0) #use for buy phase
 	calc_num_to_spawn()
 	create_enemy_schedule()
 	spawn_enemies()
 	
 	#connect background music
-	var background_music = $"../BackgroundMusic"
-	wave_update.connect(background_music.on_wave_update)
+	#var background_music = $"../BackgroundMusic"
+	wave_update.connect(audioPlayer.on_wave_update)
 	var ui = $"../UI"
 	wave_update.connect(ui._ui_on_wave_update)
-	wave_update.emit(wave)
+	wave_update.emit(globalVars.wave_num)
 	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if check_end():
+		signals.new_wave.emit()
 		globalVars.wave_num += 1
 		done_spawning = false
 		#switch scene to buy menu, on player exit or timer end, switch back to stage1
@@ -60,11 +61,20 @@ func wait(seconds: float) -> void:
 
 # Fills placement_array with random placement and 
 func create_enemy_schedule() -> void:
-	print("wave: ", wave)
+	print("wave: ", globalVars.wave_num)
 	var rng = RandomNumberGenerator.new()
-	for i in num_to_spawn:
+	for i in globalVars.num_to_spawn_total:
 		placement_array.push_back(rng.randi_range(1, 5))
-		timing_array.push_back(rng.randf_range(1, 5))
+		timing_array.push_back(rng.randf_range(2, 5))
+	# Fills spawn array with necessary amt of each enemy then shuffles
+	for j in globalVars.num_to_spawn_one:
+		spawn_array.push_back(1)
+	for k in globalVars.num_to_spawn_two:
+		spawn_array.push_back(2)
+	for m in globalVars.num_to_spawn_three:
+		spawn_array.push_back(3)
+	spawn_array.shuffle()
+	print(spawn_array)
 	
 # Checks if wave is over, if so start buy phase(not implemented yet)
 func check_end() -> bool:
@@ -73,15 +83,41 @@ func check_end() -> bool:
 	else:
 		return false
 
+func spawnEnemyOne() -> EnemySpec:
+	enemy_spec = EnemySpec.new()
+	enemy_spec.damage = 10
+	enemy_spec.speed = 50
+	enemy_spec.health = 50
+	enemy_spec.type = 1
+	return enemy_spec
+	
+func spawnEnemyTwo() -> EnemySpec:
+	enemy_spec = EnemySpec.new()
+	enemy_spec.damage = 20
+	enemy_spec.speed = 75
+	enemy_spec.health = 75
+	enemy_spec.type = 2
+	return enemy_spec
+	
+func spawnEnemyThree() -> EnemySpec:
+	enemy_spec = EnemySpec.new()
+	enemy_spec.damage = 30
+	enemy_spec.speed = 100
+	enemy_spec.health = 100
+	enemy_spec.type = 3
+	return enemy_spec
+
 # Can calculate some difficulty elements here (if wave is over 5, make _ out of _ enemies spawn with greater speed/damage/health)
 func spawn_enemies() -> void:
-	for i in num_to_spawn:
-		enemy_spec = EnemySpec.new()
-		enemy_spec.damage = 10
-		enemy_spec.speed = 200
-		enemy_spec.health = 100
-		
-		var new_enemy = enemy_fact.build(enemy_spec)
+	var new_enemy
+	# Spawns enemy based on enemy type in spawn_array
+	for i in globalVars.num_to_spawn_total:
+		if spawn_array[i] == 1:
+			new_enemy = enemy_fact.build(spawnEnemyOne())
+		elif spawn_array[i] == 2:
+			new_enemy = enemy_fact.build(spawnEnemyTwo())
+		elif spawn_array[i] == 3:
+			new_enemy = enemy_fact.build(spawnEnemyThree())
 		#ADD All enemy signals here
 		new_enemy.died.connect(game.on_enemy_died)  # Connect the `died` signal to Game
 
@@ -104,9 +140,23 @@ func spawn_enemies() -> void:
 	done_spawning = true
 			
 # Very simple calculation right now, can tune later for better feel
+# Every third wave, add a new enemy level 1 and make an old enemy level 2
+# EVery fifth wave, add a new enemy level 1, and make an old enemy level 3
 func calc_num_to_spawn() -> void:
-	num_to_spawn = wave + 4
-	
+	if globalVars.wave_num % 3 == 0 or globalVars.wave_num % 5 == 0:
+		if globalVars.wave_num % 3 == 0:
+			globalVars.num_to_spawn_total += 1
+			globalVars.num_to_spawn_one += 1
+			globalVars.num_to_spawn_two += 1
+		if globalVars.wave_num % 5 == 0:
+			globalVars.num_to_spawn_total += 1
+			globalVars.num_to_spawn_one += 1
+			globalVars.num_to_spawn_three += 1
+	# Testing
+	#globalVars.num_to_spawn_one = 0
+	#globalVars.num_to_spawn_three = 5
+	#globalVars.num_to_spawn_total = 5
+
 # Checks if there are any instances of enemies left, if so, return true
 func check_enemy_exists() -> bool:
 	var check_parent_node:Array[Node] = $"../EnemySpawns".get_children()

@@ -5,3 +5,4 @@ extends Node
 var damage:float
 var speed:float
 var health:float
+var type:int

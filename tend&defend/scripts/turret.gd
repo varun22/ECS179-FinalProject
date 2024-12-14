@@ -22,31 +22,63 @@ func _ready() -> void:
 	shoot_timer = Timer.new()
 	shoot_timer.one_shot = true
 	add_child(shoot_timer)
-
+	
+	$HealthBar.max_value = 100.0
+	$HealthBar.value = turretType.turret_health[lane]
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	$HealthBar.value = turretType.turret_health[lane]
 	if shoot_timer.is_stopped():
 		shoot()
 	
 func shoot() -> void:
 	# Make proj spec based off turret spec
+	if turretType.type_array[lane] == turretType.Type.BASIC:
+		proj_spec.type = 1
+		$Turret/AnimationPlayer.play("base_tower_attack")
+	elif turretType.type_array[lane] == turretType.Type.POWER:
+		proj_spec.type = 2
+		$Turret/AnimationPlayer.play("power_turret_attack")
+	elif turretType.type_array[lane] == turretType.Type.REACH:
+		proj_spec.type = 3
+		$Turret/AnimationPlayer.play("range_turret_attack")
+	elif turretType.type_array[lane] == turretType.Type.FREQUENCY:
+		proj_spec.type = 4
+		$Turret/AnimationPlayer.play("freq_tower_attack")
+		
 	proj_spec.reach = reach
 	proj_spec.damage = damage
 	
-	# Build proj based off spec and add it as child of turret
+	
 	var new_proj = proj_fact.build(proj_spec)
 	add_child(new_proj)
 	
-	# Start timer for next shoot
+	signals.turret_shot.emit()
 	shoot_timer.start(frequency)
 	
+	
 func take_damage(damage_amt: float) -> void:
+	signals.turret_damaged.emit()
+	print("took damage ", damage_amt)
 	health -= damage_amt
+	turretType.turret_health[lane] -= damage_amt
 	if health <= 0:
+		turretType.turret_health[lane] = 0.0
 		die()
 	
 func die() -> void:
+	signals.turret_death.emit()
 	globalVars.currency += calculate_payback(lane)
+	if(globalVars.game_health > 0):
+		globalVars.game_health -= 1
+		if(globalVars.game_health <= 0):
+			await get_tree().create_timer(1).timeout
+			scene_switcher.switch_scene("res://scenes/game_over.tscn")
+			pass
+	turretType.type_array[lane] = turretType.Type.BASIC
+	$Turret/AnimationPlayer.play("base_tower_death")
+	await get_tree().create_timer(0.8).timeout
+	queue_free()
 	
 # Calculate how much currency player gets back for a destroyed turret (50% of what it costs is given back)
 func calculate_payback(lane_num: int) -> int:

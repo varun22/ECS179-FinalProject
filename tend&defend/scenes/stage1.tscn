@@ -11,17 +11,18 @@
 [ext_resource type="PackedScene" uid="uid://eghh27wxoi76" path="res://scenes/ui.tscn" id="7_r3htk"]
 [ext_resource type="Script" path="res://scripts/turret_factory.gd" id="8_5kvr3"]
 [ext_resource type="Script" path="res://scripts/projectile_factory.gd" id="10_a00n7"]
-[ext_resource type="PackedScene" uid="uid://bv5fslc67ynm1" path="res://scenes/background_music.tscn" id="10_qriqr"]
 [ext_resource type="PackedScene" uid="uid://d1oxoghresfh5" path="res://scenes/projectile.tscn" id="11_3dyi8"]
-[ext_resource type="Script" path="res://scripts/background_music.gd" id="11_hnr68"]
+[ext_resource type="PackedScene" uid="uid://gr765jgn4n5p" path="res://scenes/sound_manager.tscn" id="13_ulv4p"]
+[ext_resource type="PackedScene" uid="uid://1imcpqbvd8e6" path="res://scenes/hearts.tscn" id="14_kf8bv"]
 
 [node name="Stage1" type="Node2D" node_paths=PackedStringArray("ui")]
+process_mode = 1
 script = ExtResource("1_ycv23")
 ui = NodePath("UI")
 
 [node name="Player" parent="." instance=ExtResource("1_4ps2d")]
 z_index = 2
-position = Vector2(819, 474)
+position = Vector2(409, 785)
 scale = Vector2(3, 3)
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -48,25 +49,21 @@ script = ExtResource("4_mlgcr")
 enemy = ExtResource("5_mcqh0")
 
 [node name="EnemySpawn1" type="Node2D" parent="EnemySpawns"]
-position = Vector2(1825, 536)
+position = Vector2(1900, 545)
 
 [node name="EnemySpawn2" type="Node2D" parent="EnemySpawns"]
-position = Vector2(1812, 648)
+position = Vector2(1850, 660)
 
 [node name="EnemySpawn3" type="Node2D" parent="EnemySpawns"]
-position = Vector2(1807, 756)
+position = Vector2(1800, 775)
 
 [node name="EnemySpawn4" type="Node2D" parent="EnemySpawns"]
-position = Vector2(1802, 867)
+position = Vector2(1750, 890)
 
 [node name="EnemySpawn5" type="Node2D" parent="EnemySpawns"]
-position = Vector2(1807, 972)
+position = Vector2(1700, 1005)
 
 [node name="UI" parent="." instance=ExtResource("7_r3htk")]
-
-[node name="BackgroundMusic" parent="." node_paths=PackedStringArray("audio_player") instance=ExtResource("10_qriqr")]
-script = ExtResource("11_hnr68")
-audio_player = NodePath(".")
 
 [node name="Turrets" type="Node" parent="."]
 script = ExtResource("8_5kvr3")
@@ -75,3 +72,7 @@ turret = ExtResource("4_orpjk")
 [node name="ProjectileFactory" type="Node" parent="Turrets"]
 script = ExtResource("10_a00n7")
 projectile = ExtResource("11_3dyi8")
+
+[node name="soundManager" parent="." instance=ExtResource("13_ulv4p")]
+
+[node name="Hearts" parent="." instance=ExtResource("14_kf8bv")]
