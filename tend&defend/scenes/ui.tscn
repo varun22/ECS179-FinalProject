@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://eghh27wxoi76"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_y26uq"]
-[ext_resource type="FontFile" uid="uid://dnlncfc0vlj4a" path="res://assets/fonts/PixelOperator8.ttf" id="2_1uel0"]
-[ext_resource type="FontFile" uid="uid://bf1mvd63pl18d" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_2m3ko"]
+[ext_resource type="FontFile" uid="uid://dwymrr4g1jj1e" path="res://assets/fonts/PixelOperator8.ttf" id="2_1uel0"]
+[ext_resource type="FontFile" uid="uid://c8p0st0lyvhq2" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_2m3ko"]
 [ext_resource type="Texture2D" uid="uid://brybc5pw1vo05" path="res://assets/heart.png" id="4_d0n8f"]
 
 [node name="UI" type="CanvasLayer"]
