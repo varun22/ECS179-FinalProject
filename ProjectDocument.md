@@ -9,9 +9,12 @@ character.
 
 ## Project Resources
 
-[Web-playable version of your game.](https://itch.io/)  
-[Trailer](https://youtube.com)  
-[Press Kit](https://dopresskit.com/)  
+[Web-playable version of your game.](https://mariposa7273.itch.io/tendndefend)
+
+[Trailer](https://www.youtube.com/watch?v=yuImlzO8yxI)
+
+[Press Kit](https://drive.google.com/file/d/1XMUI37bU57cAUlQvjEk63kfijGHDjKfg/view?usp=sharing) 
+
 [Proposal](https://docs.google.com/document/d/1gyG7b2Upl4-9ODWC7Yq1yP8rd9siS_M9wfrzslGFUY8/edit?usp=sharing)  
 
 ## Gameplay Explanation ##
@@ -69,7 +72,7 @@ As the game logician, I decided how the different data we needed to run the game
 
 **Describe the steps you took in your role as producer. Typical items include group scheduling mechanisms, links to meeting notes, descriptions of team logistics problems with their resolution, project organization tools (e.g., timelines, dependency/task tracking, Gantt charts, etc.), and repository management methodology.**
 
-Early in the game's creation, I offered feedback on how gameplay systems could work as well as creating a [dependency map](https://lucid.app/lucidchart/38c5f6f2-af6c-4aaf-9f01-ea6828f57e6b/edit?viewport_loc=-1254%2C-387%2C3462%2C1784%2C0_0&invitationId=inv_ba75bc30-26f2-42a9-93a5-5e81a859d64b) for the major code files. I kept track of important due dates for the project and insured everyone was aware of what they had to do for things like the progress report and organized a meeting so we could finalize game progress ahead of our presentation and took [notes](https://docs.google.com/document/d/1504CdvgLSkfjD5s2aA8LvRw1AbyOrO5VQlXhDs5T7SM/edit?usp=sharing). I also stepped in to help other roles when they were busy with other gameplay systems by using the assets made by our animator and importing and creating all the animations in godot. As well as doing large portions of documents such as the progress report and parts of this document as well.
+Early in the game's creation, I offered feedback on how gameplay systems could work as well as creating a [dependency map](https://lucid.app/lucidchart/38c5f6f2-af6c-4aaf-9f01-ea6828f57e6b/edit?viewport_loc=-1254%2C-387%2C3462%2C1784%2C0_0&invitationId=inv_ba75bc30-26f2-42a9-93a5-5e81a859d64b) for the major code files. I kept track of important due dates for the project and insured everyone was aware of what they had to do for things like the progress report and organized a meeting so we could finalize game progress ahead of our presentation and took [notes](https://docs.google.com/document/d/1504CdvgLSkfjD5s2aA8LvRw1AbyOrO5VQlXhDs5T7SM/edit?usp=sharing). I also stepped in to help other roles when they were busy with other gameplay systems by using the assets made by our animator and importing and creating all the animations in godot or completing pieces of the press kit like our itch.io page or uploading our trailer to youtube. As well as doing large portions of documents such as the progress report and parts of this document as well.
 
 ## User Interface and Input
 
