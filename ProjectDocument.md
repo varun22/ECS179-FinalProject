@@ -81,9 +81,10 @@ Early in the game's creation, I offered feedback on how gameplay systems could w
 
 **Add an entry for each platform or input style your project supports.**
 
-## Movement/Physics
+## Movement/Physics (Varun Thakkar)
 
 **Describe the basics of movement and physics in your game. Is it the standard physics model? What did you change or modify? Did you make your movement scripts that do not use the physics system?**
+The basics of movement and physics in our game revolve around the player, enemy, and the turrets. Everything does follow the standard physics model pretty much, other than maybe the player rows movement. The player is only allowed to switch between rows by jumping, which means they can only be in one lane at a time and not have completely free movement in the y axis. There were also some adjustments needed regarding the x-axis when the player switched rows, since our camera is on an angle. Another decision we had to make was to not give the player the opportunity to turn around and attack enemies from the back, which proved to be too big of an advantage for the player. Therefore, the player always faces the right side. The turrets and their projectiles use a lot of custom physics to tailor to the needs of our game, while the player is mainly following the standard physics model other than the lerp for y-axis movement. The enemies move until the interact with the turret, proceeding to attack and destroy it(hopefully not).
 
 ## Animation and Visuals (Richard Huang)
 
@@ -128,9 +129,10 @@ The sound style consists of simplistic sounds mainly for the purpose of communic
 
 The playtests were all done on an earlier unfinished branch of the game so there were lots of concerns about bugs with the player to enemy interactions as well as how health worked in the game. There was also a lot of confusion about why the player attack were bound to enter which is not a key most people intuitively tried to attack with. Some people really enjoyed the music while other found it too repetitive after a while but everyone liked the animations/assets. For further improvements people suggested an increased level of difficulty, character customization, and adding more variety of enemies, weapons, and maps.
 
-## Narrative Design
+## Narrative Design (Varun Thakkar)
 
 **Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
+While I did plan on implementing a cutscene at the very beginning to introduce the player to the movements, control, and add some story, time did not allow it. Overall Narrative design was a team effort on choosing how we want the game to progress wave by wave and what options we want to give to the player. We based the game in a dystopian future with art based on popular pop culture references. We tried our best to make the game as hard as possible, and that even though the game is unlimited, we don't want early players to be playing for too long and feel that its too easy.
 
 ## Press Kit (Richard Huang) and Trailer (Simon Gooden)
 
