@@ -3,3 +3,4 @@ extends Node
 
 var reach:float
 var damage:float
+var type:int

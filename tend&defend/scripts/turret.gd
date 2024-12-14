@@ -29,26 +29,28 @@ func _process(_delta: float) -> void:
 		shoot()
 	
 func shoot() -> void:
-	# Make proj spec based off turret spec
-	if turretType.type_array[lane-1] == turretType.Type.BASIC:
-		$Turret/AnimationPlayer.play("base_tower_attack")
-	elif turretType.type_array[lane-1] == turretType.Type.POWER:
-		$Turret/AnimationPlayer.play("power_turret_attack")
-	elif turretType.type_array[lane-1] == turretType.Type.REACH:
-		$Turret/AnimationPlayer.play("range_turret_attack")
-	elif turretType.type_array[lane-1] == turretType.Type.FREQUENCY:
-		$Turret/AnimationPlayer.play("freq_tower_attack")
-		
+	match turretType.type_array[lane - 1]:
+		turretType.Type.BASIC:
+			proj_spec.type = 1
+			$Turret/AnimationPlayer.play("base_tower_attack")
+		turretType.Type.POWER:
+			proj_spec.type = 2
+			$Turret/AnimationPlayer.play("power_turret_attack")
+		turretType.Type.REACH:
+			proj_spec.type = 3
+			$Turret/AnimationPlayer.play("range_turret_attack")
+		turretType.Type.FREQUENCY:
+			proj_spec.type = 4
+			$Turret/AnimationPlayer.play("freq_tower_attack")
+	
 	proj_spec.reach = reach
 	proj_spec.damage = damage
 	
-	# Build proj based off spec and add it as child of turret
+	
 	var new_proj = proj_fact.build(proj_spec)
 	add_child(new_proj)
 	
 	signals.turret_shot.emit()
-	
-	# Start timer for next shoot
 	shoot_timer.start(frequency)
 	
 	

@@ -21,3 +21,6 @@ res://scripts/banana.gd
 res://scenes/banana.tscn
 res://scripts/global_vars.gd
 res://scripts/ui.gd
+res://scripts/projectile.gd
+res://scripts/projectile_factory.gd
+res://scripts/projectile_spec.gd
