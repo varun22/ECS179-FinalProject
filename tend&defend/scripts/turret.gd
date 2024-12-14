@@ -62,6 +62,11 @@ func take_damage(damage_amt: float) -> void:
 	
 func die() -> void:
 	globalVars.currency += calculate_payback(lane)
+	if(globalVars.game_health > 0):
+		--globalVars.game_health
+		if(globalVars.game_health == 0):
+			#switch to game over screen
+			pass
 	turretType.type_array[lane] = turretType.Type.BASIC
 	$Turret/AnimationPlayer.play("base_tower_death")
 	

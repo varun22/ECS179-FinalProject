@@ -122,6 +122,10 @@ func _physics_process(delta: float) -> void:
 func take_damage(damage:int) -> void:
 	current_health -= damage
 	if 0 >= current_health:
+		--globalVars.game_health
+		if(globalVars.game_health == 0):
+			#switch to game over screen
+			pass
 		_dead = true
 		$Sprite2d/AnimationPlayer.play("death")
 	
