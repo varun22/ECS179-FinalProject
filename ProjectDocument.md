@@ -10,8 +10,11 @@ character.
 ## Project Resources
 
 [Web-playable version of your game.](https://mariposa7273.itch.io/tendndefend)
+
 [Trailer](https://www.youtube.com/watch?v=yuImlzO8yxI)
-[Press Kit](https://drive.google.com/file/d/1XMUI37bU57cAUlQvjEk63kfijGHDjKfg/view?usp=sharing)  
+
+[Press Kit](https://drive.google.com/file/d/1XMUI37bU57cAUlQvjEk63kfijGHDjKfg/view?usp=sharing) 
+
 [Proposal](https://docs.google.com/document/d/1gyG7b2Upl4-9ODWC7Yq1yP8rd9siS_M9wfrzslGFUY8/edit?usp=sharing)  
 
 ## Gameplay Explanation ##
