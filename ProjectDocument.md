@@ -23,11 +23,11 @@ character.
 
  There are two main components of Tend & Defend, the towers and the player. Towers: During waves of enemies, towers will attack enemies on the lane of which the tower resides on. They shoot a projectile which will do a certain amount of damage each bullet, at a specific frequency and range. During the buy phase,
 Towers may be upgraded with currency to specialize in either power, frequency, or range. If the tower is damaged to an extent
-by enemies, it will fall for that round, resetting to base statistics for the next round. Next the player-controlled character: A free-roaming character will exist on the battlefield, capable of jumping between lanes and attacking enemies. The player itself will have a health bar and can fall in battle with enemies, to respawn with base statistics for the next round. The character may be upgraded through rounds to upgrade its range, speed of attack, and power. This is done by selecting 1 of 3 weapons; a hammer, a badminton racket, or an iron steel rod. 
+by enemies, it will fall for that round, resetting to base statistics for the next round. Next the player-controlled character: A free-roaming character will exist on the battlefield, capable of jumping between lanes and attacking enemies. The player itself will have a health bar and can fall in battle with enemies, to respawn with base statistics for the next round. The character may be upgraded through rounds to upgrade its damage. This is done by selecting 1 of 3 weapons; a hammer, a badminton racket, or an iron steel rod. 
 
 **Button Mappings**
 
-Movement for the player can be done either using WASD or the arrow keys. Attack is done by pressing the enter key. During the buy phase selecting a tower type can be done by clicking the button for your selected tower and then pressing the confirm button at the end of the lane. Upgrading the tower stats can be done by simply clicking the upgrade button that appears after selecting a tower type.
+Movement for the player can be done either using WASD or the arrow keys. Attack is done by pressing the enter key or left mouse button. During the buy phase selecting a tower type can be done by clicking the button for your selected tower and then pressing the confirm button at the end of the lane. Upgrading the tower stats can be done by simply clicking the upgrade button that appears after selecting a tower type.
 
 **Suggested Strategy**
 
@@ -43,16 +43,27 @@ If you used tutorials or other intellectual guidance to create aspects of your p
 
 # Main Roles #
 
-Your goal is to relate the work of your role and sub-role in terms of the content of the course. Please look at the role sections below for specific instructions for each role.
+## Game Logic (Simon Yoo) ##
+As the game logician, here is a list of the systems I implemented:  
+* Object Factories and Specs
+* Dynamic Wave Managing/Wave Difficulty Management
+* Autoloaded Global Scripts/Scenes
+* Scene Switching
+* Buy Phase Logic
+* Upgrading Turrets and Turret Stats
+* Signaling for Audio
 
-Below is a template for you to highlight items of your work. These provide the evidence needed for your work to be evaluated. Try to have at least four such descriptions. They will be assessed on the quality of the underlying system and how they are linked to course content. 
+As the game logician, I decided how the different data we needed to run the game was stored and shared across scenes and objects.  
+  
+*I utilized autoloaded globals* - I utilized autoloaded globals to store variables and information in a way that the different scripts could use for keeping a consistent game state. I used the [global_vars.gd](https://github.com/varun22/ECS179-FinalProject/blob/df5385c29f3f817d47d4cd4c57156d99dfee79ae/tend%26defend/scripts/global_vars.gd#L1) script as the main place to store variables I knew would need to be global in order to have them persist across scenes. Within it, I kept variables that were attributed to player stats, such as currency, score, health, etc. I also added some global variables for wave generation logic. I had a [turret_type](https://github.com/varun22/ECS179-FinalProject/blob/df5385c29f3f817d47d4cd4c57156d99dfee79ae/tend%26defend/scripts/turret_type.gd#L1) script that was also autoloaded and global. This one kept track of all the turret stats so that turret stats could be updated in the buy phase and rebuilt using said stats/arrays when returning to the waves.
 
-*Short Description* - Long description of your work item that includes how it is relevant to topics discussed in class. [link to evidence in your repository](https://github.com/dr-jam/ECS189L/edit/project-description/ProjectDocumentTemplate.md)
+*I used the factory pattern for generating turrets, projectiles, and enemies.* - Just like in exercise 3, I utilzed [spec scripts](https://github.com/varun22/ECS179-FinalProject/blob/df5385c29f3f817d47d4cd4c57156d99dfee79ae/tend%26defend/scripts/turret_spec.gd#L1) and [factory scripts](https://github.com/varun22/ECS179-FinalProject/blob/df5385c29f3f817d47d4cd4c57156d99dfee79ae/tend%26defend/scripts/turret_factory.gd#L1) that had [build functions](https://github.com/varun22/ECS179-FinalProject/blob/df5385c29f3f817d47d4cd4c57156d99dfee79ae/tend%26defend/scripts/turret_factory.gd#L12) in order to build differnt types of the same object. This allowed us to have different turrets with varying stats that we could upgrade. It also allowed for different projectile types coming from those turrets and different enemy types as well.
 
-Here is an example:  
-*Procedural Terrain* - The game's background consists of procedurally generated terrain produced with Perlin noise. The game can modify this terrain at run-time via a call to its script methods. The intent is to allow the player to modify the terrain. This system is based on the component design pattern and the procedural content generation portions of the course. [The PCG terrain generation script](https://github.com/dr-jam/CameraControlExercise/blob/513b927e87fc686fe627bf7d4ff6ff841cf34e9f/Obscura/Assets/Scripts/TerrainGenerator.cs#L6).
+*I implemented the different phases of the game and how to switch between them.* - I created a [global scene switcher](https://github.com/varun22/ECS179-FinalProject/blob/db38ff435ec8f4510de542aca470792466931935/tend%26defend/scripts/scene_switch.gd#L1) that was created using [this tutorial](https://docs.godotengine.org/en/stable/tutorials/scripting/singletons_autoload.html#custom-scene-switcher) from the Godot Docs. I have the scene switcher switch to the buy phase after every enemy is defeated or dead, and I have it switch back after the buy phase timer runs out.
 
-You should replay any **bold text** with your relevant information. Liberally use the template when necessary and appropriate.
+*I implemented a wave manager script.* - I created a [wave_manager.gd](https://github.com/varun22/ECS179-FinalProject/blob/db38ff435ec8f4510de542aca470792466931935/tend%26defend/scripts/waves_manager.gd#L1) script. This is one of the main game managers for the stage1 scene. This script builds all the turrets based on the global variables storing turret stats in [turret_type.gd](https://github.com/varun22/ECS179-FinalProject/blob/df5385c29f3f817d47d4cd4c57156d99dfee79ae/tend%26defend/scripts/turret_type.gd#L1). It also creates the variables necessary to store enemy generation and then generates those enemies. It decides which enemies and how many to spawn based on algorithms found in functions like [calc_num_to_spawn](https://github.com/varun22/ECS179-FinalProject/blob/db38ff435ec8f4510de542aca470792466931935/tend%26defend/scripts/waves_manager.gd#L145), [create_enemy_schedule](https://github.com/varun22/ECS179-FinalProject/blob/db38ff435ec8f4510de542aca470792466931935/tend%26defend/scripts/waves_manager.gd#L63), and [spawn_enemies](https://github.com/varun22/ECS179-FinalProject/blob/db38ff435ec8f4510de542aca470792466931935/tend%26defend/scripts/waves_manager.gd#L111).
+
+*I implemented the buy phase for upgrading* - I created a buy phase scene that runs off of the [buy_phase.gd](https://github.com/varun22/ECS179-FinalProject/blob/db38ff435ec8f4510de542aca470792466931935/tend%26defend/scripts/buy_phase.gd#L1) script. This has many button elements that change the values in arrays found in [turret_type.gd](https://github.com/varun22/ECS179-FinalProject/blob/df5385c29f3f817d47d4cd4c57156d99dfee79ae/tend%26defend/scripts/turret_type.gd#L1) which is an autoloaded global script. This allows the player to upgrade turrets and player features with the click of those buttons. The changes will then be implemented using the [rebuild](https://github.com/varun22/ECS179-FinalProject/blob/db38ff435ec8f4510de542aca470792466931935/tend%26defend/scripts/turret_factory.gd#L22) function in the turret factory.
 
 ## Producer
 
@@ -89,11 +100,15 @@ Creating different custom animations such as the turret animations add polish an
 
 ## Audio
 
-**List your assets, including their sources and licenses.**
+**List your assets, including their sources and licenses.**  
+All sound effects were found within [this free, online library: Pixabay.](https://pixabay.com/sound-effects/search/library/)  
+All music was created by Simon Gooden.
 
-**Describe the implementation of your audio system.**
+**Describe the implementation of your audio system.**  
+The audio was implemented through a [sound_manager.gd](https://github.com/varun22/ECS179-FinalProject/blob/db38ff435ec8f4510de542aca470792466931935/tend%26defend/scripts/sound_manager.gd#L1) script attached to a node that is parent to audioStreamPlayer2d nodes, each loaded with an individual sound. I then use signals from [signals.gd](https://github.com/varun22/ECS179-FinalProject/blob/db38ff435ec8f4510de542aca470792466931935/tend%26defend/scripts/signals.gd#L1) which is autoloaded global to decide when to play the sounds. I added a signal connection for each signal in the sound_manager script that just links to a function that has the audioplayer play the sound. [Here is an example of one of my calls for a sound to be played through signals.](https://github.com/varun22/ECS179-FinalProject/blob/db38ff435ec8f4510de542aca470792466931935/tend%26defend/scripts/player.gd#L117) [Here is the signal.](https://github.com/varun22/ECS179-FinalProject/blob/db38ff435ec8f4510de542aca470792466931935/tend%26defend/scripts/signals.gd#L9) [Here is the function in sound_manager.gd.](https://github.com/varun22/ECS179-FinalProject/blob/db38ff435ec8f4510de542aca470792466931935/tend%26defend/scripts/sound_manager.gd#L35). I took inspiration from the sound manager from exercise 3.
 
-**Document the sound style.** 
+**Document the sound style.**  
+The sound style consists of simplistic sounds mainly for the purpose of communicating an interaction to the user.
 
 ## Gameplay Testing
 
