@@ -1,8 +1,6 @@
 res://default_bus_layout.tres
-res://scripts/waves_manager.gd
-res://scenes/game_over.tscn
-res://scenes/game_over.gd
 res://scenes/stage1.tscn
+res://scripts/waves_manager.gd
 res://scenes/player.tscn
 res://scenes/turret.tscn
 res://scenes/enemy.tscn
@@ -10,9 +8,5 @@ res://scenes/menu.tscn
 res://scenes/projectile.tscn
 res://scenes/buy_phase.tscn
 res://scenes/ui.tscn
-res://scripts/menu.gd
+res://scenes/game_over.tscn
 res://scenes/credits.tscn
-res://scripts/credits.gd
-res://scripts/scene_switch.gd
-res://scripts/main_menu.gd
-res://scripts/audio_player.gd
