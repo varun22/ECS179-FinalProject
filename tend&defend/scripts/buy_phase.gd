@@ -180,10 +180,16 @@ func _on_upgrade_1_pressed() -> void:
 		elif turretType.type_array[0] == turretType.Type.FREQUENCY:
 			turretType.frequency_level[0] += 1
 			$"Lane 1/Upgrade 1".text = "Upgrade to Level " + str(turretType.frequency_level[0] + 1) + "\nCost: " + str(currency_to_upgrade)
+		elif $"Lane 1/Upgrade 1".text == "Basic Turret Cannot Upgrade":
+			$"Lane 1/Power Upgrade 1".visible = true
+			$"Lane 1/Range Upgrade 1".visible = true
+			$"Lane 1/Frequency Upgrade 1".visible = true
+			$"Lane 1/Upgrade 1".visible = false
 
 func _on_tend_1_pressed() -> void:
 	signals.button_click.emit()
 	if globalVars.currency >= currency_to_tend:
+		globalVars.currency -= currency_to_tend
 		$"Lane 1/Tend1".visible = false
 		$"Lane 1/Power Upgrade 1".visible = true
 		$"Lane 1/Range Upgrade 1".visible = true
@@ -238,10 +244,16 @@ func _on_upgrade_2_pressed() -> void:
 		elif turretType.type_array[1] == turretType.Type.FREQUENCY:
 			turretType.frequency_level[1] += 1
 			$"Lane 2/Upgrade 2".text = "Upgrade to Level " + str(turretType.frequency_level[1] + 1) + "\nCost: " + str(currency_to_upgrade)
+		elif $"Lane 2/Upgrade 2".text == "Basic Turret Cannot Upgrade":
+			$"Lane 2/Power Upgrade 2".visible = true
+			$"Lane 2/Range Upgrade 2".visible = true
+			$"Lane 2/Frequency Upgrade 2".visible = true
+			$"Lane 2/Upgrade 2".visible = false
 
 func _on_tend_2_pressed() -> void:
 	signals.button_click.emit()
 	if globalVars.currency >= currency_to_tend:
+		globalVars.currency -= currency_to_tend
 		$"Lane 2/Tend2".visible = false
 		$"Lane 2/Power Upgrade 2".visible = true
 		$"Lane 2/Range Upgrade 2".visible = true
@@ -296,10 +308,16 @@ func _on_upgrade_3_pressed() -> void:
 		elif turretType.type_array[2] == turretType.Type.FREQUENCY:
 			turretType.frequency_level[2] += 1
 			$"Lane 3/Upgrade 3".text = "Upgrade to Level " + str(turretType.frequency_level[2] + 1) + "\nCost: " + str(currency_to_upgrade)
+		elif $"Lane 3/Upgrade 3".text == "Basic Turret Cannot Upgrade":
+			$"Lane 3/Power Upgrade 3".visible = true
+			$"Lane 3/Range Upgrade 3".visible = true
+			$"Lane 3/Frequency Upgrade 3".visible = true
+			$"Lane 3/Upgrade 3".visible = false
 
 func _on_tend_3_pressed() -> void:
 	signals.button_click.emit()
 	if globalVars.currency >= currency_to_tend:
+		globalVars.currency -= currency_to_tend
 		$"Lane 3/Tend3".visible = false
 		$"Lane 3/Power Upgrade 3".visible = true
 		$"Lane 3/Range Upgrade 3".visible = true
@@ -354,10 +372,16 @@ func _on_upgrade_4_pressed() -> void:
 		elif turretType.type_array[3] == turretType.Type.FREQUENCY:
 			turretType.frequency_level[3] += 1
 			$"Lane 4/Upgrade 4".text = "Upgrade to Level " + str(turretType.frequency_level[3] + 1) + "\nCost: " + str(currency_to_upgrade)
+		elif $"Lane 4/Upgrade 4".text == "Basic Turret Cannot Upgrade":
+			$"Lane 4/Power Upgrade 4".visible = true
+			$"Lane 4/Range Upgrade 4".visible = true
+			$"Lane 4/Frequency Upgrade 4".visible = true
+			$"Lane 4/Upgrade 4".visible = false
 
 func _on_tend_4_pressed() -> void:
 	signals.button_click.emit()
 	if globalVars.currency >= currency_to_tend:
+		globalVars.currency -= currency_to_tend
 		$"Lane 4/Tend4".visible = false
 		$"Lane 4/Power Upgrade 4".visible = true
 		$"Lane 4/Range Upgrade 4".visible = true
@@ -412,10 +436,16 @@ func _on_upgrade_5_pressed() -> void:
 		elif turretType.type_array[4] == turretType.Type.FREQUENCY:
 			turretType.frequency_level[4] += 1
 			$"Lane 5/Upgrade 5".text = "Upgrade to Level " + str(turretType.frequency_level[4] + 1) + "\nCost: " + str(currency_to_upgrade)
+		elif $"Lane 5/Upgrade 5".text == "Basic Turret Cannot Upgrade":
+			$"Lane 5/Power Upgrade 5".visible = true
+			$"Lane 5/Range Upgrade 5".visible = true
+			$"Lane 5/Frequency Upgrade 5".visible = true
+			$"Lane 5/Upgrade 5".visible = false
 
 func _on_tend_5_pressed() -> void:
 	signals.button_click.emit()
 	if globalVars.currency >= currency_to_tend:
+		globalVars.currency -= currency_to_tend
 		$"Lane 5/Tend5".visible = false
 		$"Lane 5/Power Upgrade 5".visible = true
 		$"Lane 5/Range Upgrade 5".visible = true

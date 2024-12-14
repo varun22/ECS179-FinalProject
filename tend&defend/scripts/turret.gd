@@ -68,6 +68,11 @@ func take_damage(damage_amt: float) -> void:
 	
 func die() -> void:
 	signals.turret_death.emit()
+	#Reset turret stats
+	turretType.frequency_level[lane] = 1
+	turretType.power_level[lane] = 1
+	turretType.reach_level[lane] = 1
+	
 	globalVars.currency += calculate_payback(lane)
 	if(globalVars.game_health > 0):
 		globalVars.game_health -= 1
