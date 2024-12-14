@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_dytbo"]
 [ext_resource type="Texture2D" uid="uid://dqpmf7f2d55do" path="res://assets/Enemy/Enemy (1) (2).png" id="2_g0fw6"]
 [ext_resource type="Script" path="res://scripts/hurt_box.gd" id="3_wdlpv"]
-[ext_resource type="Script" path="res://scripts/hit_box.gd" id="4_hpyyu"]
+[ext_resource type="Script" path="res://scripts/hit_box_enemy.gd" id="4_0tkqx"]
 
 [sub_resource type="Animation" id="Animation_uys2l"]
 length = 0.001
@@ -18,6 +18,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HitBox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_f0dkf"]
@@ -34,6 +46,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [8, 9, 10, 11, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HitBox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_amupw"]
@@ -84,6 +108,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [26, 27, 28, 29, 30]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HitBox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_utfb5"]
 resource_name = "machete_death"
@@ -132,6 +168,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HitBox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_0gwxl"]
@@ -258,7 +306,7 @@ shape = SubResource("RectangleShape2D_ean05")
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 16
-script = ExtResource("4_hpyyu")
+script = ExtResource("4_0tkqx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-13.2, 4)

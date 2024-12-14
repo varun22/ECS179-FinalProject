@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://gr765jgn4n5p"]
+[gd_scene load_steps=6 format=3 uid="uid://gr765jgn4n5p"]
 
 [ext_resource type="Script" path="res://scripts/sound_manager.gd" id="1_w8jf8"]
 [ext_resource type="AudioStream" uid="uid://dy8bfoojqgbko" path="res://assets/sfx/shoot.mp3" id="2_icg7n"]
 [ext_resource type="AudioStream" uid="uid://bp1uqu2q3p0kk" path="res://assets/sfx/click.mp3" id="3_nycs1"]
+[ext_resource type="AudioStream" uid="uid://dwluykpb2ih8m" path="res://assets/sfx/metal_impact.mp3" id="4_004dt"]
+[ext_resource type="AudioStream" uid="uid://bocpksqpv2ubm" path="res://assets/sfx/crumble.mp3" id="5_apk07"]
 
 [node name="soundManager" type="Node"]
 script = ExtResource("1_w8jf8")
@@ -12,3 +14,9 @@ stream = ExtResource("2_icg7n")
 
 [node name="buttonClick" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_nycs1")
+
+[node name="turret_damaged" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_004dt")
+
+[node name="turret_death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_apk07")

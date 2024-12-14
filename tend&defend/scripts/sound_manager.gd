@@ -6,6 +6,8 @@ extends Node
 func _ready() -> void:
 	signals.turret_shot.connect(_on_turret_shoot)
 	signals.button_click.connect(_on_button_click)
+	signals.turret_damaged.connect(_on_turret_damaged)
+	signals.turret_damaged.connect(_on_turret_death)
 
 # Two ways of doing it
 func _on_turret_shoot() -> void:
@@ -14,3 +16,9 @@ func _on_turret_shoot() -> void:
 
 func _on_button_click() -> void:
 	$buttonClick.play()
+
+func _on_turret_damaged() -> void:
+	$turret_damaged.play()
+
+func _on_turret_death() -> void:
+	$turret_death.play()

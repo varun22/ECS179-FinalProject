@@ -33,10 +33,11 @@ var attacking : bool:
 		
 func _ready():
 	type = globalVars.player_type
-	
 	current_health = HEALTH
 	target_position = global_position
 	bind_player_input_commands()
+	
+	$HitBox/CollisionShape2D.disabled = true
 	
 	$HealthBar.max_value = HEALTH
 	$HealthBar.value = current_health
@@ -55,6 +56,12 @@ func bind_player_input_commands():
 	left_cmd = MoveLeftCommand.new()
 	attack = AttackCommand.new()
 	idle = IdleCommand.new()
+	
+func unbind_player_input_commands():
+	right_cmd = Command.new()
+	left_cmd = Command.new()
+	attack = Command.new()
+	idle = Command.new()
 
 func change_facing(new_facing:Facing) -> void:
 	facing = new_facing
@@ -63,13 +70,15 @@ var target_position: Vector2
 var lerp_speed: float = 10.0
 
 func move_up():
-	if current_y_index > 0:
+	$HitBox/CollisionShape2D.disabled = true
+	if current_y_index > 0 and not _dead:
 		current_y_index -= 1
 		target_position.y = y_positions[current_y_index]
 		target_position.x = global_position.x + 77
 
 func move_down():
-	if current_y_index < y_positions.size() - 1:
+	$HitBox/CollisionShape2D.disabled = true
+	if current_y_index < y_positions.size() - 1 and not _dead:
 		current_y_index += 1
 		target_position.y = y_positions[current_y_index]
 		target_position.x = global_position.x - 77
@@ -81,6 +90,7 @@ func _physics_process(delta: float) -> void:
 	var move_input = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	
 	if move_input > 0.1:
+		$HitBox/CollisionShape2D.disabled = true
 		if type == 1:
 			$Sprite2d/AnimationPlayer.play("sword_walk_right")
 		elif type == 2:
@@ -92,6 +102,7 @@ func _physics_process(delta: float) -> void:
 		right_cmd.execute(self)
 		target_position.x += SPEED * delta 
 	elif move_input < -0.1:
+		$HitBox/CollisionShape2D.disabled = true
 		if type == 1:
 			$Sprite2d/AnimationPlayer.play("sword_walk_right")
 		elif type == 2:
@@ -139,6 +150,7 @@ func take_damage(damage:int) -> void:
 	if 0 >= current_health:
 		#don't spawn player until next round
 		_dead = true
+		unbind_player_input_commands()
 		$Sprite2d/AnimationPlayer.play("death")
 		await get_tree().create_timer(0.8).timeout
 		queue_free()
