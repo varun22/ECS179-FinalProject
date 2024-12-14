@@ -24,3 +24,5 @@ res://scenes/credits.tscn
 res://scripts/credits.gd
 res://scripts/ui.gd
 res://scripts/menu.gd
+res://scenes/hearts.tscn
+res://scripts/hearts.gd

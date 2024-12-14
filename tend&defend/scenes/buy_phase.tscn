@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b3fwx0oivo4y2"]
+[gd_scene load_steps=36 format=3 uid="uid://b3fwx0oivo4y2"]
 
 [ext_resource type="Script" path="res://scripts/buy_phase.gd" id="1_coiml"]
 [ext_resource type="Texture2D" uid="uid://3rkprs6gqxi6" path="res://assets/game images/BG.png" id="1_nlvc3"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d0g1xg21qixu1" path="res://assets/Player/weapons/hammer.png" id="6_8n3uo"]
 [ext_resource type="PackedScene" uid="uid://gr765jgn4n5p" path="res://scenes/sound_manager.tscn" id="6_t0jfv"]
 [ext_resource type="Texture2D" uid="uid://c04hijgalggqp" path="res://assets/Player/weapons/racket.png" id="7_w40tg"]
+[ext_resource type="PackedScene" uid="uid://1imcpqbvd8e6" path="res://scenes/hearts.tscn" id="10_qjmg4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5uhv"]
 bg_color = Color(0.803922, 0.498039, 0.196078, 1)
@@ -684,6 +685,8 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_mwar2")
 show_percentage = false
 
 [node name="soundManager" parent="." instance=ExtResource("6_t0jfv")]
+
+[node name="Hearts" parent="." instance=ExtResource("10_qjmg4")]
 
 [connection signal="pressed" from="Lane 0/Stick" to="." method="_on_stick_pressed"]
 [connection signal="pressed" from="Lane 0/Hammer" to="." method="_on_hammer_pressed"]

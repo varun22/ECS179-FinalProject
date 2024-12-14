@@ -13,16 +13,16 @@ var score = globalVars.score:
 		score = new_score
 		_update_score_label()
 		
-var game_health: int = globalVars.game_health:
-	set(value):
-		game_health = value
-		_update_health_display()
+#var game_health: int = globalVars.game_health:
+	#set(value):
+		#game_health = value
+		#_update_health_display()
 
 var heart_texture: Texture = preload("res://assets/heart.png")
 
 func _ready():
 	_update_score_label()
-	_update_health_display()
+	#_update_health_display()
 	round.visible = false
 
 func _process(_delta: float) -> void:
@@ -43,14 +43,14 @@ func _ui_on_wave_update(wave: int) -> void:
 	await get_tree().create_timer(3.0).timeout
 	round.visible = false
 
-func _update_health_display():
-	var health_array:Array[Node] = health_container.get_children()
-	for n in health_array:
-		n.queue_free()
-	#health_container.clear_children()
-
-	for i in range(globalVars.game_health):
-		var heart = TextureRect.new()
-		heart.texture = heart_texture
-		heart.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		health_container.add_child(heart)
+#func _update_health_display():
+	#var health_array:Array[Node] = health_container.get_children()
+	#for n in health_array:
+		#n.queue_free()
+	##health_container.clear_children()
+#
+	#for i in range(globalVars.game_health):
+		#var heart = TextureRect.new()
+		#heart.texture = heart_texture
+		#heart.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		#health_container.add_child(heart)

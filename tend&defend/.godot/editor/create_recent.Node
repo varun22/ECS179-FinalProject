@@ -1,13 +1,13 @@
+Sprite2D
+Node
 AudioStreamPlayer2D
 Label
 ColorRect
-Sprite2D
 TextureRect
 HBoxContainer
 VBoxContainer
 MarginContainer
 Button
-Node
 CollisionShape2D
 HurtBox
 AnimationTree

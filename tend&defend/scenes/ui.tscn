@@ -128,6 +128,7 @@ theme_override_font_sizes/font_size = 30
 text = "0"
 
 [node name="Top3" type="MarginContainer" parent="HUD"]
+visible = false
 layout_mode = 0
 offset_left = 30.0
 offset_top = 120.0
