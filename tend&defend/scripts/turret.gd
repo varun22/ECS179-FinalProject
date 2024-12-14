@@ -68,7 +68,7 @@ func die() -> void:
 	if(globalVars.game_health > 0):
 		--globalVars.game_health
 		if(globalVars.game_health == 0):
-			#switch to game over screen
+			scene_switcher.switch_scene("res://scenes/credits.tscn")
 			pass
 	turretType.type_array[lane] = turretType.Type.BASIC
 	$Turret/AnimationPlayer.play("base_tower_death")
