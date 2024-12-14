@@ -17,3 +17,5 @@ var game_health:int = 3
 var currency_to_switch:int = 25
 var currency_to_upgrade:int = 10
 var currency_to_tend:int = 100
+# Player weapon type
+var player_type:int = 1

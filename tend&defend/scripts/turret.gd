@@ -22,27 +22,30 @@ func _ready() -> void:
 	shoot_timer = Timer.new()
 	shoot_timer.one_shot = true
 	add_child(shoot_timer)
-
+	
+	$HealthBar.max_value = 100.0
+	$HealthBar.value = turretType.turret_health[lane]
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	$HealthBar.value = turretType.turret_health[lane]
 	if shoot_timer.is_stopped():
 		shoot()
 	
 func shoot() -> void:
-	match turretType.type_array[lane - 1]:
-		turretType.Type.BASIC:
-			proj_spec.type = 1
-			$Turret/AnimationPlayer.play("base_tower_attack")
-		turretType.Type.POWER:
-			proj_spec.type = 2
-			$Turret/AnimationPlayer.play("power_turret_attack")
-		turretType.Type.REACH:
-			proj_spec.type = 3
-			$Turret/AnimationPlayer.play("range_turret_attack")
-		turretType.Type.FREQUENCY:
-			proj_spec.type = 4
-			$Turret/AnimationPlayer.play("freq_tower_attack")
-	
+	# Make proj spec based off turret spec
+	if turretType.type_array[lane] == turretType.Type.BASIC:
+		proj_spec.type = 1
+		$Turret/AnimationPlayer.play("base_tower_attack")
+	elif turretType.type_array[lane] == turretType.Type.POWER:
+		proj_spec.type = 2
+		$Turret/AnimationPlayer.play("power_turret_attack")
+	elif turretType.type_array[lane] == turretType.Type.REACH:
+		proj_spec.type = 3
+		$Turret/AnimationPlayer.play("range_turret_attack")
+	elif turretType.type_array[lane] == turretType.Type.FREQUENCY:
+		proj_spec.type = 4
+		$Turret/AnimationPlayer.play("freq_tower_attack")
+		
 	proj_spec.reach = reach
 	proj_spec.damage = damage
 	
@@ -67,7 +70,7 @@ func die() -> void:
 	if(globalVars.game_health > 0):
 		--globalVars.game_health
 		if(globalVars.game_health == 0):
-			#switch to game over screen
+			scene_switcher.switch_scene("res://scenes/credits.tscn")
 			pass
 	turretType.type_array[lane] = turretType.Type.BASIC
 	$Turret/AnimationPlayer.play("base_tower_death")

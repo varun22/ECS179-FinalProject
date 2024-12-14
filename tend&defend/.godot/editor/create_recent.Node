@@ -1,8 +1,10 @@
+Label
+ColorRect
+Sprite2D
 TextureRect
 HBoxContainer
 VBoxContainer
 MarginContainer
-Sprite2D
 Button
 Node
 CollisionShape2D
@@ -11,5 +13,3 @@ AnimationTree
 HitBox
 Area2D
 AnimationPlayer
-AnimatedSprite2D
-AudioStreamPlayer2D

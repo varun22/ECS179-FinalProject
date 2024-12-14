@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://26f3kc4nm0yv"]
+[gd_scene load_steps=20 format=3 uid="uid://26f3kc4nm0yv"]
 
 [ext_resource type="Script" path="res://scripts/turret.gd" id="1_d13qn"]
 [ext_resource type="PackedScene" uid="uid://d1oxoghresfh5" path="res://scenes/projectile.tscn" id="2_gg628"]
@@ -184,6 +184,30 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2f3gv"]
 size = Vector2(44, 125)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3wl4"]
+bg_color = Color(0.106223, 0.00353468, 0.00788417, 1)
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.599617, 0.0922846, 0.141251, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hv4jk"]
+bg_color = Color(0.876042, 0.182791, 0.27049, 1)
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.892026, 0.357369, 0.465784, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 3
+
 [node name="Turret" type="StaticBody2D"]
 collision_layer = 8
 collision_mask = 4
@@ -214,3 +238,14 @@ script = ExtResource("4_amow8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, 14.5)
 shape = SubResource("RectangleShape2D_2f3gv")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -25.0
+offset_top = -57.0
+offset_right = 142.0
+offset_bottom = -27.0
+scale = Vector2(0.3, 0.3)
+theme_override_styles/background = SubResource("StyleBoxFlat_t3wl4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hv4jk")
+step = 1.0
+show_percentage = false

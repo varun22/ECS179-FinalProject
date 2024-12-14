@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/buy_phase.gd" id="1_coiml"]
 [ext_resource type="Texture2D" uid="uid://3rkprs6gqxi6" path="res://assets/game images/BG.png" id="1_nlvc3"]
 [ext_resource type="Texture2D" uid="uid://dgf4ql7x3tfjs" path="res://assets/game images/Floor.png" id="2_sk6yv"]
-[ext_resource type="FontFile" uid="uid://dnlncfc0vlj4a" path="res://assets/fonts/PixelOperator8.ttf" id="4_b2pb8"]
+[ext_resource type="FontFile" uid="uid://dwymrr4g1jj1e" path="res://assets/fonts/PixelOperator8.ttf" id="4_b2pb8"]
 [ext_resource type="Texture2D" uid="uid://cmxj3w2tl3214" path="res://assets/Player/weapons/Rod.png" id="5_55hff"]
 [ext_resource type="PackedScene" uid="uid://eghh27wxoi76" path="res://scenes/ui.tscn" id="5_sv8g7"]
 [ext_resource type="Texture2D" uid="uid://d0g1xg21qixu1" path="res://assets/Player/weapons/hammer.png" id="6_8n3uo"]

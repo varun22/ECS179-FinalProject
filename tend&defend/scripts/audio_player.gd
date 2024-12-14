@@ -9,6 +9,7 @@ extends AudioStreamPlayer2D
 
 const stage1_music = preload("res://assets/music/background.ogg")
 const main_menu_music = preload("res://assets/music/main menu.ogg")
+const game_over_music = preload("res://assets/music/End-Music.ogg")
 
 var current_wave: int = 1  
 var is_playing: bool = false 
@@ -32,6 +33,9 @@ func play_stage1():
 	
 func play_main_menu():
 	play_music(main_menu_music)
+	
+func play_game_over():
+	play_music(game_over_music)
 
 # Helper function to play sound effects
 func play_SFX(stream: AudioStream, volume: float):

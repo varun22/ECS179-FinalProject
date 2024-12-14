@@ -49,21 +49,21 @@ func rebuild() -> void:
 		if i == 0:
 			new_turret.position.x = 425
 			new_turret.position.y = 540
-			new_turret.lane = 1
+			new_turret.lane = 0
 		elif i == 1:
 			new_turret.position.x = 345
 			new_turret.position.y = 660
-			new_turret.lane = 2
+			new_turret.lane = 1
 		elif i == 2:
 			new_turret.position.x = 265
 			new_turret.position.y = 780
-			new_turret.lane = 3
+			new_turret.lane = 2
 		elif i == 3:
 			new_turret.position.x = 185
 			new_turret.position.y = 900
-			new_turret.lane = 4
+			new_turret.lane = 3
 		elif i == 4:
 			new_turret.position.x = 105
 			new_turret.position.y = 1020
-			new_turret.lane = 5
+			new_turret.lane = 4
 		$".".add_child(new_turret)
