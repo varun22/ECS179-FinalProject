@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
 		done_spawning = false
 		#switch scene to buy menu, on player exit or timer end, switch back to stage1
 		#consider currency, storing bought changes, etc.
-		scene_switcher.switch_scene("res://scenes/buy_phase.tscn")
+		scene_switcher.switch_scene("res://scenes/game_over.tscn")
 		
 		# This never gets reached anymore due to scene switching
 		# Update music playback speed, add title
