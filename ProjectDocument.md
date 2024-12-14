@@ -2,8 +2,8 @@
 
 ## Summary ##
 
-Tend & Defend is an endless Tower Defense game with action packed gameplay, precise economy control, and a variety of
-threatening enemies. The goal for this game is to survive an endless number enemies who come in rounds, increasing in
+Tend & Defend is an endless Tower Defense game with action-packed gameplay, precise economy control, and a variety of
+threatening enemies. The goal of this game is to survive an endless number of enemies who come in rounds, increasing in
 difficulty per wave. To accomplish this, the player has two defense mechanisms to manipulate; towers and a moveable
 character. 
 
@@ -12,7 +12,7 @@ character.
 [Web-playable version of your game.](https://itch.io/)  
 [Trailer](https://youtube.com)  
 [Press Kit](https://dopresskit.com/)  
-[Proposal: make your own copy of the linked doc.](https://docs.google.com/document/d/1gyG7b2Upl4-9ODWC7Yq1yP8rd9siS_M9wfrzslGFUY8/edit?usp=sharing)  
+[Proposal](https://docs.google.com/document/d/1gyG7b2Upl4-9ODWC7Yq1yP8rd9siS_M9wfrzslGFUY8/edit?usp=sharing)  
 
 ## Gameplay Explanation ##
 
@@ -21,10 +21,9 @@ character.
 
 **Game Explanation**
 
- There are two main components of Tend & Defend, the towers and the player. Towers: During waves of enemies, towers will attack enemies on the lane of which the tower resides on. They shoot a
-projectile which will do a certain amount of damage each bullet, at a specific frequency and range. During the buy phase,
+ There are two main components of Tend & Defend, the towers and the player. Towers: During waves of enemies, towers will attack enemies on the lane of which the tower resides on. They shoot a projectile which will do a certain amount of damage each bullet, at a specific frequency and range. During the buy phase,
 Towers may be upgraded with currency to specialize in either power, frequency, or range. If the tower is damaged to an extent
-by enemies, it will fall for that round, resetting to base statistics for the next round. Next the player controlled character: A free-roaming character will exist on the battlefield, capable of jumping between lanes and attacking enemies. The player itself will have a health bar, and can fall in battle with enemies, to respawn with base statistics for the next round. The character may be upgraded through rounds to upgrade it’s range, speed of attack, and power. This is done by selecting 1 of 3 weapons; a hammer, a badminton racket, or a iron steel rod. 
+by enemies, it will fall for that round, resetting to base statistics for the next round. Next the player-controlled character: A free-roaming character will exist on the battlefield, capable of jumping between lanes and attacking enemies. The player itself will have a health bar and can fall in battle with enemies, to respawn with base statistics for the next round. The character may be upgraded through rounds to upgrade its range, speed of attack, and power. This is done by selecting 1 of 3 weapons; a hammer, a badminton racket, or an iron steel rod. 
 
 **Button Mappings**
 
