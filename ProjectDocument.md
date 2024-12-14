@@ -85,15 +85,20 @@ Early in the game's creation, I offered feedback on how gameplay systems could w
 
 **Describe the basics of movement and physics in your game. Is it the standard physics model? What did you change or modify? Did you make your movement scripts that do not use the physics system?**
 
-## Animation and Visuals
+## Animation and Visuals (Richard Huang)
 
 **List your assets, including their sources and licenses.**
-
-All assets are custom sprites created to fit the unique asks of each game mechanic including the tower upgrade animations, death animations, weapon upgrade animations, custom enemy animations, title screen, game over screen, game field & towers.
-
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
-Creating different custom animations such as the turret animations add polish and help improve the game feel of the game. The 2d-pixel art style contributes to helping tie the entire game together by standardizing all the assets. 
+Early on in the brainstorming for the project, we collectively decided to make the decision to create our own visuals and sprites. This was because as we wanted to have the creative freedom while programming, and not be constraint to online assets and potentially inconsistent graphic design choices. 
+
+As Animation and Visuals, my job was mainly to be in constant contact with each programmer and the project manager to maintain a good idea of what they wanted to have available to them. We began by using placeholder assets found on the projects used throughout the quarter, while I utilized [PiskelApp](https://www.piskelapp.com/) to create the custom animated sprites.
+
+A complete collection of each asset built for Tend & Defend can be found in [this drive](https://drive.google.com/drive/folders/1KGMQUHQ20xn9OwS91FxMVZwHEPbBwQFV?usp=sharing). For each asset implemented to the game, they can be found in [the Assets folder](https://github.com/varun22/ECS179-FinalProject/tree/db38ff435ec8f4510de542aca470792466931935/tend%26defend/assets) in our project Github. 
+
+As I documented within the [Presskit](https://drive.google.com/file/d/1XMUI37bU57cAUlQvjEk63kfijGHDjKfg/view?usp=sharing), there were many different inspirations towards the design of each character, landscape, tower, and enemy. Each design was something that had a 'vibe'(as we would call it) that the team enjoyed, further making the game feel of our project more personal to us. At many times, this work included a lot of editing of sprites, expanding/ contracting sprites to match the resolution needs, and maintaining the same art style project-wide to maximize consistency within game feel. We wanted the world to feel slightly futuristic, yet dystopian, therefore I chose to follow Arcane for inspiration for many of the assets. 
+
+The most difficult challenge for this role for me was being able to visualize the needs of other members in this project, and to be able to take those notes and ideas and turn them into a graphic result. If there was a new jump mechanism that was made, that meant the up movement sprite had to go, replaced by a jumping one. But with a lot of creative freedom, I found a lot of fun in being able to push the limits of what we wanted our game to look like.
 
 ## Game Logic
 
@@ -127,15 +132,19 @@ The playtests were all done on an earlier unfinished branch of the game so there
 
 **Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
 
-## Press Kit and Trailer
+## Press Kit (Richard Huang) and Trailer (Simon Gooden)
 
 **Include links to your presskit materials and trailer.**
+Within our [Presskit](https://drive.google.com/file/d/1XMUI37bU57cAUlQvjEk63kfijGHDjKfg/view?usp=sharing), we utilized Google Slides to craft it to maximize creative freedom in what we wanted it to look like. Materials include [game sprites](https://drive.google.com/drive/folders/1KGMQUHQ20xn9OwS91FxMVZwHEPbBwQFV?usp=sharing), images of inspirations and how they were translated to our project, and an overall explanation on the story, description, and inspirations for our project.
+**Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
 
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
 
-## Game Feel and Polish
+## Game Feel and Polish (Richard Huang)
 
 **Document what you added to and how you tweaked your game to improve its game feel.**
 
-I was apart of testing process to review and advise on game mechanics: towers, upgrades, placement. Conversed with team to formulate programmable ideas for each mechanic to keep on the same page with all game design choices.
+I was apart of testing process to review and advise on game mechanics: towers, upgrades, placement. As my main role was Visual Design, my role itself contained a lot of maintaining a consistent visual game feel. With a consistent art design(2D Pixel art) and animations to make the visuals feel alive, I worked with the Player Movement / Physics team to adapt smooth animations to their ideas.
+
+Examples of decisions regarding game feel would be exploring the idea that our game should not be completely free-roaming, but having the player locked within each lane. At many times, we had communicated different ideas that we should have the player do, like jumping, shooting, or getting behind enemies. Leading conversation around creating the most coherent game was something that I was able to communicate through my knowledge of both the game design, and visual limits.
 
