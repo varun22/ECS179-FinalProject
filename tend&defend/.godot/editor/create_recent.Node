@@ -1,3 +1,7 @@
+TextureRect
+HBoxContainer
+VBoxContainer
+MarginContainer
 Sprite2D
 Button
 Node
@@ -9,6 +13,3 @@ Area2D
 AnimationPlayer
 AnimatedSprite2D
 AudioStreamPlayer2D
-ProgressBar
-CharacterBody2D
-CanvasLayer
