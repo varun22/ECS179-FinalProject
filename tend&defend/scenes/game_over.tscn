@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/game_over.gd" id="1_7jirw"]
 [ext_resource type="Texture2D" uid="uid://btesawj8bqane" path="res://assets/menu screen/GameOver.png" id="1_peqhy"]
-[ext_resource type="FontFile" uid="uid://bf1mvd63pl18d" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_s4ifg"]
+[ext_resource type="FontFile" uid="uid://c8p0st0lyvhq2" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_s4ifg"]
 [ext_resource type="Texture2D" uid="uid://bxtsi0hu5y37h" path="res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[3] Hover.png" id="3_00xmx"]
 [ext_resource type="Texture2D" uid="uid://dvbk0r07yvbry" path="res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[2] Clicked.png" id="4_cmgin"]
 [ext_resource type="Texture2D" uid="uid://cherc432hfd10" path="res://assets/menu screen/Button Pack - ok_lavender/Individual Frames/[4] Green/[1] Normal.png" id="5_g08md"]
