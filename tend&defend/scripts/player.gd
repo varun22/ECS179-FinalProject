@@ -67,9 +67,9 @@ func _physics_process(delta: float) -> void:
 	
 	if move_input > 0.1:
 		if type == 1:
-			$Sprite2d/AnimationPlayer.play("stick_walk_right")
-		elif type == 2:
 			$Sprite2d/AnimationPlayer.play("sword_walk_right")
+		elif type == 2:
+			$Sprite2d/AnimationPlayer.play("stick_walk_right")
 		elif type == 3:
 			$Sprite2d/AnimationPlayer.play("hammer_move_right")
 		else: 
@@ -78,9 +78,9 @@ func _physics_process(delta: float) -> void:
 		target_position.x += SPEED * delta 
 	elif move_input < -0.1:
 		if type == 1:
-			$Sprite2d/AnimationPlayer.play("stick_walk_right")
-		elif type == 2:
 			$Sprite2d/AnimationPlayer.play("sword_walk_right")
+		elif type == 2:
+			$Sprite2d/AnimationPlayer.play("stick_walk_right")
 		elif type == 3:
 			$Sprite2d/AnimationPlayer.play("hammer_move_right")
 		else: 
@@ -89,9 +89,9 @@ func _physics_process(delta: float) -> void:
 		target_position.x -= SPEED * delta 
 	elif Input.is_action_just_pressed("attack"):
 		if type == 1:
-			$Sprite2d/AnimationPlayer.play("stick_attack")
-		elif type == 2:
 			$Sprite2d/AnimationPlayer.play("sword_attack")
+		elif type == 2:
+			$Sprite2d/AnimationPlayer.play("stick_attack")
 		elif type == 3:
 			$Sprite2d/AnimationPlayer.play("hammer_attack")
 		else: 
@@ -106,9 +106,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		if (!$Sprite2d/AnimationPlayer.is_playing()):
 			if type == 1:
-				$Sprite2d/AnimationPlayer.play("stick_idle")
-			elif type == 2:
 				$Sprite2d/AnimationPlayer.play("sword_idle")
+			elif type == 2:
+				$Sprite2d/AnimationPlayer.play("stick_idle")
 			elif type == 3:
 				$Sprite2d/AnimationPlayer.play("hammer_idle")
 			else: 
@@ -122,14 +122,10 @@ func _physics_process(delta: float) -> void:
 func take_damage(damage:int) -> void:
 	current_health -= damage
 	if 0 >= current_health:
-		--globalVars.game_health
-		if(globalVars.game_health == 0):
-			#switch to game over screen
-			pass
+		#don't spawn player until next round
 		_dead = true
 		$Sprite2d/AnimationPlayer.play("death")
-	
-
+		
 	## Add the gravity.
 	#if not is_on_floor():
 		#velocity += get_gravity() * delta
