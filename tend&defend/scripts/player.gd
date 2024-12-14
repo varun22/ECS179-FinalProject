@@ -140,6 +140,8 @@ func take_damage(damage:int) -> void:
 		#don't spawn player until next round
 		_dead = true
 		$Sprite2d/AnimationPlayer.play("death")
+		await get_tree().create_timer(0.8).timeout
+		queue_free()
 		
 	## Add the gravity.
 	#if not is_on_floor():
