@@ -8,9 +8,5 @@ res://scenes/menu.tscn
 res://scenes/projectile.tscn
 res://scenes/buy_phase.tscn
 res://scenes/ui.tscn
-res://scripts/player.gd
-res://scripts/turret_factory.gd
-res://scripts/turret.gd
-res://scripts/hit_box.gd
-res://scripts/global_vars.gd
-res://scripts/buy_phase.gd
+res://scenes/game_over.tscn
+res://scenes/credits.tscn
